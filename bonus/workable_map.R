@@ -6,9 +6,9 @@ library(ggmap)
 library(sf)
 library(mapview)
 
-google_api_key = Sys.getenv("GOOGLE_MAPS_KEY")
+googlemaps_api_key = Sys.getenv("GOOGLEMAPS_API_KEY")
 
-register_google(key = google_api_key)
+register_google(key = googlemaps_api_key)
 
 Teams <- tibble(Teams = c("Real Madrid",
                           "FC Barcelona",
