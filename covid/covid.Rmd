@@ -27,12 +27,12 @@ We need to import the `.csv` file into the environment for us to play with it. I
 
 ```{r import, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
 
-raw_data <- read.csv(file = "covid.csv", row.names=1, header=TRUE)
+raw_covid <- read.csv(file = "covid.csv", row.names=1, header=TRUE)
 
-colnames(raw_data)[8] <- "Notes"
+colnames(raw_covid)[8] <- "Notes"
 
 # Take a look:
-glimpse(raw_data)
+glimpse(raw_covid)
 
 ```
 
@@ -40,13 +40,13 @@ glimpse(raw_data)
 
 ### 1 and 2: Correctly format the dates in “Date.of.birth”, “First.day.of.symptoms”, “Date.of.outcome” and “Date.of.diagnosis”; Format “Hospitalization.type”, “Symptoms” and “Outcome” as factors and “Epidemiological.link…Notes” as character.
 
-Because all modifications were in the same file, I made them using piping within the `raw_data` data frame and using the `mutate` function for each type of modification. For the modifications in more than one variable, I used the `across` function applied to a vector of them.
+Because all modifications were in the same file, I made them using piping within the `raw_covid` data frame and using the `mutate` function for each type of modification. For the modifications in more than one variable, I used the `across` function applied to a vector of them.
 
 </div>
 
 ```{r q1q2, echo=TRUE, eval=FALSE}
 
-raw_data <- raw_data %>%
+raw_covid <- raw_covid %>%
      mutate(across(c(Date.of.birth,
                      First.day.of.symptoms,
                      Date.of.outcome,
@@ -56,7 +56,7 @@ raw_data <- raw_data %>%
      mutate(Notes = as.character(Notes))
 
 # Take another look to see the modifications:
-glimpse(raw_data)
+glimpse(raw_covid)
 
 ```
 
@@ -67,16 +67,25 @@ glimpse(raw_data)
 For this, I did not used the `table` function. Instead, I selected the data based on the class of the variable. To use the `table` function, it would look something like the `#commented` line below.
 </div>
 
-```{r q3, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+```{r q3, echo=TRUE, eval=TRUE}
 
-q3 <- raw_data %>%
+q3 <- raw_covid %>%
      select_if(is.factor)
 
-# q3 <- with(raw_data,table(raw_data$Hospitalization.type,
-#                          raw_data$Symptoms,
-#                          raw_data$Outcome))
+# q3 <- with(raw_covid,table(raw_covid$Hospitalization.type,
+#                          raw_covid$Symptoms,
+#                          raw_covid$Outcome))
 
 glimpse(q3)
+
+# glimpse(q3)
+# num funfa, nem str(q3)
+# e é só no html, depois de knit. 
+# aqui funfa, no .R funfa.....
+# por algum motivo diz que 
+#       ## Rows: 1,106
+#       ## Columns: 0
+#       otimo.
 
 ```
 
@@ -113,7 +122,7 @@ kable(q4)
 
 ```{r q5, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
 
-q5 <- arrange(raw_data, Date.of.outcome)
+q5 <- arrange(raw_covid, Date.of.outcome)
 
 # kable(head(q5))
 
@@ -138,7 +147,7 @@ q5 <- arrange(raw_data, Date.of.outcome)
 
 ```{r q7, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
 
-q7 <- raw_data %>%
+q7 <- raw_covid %>%
      filter(Date.of.birth >= "1981-01-01") %>%
      filter(Outcome == "Healed") %>%
      summarize(n())

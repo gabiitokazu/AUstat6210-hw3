@@ -8,7 +8,7 @@ output:
 highlight: github
 ---
 
-```{css, echo=FALSE}
+```{css setup, echo=FALSE}
 
      .image {
           display: block;
@@ -69,9 +69,9 @@ For me to be able to use the `sf` package to retrieve the coordinates data from 
 </div>
 
 ```{r APIkey, echo=TRUE, message=FALSE, warning=FALSE}
-google_api_key = Sys.getenv("GOOGLE_MAPS_KEY")
+googlemaps_api_key = Sys.getenv("GOOGLEMAPS_API_KEY")
 
-register_google(key = google_api_key)
+register_google(key = googlemaps_api_key)
 ```
 
 <div style="text-align: justify">
@@ -100,8 +100,16 @@ City <- tibble(City = c("Madrid, Spain",
 
 bonus <- bind_cols(Teams, Champions, City)
 
-glimpse(bonus)
+```
 
+<div style="text-align: justify">
+
+Which gives us this:
+
+</div>
+
+```{r view_tb_bonus, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+str(bonus)
 ```
 
 <div style="text-align: justify">
@@ -112,12 +120,25 @@ glimpse(bonus)
 
 ```{r mutate_geocode, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
 map <- mutate_geocode(bonus, City)
-kable(map)
 
 #map_sf <- st_as_sf(map, coords = c("lon","lat"), crs = 4326)
-# Can make it work to show the map_sf
+# AINDA TEM QUE FAZER FUNCIONAR O mapview() PRA MOSTRAR
 #mapview(map_sf)
+#
+#erro:
+#Error in UseMethod("st_as_sf") : 
+#  no applicable method for 'st_as_sf' applied to an object of class "function"
 
+```
+
+<div style="text-align: justify">
+
+<!-- blob -->
+
+</div>
+
+```{r view_tb_coords, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+kable(map)
 ```
 
 <div style="text-align: justify">
@@ -158,7 +179,11 @@ Valencia <- paste(sep = "<br/>",
 
 ```
 
+<div style="text-align: justify">
 
+We can use markers to point out the locations (just as a pin in GoogleMaps), in which one can click and then a pop-up will appear with the name of the city, a link that leads to the teams' home page, and the number of times said team has been champion:
+
+</div>
 
 ```{r map1, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
 
@@ -169,12 +194,19 @@ map1 <- leaflet() %>%
      addMarkers(lng=-2.9349852, lat=43.26301, popup=Bilbao) %>%
      addMarkers(lng=-0.3762881, lat=39.46991, popup=Valencia)
 
-map1
 
 ### arrumar o quadrante, 
-
 ```
 
+```{r view_map1, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+map1
+```
+
+<div style="text-align: justify">
+
+... Or we can just throw the pop-ups in there, as the reference map provided:
+
+</div>
 
 ```{r map2, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
 
@@ -189,7 +221,8 @@ map2 <- leaflet() %>%
                options = popupOptions(closeButton = FALSE)) %>%
      addPopups(lng=-0.3762881, lat=39.46991, Valencia,
                options = popupOptions(closeButton = FALSE))
-     
-map2
+```
 
+```{r view_map2, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+map2
 ```

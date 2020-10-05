@@ -13,19 +13,19 @@ Finalized `.html` files in the `final` directory.
 
 
 
-In `covid` directory: 
+In `/covid` directory: 
 
-* See `covid.Rmd` for Problem 1. 
+* See `covid.html` for Problem 1. 
 * See `covid.csv` for raw data used on Problem 1. 
 
-In `salary` directory: 
+In `/salary` directory: 
 
-* See `salary.Rmd` for Problem 2. 
+* See `salary.html` for Problem 2. 
 * See `adult.csv` for raw data used on Problem 2. 
 
-In `bonus` directory: 
+In `/bonus` directory: 
 
-* See `map.Rmd` for the Bonus Problem assignment. 
+* See `map.html` for the Bonus Problem assignment. 
 
 
 

@@ -37,7 +37,7 @@ try <- t(bonus)
 map <- mutate_geocode(bonus, City)
 
 
-#l ongitude and latitude to be plotted using the World Geographic System 1984 projection, which is referenced as European Petroleum Survey Group (EPSG) 4326. Geographic jargon aside, what matters at this stage is that EPSG 4326 is the projection used by web maps such as Google Maps.
+#longitude and latitude to be plotted using the World Geographic System 1984 projection, which is referenced as European Petroleum Survey Group (EPSG) 4326. Geographic jargon aside, what matters at this stage is that EPSG 4326 is the projection used by web maps such as Google Maps.
 #
 map_sf <- st_as_sf(map, coords = c("lon","lat"), crs = 4326)
 
@@ -48,7 +48,15 @@ mapview(map_sf)
 # reconhecia os caracteres
 # cities <- bonus$City
 # cities_df <- as.data.frame(cities, stringsAsFactor = FALSE)
-
+# 
+# 
+# 
+# 
+# 
+# 
+# ------------------
+# #fazer mapas dinamicos!!!!!!!!!
+# ------------------
 
 ##--example--------------------------------------------------
 m <- leaflet() %>%
