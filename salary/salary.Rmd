@@ -1,0 +1,28 @@
+---
+title: "salary"
+author: "Gabi Itokazu"
+date: "10/3/2020"
+output: html_document
+---
+The “adult.csv” dataset was downloaded from the UCI data repository and collects census information paired with a variable determining whether an individual’s salary is larger or smaller than (or equal to) $50,000. To do so, we will use logistic regression which can be generally represented as follows:
+
+y=g(Xβ)
+
+where y is a dichotomous variable with two levels, g(⋅) is a known function, X is the matrix/dataframe containing the independent (census) variables and β is the coefficient vector determining how each variable contributes to determining y. Our goal is to estimate the coefficient vector β and check which coefficients are statistically significant.
+
+1 Load the data and check the formatting of the variables.
+
+2 Rename the last column (currently called “NA”) containing the dichotomous salary information. Assign the name salary to it.
+
+3 The values in salary have a space in front of them (e.g. " >50K"): remove the space from all values (hint: you can use substring()).
+
+4 Again, in the variable salary, replace “>50K” with the value 1 and “<=50K” with 0. Make sure to format it as a factor with two levels.
+
+5 Use the glm() function to estimate this logistic model. Only specify the arguments formula = salary ~ ., data and family = binomial. Save the result of the estimation in an object called fit.
+
+6 Using the information in fit (hint: you can use the functions coef() and summary() to extract information), create a dataframe collecting:
+     The names of the variables (names of the rows of the dataframe);
+     The value of the coefficients (first column);
+     A logical vector stating which coefficients are positive (second column);
+     The p-values (third column). .
+7 Subset the dataframe created in the previous question to only show the rows where the p-values are strictly smaller than 0.05. Knowing that (i) the remaining rows are statistically significant and that (ii) positive coefficients contribute to increase the probability of a salary larger than $50,000 (the opposite for negative values), comment on those variables that negatively contribute to salary.

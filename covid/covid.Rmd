@@ -1,0 +1,190 @@
+---
+title: "Homework 3: covid-19"
+subtitle: "STAT 6210 AU Fall 2020"
+author: "Ana Gabriela Itokazu"
+output:
+     prettydoc::html_pretty:
+     theme: cayman
+highlight: github
+---
+
+<div style="text-align: justify">
+
+### The `covid.csv` file contains data on Covid-19 cases in a province of Italy. For the following exercises, only provide first rows or elements in the output if the results are too large.
+
+</div>
+
+```{r install, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(knitr)
+```
+
+<div style="text-align: justify">
+
+We need to import the `.csv` file into the environment for us to play with it. I made sure that the file was in the same working directory as my project, so there is no file path in the command. I make the first row as the columns names, and the first column, as the rows names. I also re-name the "Epidemiological.link...Notes" column as "Notes", just for the sake of tidiness...
+
+</div>
+
+```{r import, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+
+raw_data <- read.csv(file = "covid.csv", row.names=1, header=TRUE)
+
+colnames(raw_data)[8] <- "Notes"
+
+# Take a look:
+glimpse(raw_data)
+
+```
+
+<div style="text-align: justify">
+
+### 1 and 2: Correctly format the dates in “Date.of.birth”, “First.day.of.symptoms”, “Date.of.outcome” and “Date.of.diagnosis”; Format “Hospitalization.type”, “Symptoms” and “Outcome” as factors and “Epidemiological.link…Notes” as character.
+
+Because all modifications were in the same file, I made them using piping within the `raw_data` data frame and using the `mutate` function for each type of modification. For the modifications in more than one variable, I used the `across` function applied to a vector of them.
+
+</div>
+
+```{r q1q2, echo=TRUE, eval=FALSE}
+
+raw_data <- raw_data %>%
+     mutate(across(c(Date.of.birth,
+                     First.day.of.symptoms,
+                     Date.of.outcome,
+                     Date.of.diagnosis), as.Date)) %>%
+     mutate(across(c(Hospitalization.type,
+                     Symptoms,Outcome), as.factor)) %>%
+     mutate(Notes = as.character(Notes))
+
+# Take another look to see the modifications:
+glimpse(raw_data)
+
+```
+
+<div style="text-align: justify">
+
+### 3: Create a three-dimensional table reporting the three factors from the previous question.
+
+For this, I did not used the `table` function. Instead, I selected the data based on the class of the variable. To use the `table` function, it would look something like the `#commented` line below.
+</div>
+
+```{r q3, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+
+q3 <- raw_data %>%
+     select_if(is.factor)
+
+# q3 <- with(raw_data,table(raw_data$Hospitalization.type,
+#                          raw_data$Symptoms,
+#                          raw_data$Outcome))
+
+glimpse(q3)
+
+```
+
+<div style="text-align: justify">
+
+### 4: Using the table object created in the previous question, subset it in order to create the table presented in the homework assignment.
+
+To be able to reproduce the table, we need to `filter` the data to the set represented there. The whole table is only representing the data for the "Asymptomatic", and it does not represent the data that includes "Deceased" or "Non-Intensive care hospitalization". Once filtering all this, we can `group_by` the "Hospitalization Type" and "Outcome". This, summarized by the "Symptoms" column, gives us the counts for this overlap. In a separate piping, I use the function `spread` to move the "Outcome" values in a column based on the "Symptoms" values. Now, this looks like the table provided already, but because the `summarize` function did not provided a zero-value count, we need to `replace` the NA values for zero:
+
+</div>
+
+```{r q4, echo=TRUE, eval=FALSE, warning=FALSE, message=FALSE}
+
+q4 <- q3 %>%
+     filter(Symptoms != "Symptomatic") %>%
+     filter(Outcome != "Deceased") %>%
+     filter(Hospitalization.type != "Non-Intensive care hospitalization") %>%
+     group_by(Hospitalization.type, Outcome) %>%
+     summarize(Symptoms = n())
+
+q4 <- q4 %>%
+     spread(Outcome,Symptoms) %>%
+     replace(is.na(.), 0)
+
+kable(q4)
+
+```
+
+<div style="text-align: justify">
+
+### 5 Order the data based on the date of diagnosis (from first to most recent).
+
+</div>
+
+```{r q5, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+
+q5 <- arrange(raw_data, Date.of.outcome)
+
+# kable(head(q5))
+
+```
+
+<div style="text-align: justify">
+
+### 6 Add a column that reports whether or not a case was asymptomatic AND in home isolation. Name the observation “Home_Asymptomatic” if the conditions apply and “Non_Home_Asymptomatic” if not and then produce a bar plot of this new variable.
+
+</div>
+
+```{r q6, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+#NAO PODE ESQUECER DO BARPLOT HEIN
+
+```
+
+<div style="text-align: justify">
+
+### 7 Count the number of cases of people born after 1981 and that have healed.
+
+</div>
+
+```{r q7, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+
+q7 <- raw_data %>%
+     filter(Date.of.birth >= "1981-01-01") %>%
+     filter(Outcome == "Healed") %>%
+     summarize(n())
+
+```
+
+<div style="text-align: justify">
+
+### 8 Count the number of cases that are asymptomatic OR in home isolation (but not both) AND were born before 1982.
+
+</div>
+
+```{r q8, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+
+
+```
+
+<div style="text-align: justify">
+
+### 9 Create a new dataset including only the rows where “Epidemiological.link…Notes” includes the words “contact” OR “symptom” (or both). Hint: you can use the grep() function and tolower().
+
+</div>
+
+```{r q9, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+
+
+```
+
+<div style="text-align: justify">
+
+### 10 In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.
+
+</div>
+
+```{r q10, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+
+
+```
+
+<div style="text-align: justify">
+
+### 11 Produce a pie chart for the type of hospitalization for cases born between 1960 and 1980.
+
+</div>
+
+```{r q11, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+
+
+```
