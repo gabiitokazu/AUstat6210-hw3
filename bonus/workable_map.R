@@ -44,6 +44,8 @@ map_sf <- st_as_sf(map, coords = c("lon","lat"), crs = 4326)
 mapview(map_sf)
 
 
+
+
 # nao tava funcionando porque nao reconhecia a API key nem
 # reconhecia os caracteres
 # cities <- bonus$City

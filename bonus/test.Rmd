@@ -1,0 +1,43 @@
+---
+title: "test"
+author: "Gabi Itokazu"
+date: "10/5/2020"
+output: html_document
+---
+
+```{r , echo=FALSE}
+
+library(ggplot2)
+library(rgdal)
+library(mapview)
+
+mapviewOptions(maxpoints = 55000) # diamonds has some 53000 rows
+
+data(diamonds)
+
+### blow diamonds up a bit
+big <- diamonds[rep(seq_len(nrow(diamonds)), 1), ]
+big$cut <- as.character(big$cut)
+big$color <- as.character(big$color)
+big$clarity <- as.character(big$clarity)
+
+### provide some random positions
+big$x <- rnorm(nrow(big), 0, 10)
+big$y <- rnorm(nrow(big), 0, 10)
+coordinates(big) <- ~x+y
+proj4string(big) <- CRS("+init=epsg:4326")
+
+### view it
+m <- mapview(big)
+# knit_print.mapview(m)
+m@map
+
+mv = mapview(franconia)
+mv@map
+
+```
+
+```{r omg, echo=TRUE, eval=TRUE}
+mv = mapview(franconia)
+mv@map
+```

@@ -10,12 +10,16 @@ highlight: github
 
 ```{css setup, echo=FALSE}
 
-     .image {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 60%;
-     }
+        .image {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 60%;
+        }
+
+        .html-widget {
+                margin: auto;
+        }
 
 ```
 
@@ -60,6 +64,8 @@ library(ggmap)
 library(sf)
 library(mapview)
 library(knitr)
+#rgdal
+#ggplot2
 ```
 
 <div style="text-align: justify">
@@ -76,7 +82,7 @@ register_google(key = googlemaps_api_key)
 
 <div style="text-align: justify">
 
-I built `tibble()` with the data of each column of the provided table: "Teams", "Champions", and "City". Then I unified them as a "bonus" `data.frame()`. All this seems strange, but it facilitates later, when managing the packages `sf` and `mapview`, saving us some time converting stuff. Now, this is NOT the easiest way to do it, nor the prettier way, but it is the solution I found that makes sense for the way my brain works when thinking about it.
+I built `tibble()` with the data of each column of the provided table: "Teams", "Champions", and "City". Then I unified them as a "bonus" `data.frame()`. All this seems strange, but it facilitates later, when managing the packages `sf` and `mapview`, saving us some time converting stuff.
 
 </div>
 
@@ -120,15 +126,6 @@ str(bonus)
 
 ```{r mutate_geocode, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
 map <- mutate_geocode(bonus, City)
-
-#map_sf <- st_as_sf(map, coords = c("lon","lat"), crs = 4326)
-# AINDA TEM QUE FAZER FUNCIONAR O mapview() PRA MOSTRAR
-#mapview(map_sf)
-#
-#erro:
-#Error in UseMethod("st_as_sf") : 
-#  no applicable method for 'st_as_sf' applied to an object of class "function"
-
 ```
 
 <div style="text-align: justify">
@@ -143,9 +140,36 @@ kable(map)
 
 <div style="text-align: justify">
 
-<!-- blob -->
+<!-- Now we have all the pretty data we wanted. The map seemed easy enough - it is not.  
+
+-----------------{era pra estar num chunk}----------------------------
+map_sf <- st_as_sf(map, coords = c("lon","lat"), crs = 4326)
+# AINDA TEM QUE FAZER FUNCIONAR O mapview() PRA MOSTRAR
+#mapview(map_sf)
+#
+#erro:
+#Error in UseMethod("st_as_sf") : 
+#  no applicable method for 'st_as_sf' applied to an object of class "function"
+## mapview(map_sf)@map     --- works here, not there
+## knit_print.mapview(MYMAP)   --- nope
+## MYMAP@map        --- works here, not there
+#
+----------------------------------------------------------------------
+
+-->
 
 </div>
+
+```{r example, echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE}
+#example:
+
+City <- paste(sep = "<br/>",
+                 "<b>Example Team</b>",
+                 "<a href='https://www.exampleteam.com/en/'>Example Team</a>",
+                 "Champions: 100"
+)
+
+```
 
 ```{r prep_map, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
 
@@ -201,6 +225,8 @@ map1 <- leaflet() %>%
 ```{r view_map1, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
 map1
 ```
+
+\
 
 <div style="text-align: justify">
 
