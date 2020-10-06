@@ -1,21 +1,24 @@
-# make sure you are in the right directory using `getwd()` and `setwd()`
-# or use 
+library(tidyverse)
 
 
-raw_data <- read.csv(file = "covid.csv", row.names=1, header=TRUE)
+raw_covid <- read.csv(file = "covid.csv", row.names=1, header=TRUE)
 
-glimpse(raw_data)
+colnames(raw_covid)[8] <- "Notes"
 
-colnames(raw_data)[8] <- "Notes"
+# glimpse(raw_covid)
 
 # 1 and 2:
 
-raw_data <- raw_data %>%
-     mutate(across(c(Date.of.birth,First.day.of.symptoms,Date.of.outcome,Date.of.diagnosis), as.Date)) %>%
-     mutate(across(c(Hospitalization.type,Symptoms,Outcome), as.factor)) %>%
-     mutate(Notes = as.character(Notes))
+raw_covid <- raw_covid %>%
+   mutate(across(c(Date.of.birth,
+                   First.day.of.symptoms,
+                   Date.of.outcome,
+                   Date.of.diagnosis), as.Date)) %>%
+   mutate(across(c(Hospitalization.type,
+                   Symptoms,Outcome), as.factor)) %>%
+   mutate(Notes = as.character(Notes))
 
-glimpse(raw_data)  
+# glimpse(raw_covid)
 
 # 1 Correctly format the dates in “Date.of.birth”, “First.day.of.symptoms”, “Date.of.outcome” and “Date.of.diagnosis”.
 # raw_data[c(1,4,6:7)] <- as.data.frame(lapply(raw_data[c(1,4,6:7)], function(x) as.Date(x, format="%Y-%b-%d")))
@@ -31,8 +34,14 @@ glimpse(raw_data)
 
 # 3 Create a three-dimensional table reporting the three factors from the previous question. Hint: use the function table() with the variables of interest.
 
-report <- raw_data %>%
-     select_if(is.factor)
+report <- raw_covid %>%
+   select_if(is.factor)
+
+# q3 <- with(raw_covid,table(raw_covid$Hospitalization.type,
+#                          raw_covid$Symptoms,
+#                          raw_covid$Outcome))
+
+
 
 # to create as a data.frame, or a table using:
 report2 <- with(raw_data,table(raw_data$Hospitalization.type,raw_data$Symptoms,raw_data$Outcome))
@@ -56,16 +65,49 @@ subset <- subset %>%
 
 # 5 Order the data based on the date of diagnosis (from first to most recent).
 
-data_q5 <- arrange(raw_data, Date.of.outcome)
+data_q5 <- arrange(raw_covid, Date.of.outcome)
 
 # 6 Add a column that reports whether or not a case was asymptomatic AND in home isolation. Name the observation “Home_Asymptomatic” if the conditions apply and “Non_Home_Asymptomatic” if not and then produce a bar plot of this new variable.
 
-data_q6 <- raw_data
-data_q6$new = character(nrow(raw_data))
-colnames(data_q6) = "q6"
 
-data_q6 <- raw_data %>%
-     mutate(q6 = )
+df_q6 <- raw_covid %>%
+   mutate(q6 = character(nrow(raw_covid)))
+
+for (i in 1:nrow(df_q6)){
+   if(isTRUE((df_q6[i,"Hospitalization.type"] == "Home isolation")
+   && (df_q6[i,"Symptoms"] == "Asymptomatic"))) {
+      df_q6[i, "q6"] <- "Home_Asymptomatic"
+      } else {
+         df_q6[i, "q6"] <- "Non_Home_Asymptomatic"
+      }
+   }
+
+# ele realmente quer isso, ou que que pra qualquer outra condicao
+# nessas colunas, seja "non-home-asymptomatic"???
+# # includies NA values in "hospitalization type"
+
+# aparece o main mas as y values ficam estranhos
+q6 <- table(df_q6$q6)
+barplot(q6, xlab="Asymptomatic", names.arg=c("Home","Non-Home"), ylim=c(0,900))
+axis(2,at=seq(0,900,100))
+
+#fica bom mas nao aparece o 'main':
+par(mfrow=c(1,1))
+barplot(q6, main="Asymptomatic", names.arg=c("Home","Non-Home"), ann=FALSE,axes=FALSE)
+usr <- par("usr")
+par(usr=c(usr[1:2], 0, 900))
+axis(2,at=seq(0,900,100))
+
+barplot(counts, main="Car Distribution", horiz=TRUE,
+        names.arg=c("3 Gears", "4 Gears", "5 Gears"))
+
+g3 <- table(df_q6$Hospitalization.type, df_q6$q6)
+barplot(g3, main="blobblob",
+        xlab="blob", col=c("grey","black", "white"),
+        legend = rownames(g3))
+
+
+
 #NUM ESQUECE DO BARPLOT
 
 

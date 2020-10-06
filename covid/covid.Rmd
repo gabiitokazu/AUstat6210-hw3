@@ -110,38 +110,77 @@ q4 <- q4 %>%
      spread(Outcome,Symptoms) %>%
      replace(is.na(.), 0)
 
-kable(q4)
+# VIEW STILL NOT WORKING
 
 ```
 
+```{r view_q4, echo=FALSE, eval=FALSE, fig.align="center", message=FALSE, warning=FALSE}
+
+df_q4 <- as.data.frame(q4)
+
+knitr::kable(df_q4)
+```
+
+\
+
 <div style="text-align: justify">
 
-### 5 Order the data based on the date of diagnosis (from first to most recent).
+### 5: Order the data based on the date of diagnosis (from first to most recent).
 
 </div>
 
 ```{r q5, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
 
-q5 <- arrange(raw_covid, Date.of.outcome)
+q5 <- arrange(raw_covid, Date.of.diagnosis)
 
 # kable(head(q5))
+# 
+head(q5)
+glimpse(q5)
 
 ```
 
 <div style="text-align: justify">
 
-### 6 Add a column that reports whether or not a case was asymptomatic AND in home isolation. Name the observation “Home_Asymptomatic” if the conditions apply and “Non_Home_Asymptomatic” if not and then produce a bar plot of this new variable.
+### 6: Add a column that reports whether or not a case was asymptomatic AND in home isolation. Name the observation “Home_Asymptomatic” if the conditions apply and “Non_Home_Asymptomatic” if not and then produce a bar plot of this new variable.
 
 </div>
 
-```{r q6, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
-#NAO PODE ESQUECER DO BARPLOT HEIN
+```{r q6, echo=TRUE, eval=TRUE, fig.align="center", warning=FALSE, message=FALSE}
+
+df_q6 <- raw_covid %>%
+   mutate(q6 = character(nrow(raw_covid)))
+
+for (i in 1:nrow(df_q6)){
+   if(isTRUE((df_q6[i,"Hospitalization.type"] == "Home isolation")
+   && (df_q6[i, "Symptoms"] == "Asymptomatic"))) {
+      df_q6[i,"q6"] <- "Home_Asymptomatic"
+      } else {
+         df_q6[i,"q6"] <- "Non_Home_Asymptomatic"
+      }
+   }
+
+## aparece o main maso y axis fica esquisito
+plot_q6 <- table(df_q6$q6)
+
+barplot(plot_q6, xlab="Asymptomatic", names.arg=c("Home","Non-Home"), ylim=c(0,1000))
+axis(2,at=seq(0,1000,200))
 
 ```
 
+<!--
+
+#fica bom mas nao aparece o 'main':
+par(mfrow=c(1,1))
+barplot(plot_q6, main="Asymptomatic", names.arg=c("Home","Non-Home"), ann=FALSE,axes=FALSE)
+usr <- par("usr")
+par(usr=c(usr[1:2], 0, 900))
+axis(2,at=seq(0,900,100))
+
+-->
 <div style="text-align: justify">
 
-### 7 Count the number of cases of people born after 1981 and that have healed.
+### 7: Count the number of cases of people born after 1981 and that have healed.
 
 </div>
 
@@ -154,9 +193,17 @@ q7 <- raw_covid %>%
 
 ```
 
+```{r view_q7, echo=FALSE, eval=TRUE, fig.align="center", message=FALSE, warning=FALSE}
+colnames(q7) <- "Number of people born after 1981 and healed:"
+knitr::kable(q7, align = "c", format = "html", table.attr = "style='width:50%;'") %>%
+        kableExtra::kable_styling(position = "center")
+```
+
+\
+
 <div style="text-align: justify">
 
-### 8 Count the number of cases that are asymptomatic OR in home isolation (but not both) AND were born before 1982.
+### 8: Count the number of cases that are asymptomatic OR in home isolation (but not both) AND were born before 1982.
 
 </div>
 
@@ -167,7 +214,7 @@ q7 <- raw_covid %>%
 
 <div style="text-align: justify">
 
-### 9 Create a new dataset including only the rows where “Epidemiological.link…Notes” includes the words “contact” OR “symptom” (or both). Hint: you can use the grep() function and tolower().
+### 9: Create a new dataset including only the rows where “Epidemiological.link…Notes” includes the words “contact” OR “symptom” (or both). Hint: you can use the grep() function and tolower().
 
 </div>
 
@@ -178,7 +225,7 @@ q7 <- raw_covid %>%
 
 <div style="text-align: justify">
 
-### 10 In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.
+### 10: In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.
 
 </div>
 
@@ -189,7 +236,7 @@ q7 <- raw_covid %>%
 
 <div style="text-align: justify">
 
-### 11 Produce a pie chart for the type of hospitalization for cases born between 1960 and 1980.
+### 11: Produce a pie chart for the type of hospitalization for cases born between 1960 and 1980.
 
 </div>
 
