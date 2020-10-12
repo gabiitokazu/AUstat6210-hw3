@@ -8,6 +8,10 @@ output:
 highlight: github
 ---
 
+```{r clear_genv, echo=FALSE}
+rm(list = ls())
+```
+
 ```{css setup, echo=FALSE}
 
         .image {
@@ -227,6 +231,7 @@ map1
 ```
 
 \
+
 
 <div style="text-align: justify">
 
