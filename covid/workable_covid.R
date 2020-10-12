@@ -18,6 +18,8 @@ raw_covid <- raw_covid %>%
                    Symptoms,Outcome), as.factor)) %>%
    mutate(Notes = as.character(Notes))
 
+
+
 # glimpse(raw_covid)
 
 # 1 Correctly format the dates in “Date.of.birth”, “First.day.of.symptoms”, “Date.of.outcome” and “Date.of.diagnosis”.
@@ -60,6 +62,8 @@ subset <- subset %>%
      spread(Outcome,Symptoms) %>%
      replace(is.na(.), 0)
 
+table
+
 
 #-------------------------------------------------------------------------
 
@@ -68,7 +72,6 @@ subset <- subset %>%
 data_q5 <- arrange(raw_covid, Date.of.outcome)
 
 # 6 Add a column that reports whether or not a case was asymptomatic AND in home isolation. Name the observation “Home_Asymptomatic” if the conditions apply and “Non_Home_Asymptomatic” if not and then produce a bar plot of this new variable.
-
 
 df_q6 <- raw_covid %>%
    mutate(q6 = character(nrow(raw_covid)))
@@ -80,10 +83,9 @@ for (i in 1:nrow(df_q6)){
       } else {
          df_q6[i, "q6"] <- "Non_Home_Asymptomatic"
       }
-   }
+}
 
-# ele realmente quer isso, ou que que pra qualquer outra condicao
-# nessas colunas, seja "non-home-asymptomatic"???
+
 # # includies NA values in "hospitalization type"
 
 # aparece o main mas as y values ficam estranhos
@@ -113,15 +115,21 @@ barplot(g3, main="blobblob",
 
 # 7 Count the number of cases of people born after 1981 and that have healed.
 
-q7 <- raw_data %>%
+q7 <- raw_covid %>%
      filter(Date.of.birth >= "1981-01-01") %>%
      filter(Outcome == "Healed") %>%
      summarize(n())
 
-# 8 Count the number of cases that are asymptomatic OR in home isolation (but not both) AND were born before 1982.
-#### ------ Funciona, mas que coisa feia---------------------------
+q7 <- raw_covid %>%
+   filter(Date.of.birth >= "1981-01-01" &
+              Outcome == "Healed") %>%
+   summarize(n())
 
-q8 <- raw_data %>%
+
+# 8 Count the number of cases that are asymptomatic OR in home isolation (but not both) AND were born before 1982.
+#### ------ nope---------------------------
+
+q8 <- raw_covid %>%
       filter(Date.of.birth >= "1982-01-01")
 
 q8$but_not_both = factor(rep(NA, nrow(q8)), levels =1:2, labels = c("Asymptomatic", "Home isolation"))
@@ -139,17 +147,39 @@ q8 <- q8 %>%
      filter(but_not_both != is.na(but_not_both))
 
 nrow(q8)
+
+#------------------------------------------------------------------
+#----- tentar diferente pq ta mto feio:
+# q8 ainda:
+
+q8 <- raw_covid %>%
+   filter(Date.of.birth >= "1982-01-01") %>%
+   filter(xor(Symptoms == "Asymptomatic", Hospitalization.type == "Home isolation")) %>%
+   summarise(n())
+
+
 ###------------ horrivel, tem que fazer de novo--------------------------
 ###
 
 # 9 Create a new dataset including only the rows where “Epidemiological.link…Notes” includes the words “contact” OR “symptom” (or both). Hint: you can use the grep() function and tolower().
 # 
-q9 <- raw_data %>%
-     filter(grep("contact", Notes))
+q9 <- raw_covid %>%
+     filter(grepl("contact", tolower(Notes)) |
+            grepl("symptom", tolower(Notes)))
 
-tolower(q9)
-grep("contact", Notes, ignore.case = TRUE)
+any("contact", tolower(Notes), "symptom", tolower(Notes))
+
+anewdataset <- 
+   exdata_r01 %>%
+   filter( grepl("contact", tolower(exdata_r01$Epidemiological.link...Notes)) | 
+              grepl("symptom", tolower(exdata_r01$Epidemiological.link...Notes)))
+
 # 10 In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.
+# 
+anewdataset <- 
+   anewdataset %>%
+   mutate("Age" = as.period(interval(anewdataset$Date.of.birth, ymd("2020 October 2")))$year) %>%
+   write_csv("q1_part10dataset.csv")
 
 # 11 Produce a pie chart for the type of hospitalization for cases born between 1960 and 1980.
 

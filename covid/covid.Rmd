@@ -8,43 +8,57 @@ output:
 highlight: github
 ---
 
+```{r chunksetup, include=FALSE}
+knitr::opts_chunk$set(
+   echo=TRUE, eval=TRUE, include=TRUE, warning=FALSE, message=FALSE, fig.align="center"
+)
+```
+
+```{r clear_genv, echo=FALSE}
+rm(list = ls())
+```
+
 <div style="text-align: justify">
 
 ### The `covid.csv` file contains data on Covid-19 cases in a province of Italy. For the following exercises, only provide first rows or elements in the output if the results are too large.
 
 </div>
 
-```{r install, echo=FALSE, message=FALSE, warning=FALSE}
+```{r install, echo=FALSE, include=FALSE}
 library(tidyverse)
 library(knitr)
 ```
 
 <div style="text-align: justify">
 
-We need to import the `.csv` file into the environment for us to play with it. I made sure that the file was in the same working directory as my project, so there is no file path in the command. I make the first row as the columns names, and the first column, as the rows names. I also re-name the "Epidemiological.link...Notes" column as "Notes", just for the sake of tidiness...
+I made sure that the `.csv` file was in the same working directory as my project, so there was no file path in the command. I make the first row of the `raw_covid` data frame as the columns names, and the first column, as the rows names. I also re-named the "Epidemiological.link...Notes" column as "Notes", just for the sake of tidiness...
 
 </div>
 
-```{r import, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+```{r import}
 
 raw_covid <- read.csv(file = "covid.csv", row.names=1, header=TRUE)
 
 colnames(raw_covid)[8] <- "Notes"
 
-# Take a look:
+```
+
+```{r view_raw, echo=FALSE}
+
 glimpse(raw_covid)
 
 ```
+\
 
 <div style="text-align: justify">
 
 ### 1 and 2: Correctly format the dates in “Date.of.birth”, “First.day.of.symptoms”, “Date.of.outcome” and “Date.of.diagnosis”; Format “Hospitalization.type”, “Symptoms” and “Outcome” as factors and “Epidemiological.link…Notes” as character.
 
-Because all modifications were in the same file, I made them using piping within the `raw_covid` data frame and using the `mutate` function for each type of modification. For the modifications in more than one variable, I used the `across` function applied to a vector of them.
+Because all modifications were in the same object, I made them using piping (`%>%`) and the `mutate` function for each type of modification. For the modifications in more than one variable, I used the `across` function applied to a vector of them.
 
 </div>
 
-```{r q1q2, echo=TRUE, eval=FALSE}
+```{r q1q2}
 
 raw_covid <- raw_covid %>%
      mutate(across(c(Date.of.birth,
@@ -55,72 +69,70 @@ raw_covid <- raw_covid %>%
                      Symptoms,Outcome), as.factor)) %>%
      mutate(Notes = as.character(Notes))
 
-# Take another look to see the modifications:
+```
+
+```{r view_q1q2, echo=FALSE}
+
 glimpse(raw_covid)
 
 ```
-
 <div style="text-align: justify">
+\
 
 ### 3: Create a three-dimensional table reporting the three factors from the previous question.
 
-For this, I did not used the `table` function. Instead, I selected the data based on the class of the variable. To use the `table` function, it would look something like the `#commented` line below.
+For this, I did not used the `table` function. Instead, I selected the data based on the class of the variable. To use said function, I would do something that looks like the `#commented` line below.
 </div>
 
-```{r q3, echo=TRUE, eval=TRUE}
+```{r q3}
 
-q3 <- raw_covid %>%
-     select_if(is.factor)
+q3 <- select_if(raw_covid, is.factor)
 
-# q3 <- with(raw_covid,table(raw_covid$Hospitalization.type,
-#                          raw_covid$Symptoms,
-#                          raw_covid$Outcome))
+# q3 <- table(raw_covid[c("Hospitalization.type",
+#                          "Symptoms",
+#                          "Outcome")])
+
+```
+
+```{r view_q3, echo=FALSE}
 
 glimpse(q3)
 
-# glimpse(q3)
-# num funfa, nem str(q3)
-# e é só no html, depois de knit. 
-# aqui funfa, no .R funfa.....
-# por algum motivo diz que 
-#       ## Rows: 1,106
-#       ## Columns: 0
-#       otimo.
-
 ```
+\
 
 <div style="text-align: justify">
 
 ### 4: Using the table object created in the previous question, subset it in order to create the table presented in the homework assignment.
 
-To be able to reproduce the table, we need to `filter` the data to the set represented there. The whole table is only representing the data for the "Asymptomatic", and it does not represent the data that includes "Deceased" or "Non-Intensive care hospitalization". Once filtering all this, we can `group_by` the "Hospitalization Type" and "Outcome". This, summarized by the "Symptoms" column, gives us the counts for this overlap. In a separate piping, I use the function `spread` to move the "Outcome" values in a column based on the "Symptoms" values. Now, this looks like the table provided already, but because the `summarize` function did not provided a zero-value count, we need to `replace` the NA values for zero:
+To be able to reproduce the table, I `filtered` the data to the set represented there. The whole table is only representing the data for the "Asymptomatic", and it does not represent the data that includes "Deceased" or "Non-Intensive care hospitalization". Once filtering all this, I could `group_by` the "Hospitalization Type" and "Outcome". This, summarized by the "Symptoms" column, gives us the counts for this overlap. In a separate piping, I use the function `spread` to move the "Outcome" values in a column based on the "Symptoms" values. Now, this looks like the table provided already, but because the `summarize` function did not provided a zero-value count, we need to `replace` the NA values for zero. This is long, and honestly can be done in like one line of subsetting, but I find it easier to understand and use when I know exactly what I'm taking out and modifying. Also, if I need to use the same function to extract different types of information, it is easier to change small bits. Like that, I can filter out different levels, or group by different variables.
 
 </div>
 
-```{r q4, echo=TRUE, eval=FALSE, warning=FALSE, message=FALSE}
+```{r q4}
 
-q4 <- q3 %>%
-     filter(Symptoms != "Symptomatic") %>%
-     filter(Outcome != "Deceased") %>%
-     filter(Hospitalization.type != "Non-Intensive care hospitalization") %>%
-     group_by(Hospitalization.type, Outcome) %>%
-     summarize(Symptoms = n())
-
-q4 <- q4 %>%
-     spread(Outcome,Symptoms) %>%
-     replace(is.na(.), 0)
-
-# VIEW STILL NOT WORKING
-
+ q4 <- q3 %>%
+      filter(Symptoms != "Symptomatic") %>%
+      filter(Outcome != "Deceased") %>%
+      filter(Hospitalization.type != "Non-Intensive care hospitalization") %>%
+      group_by(Hospitalization.type, Outcome) %>%
+      summarize(Symptoms = n())
+ 
+ q4 <- q4 %>%
+      spread(Outcome,Symptoms) %>%
+      replace(is.na(.), 0)
+ 
 ```
 
-```{r view_q4, echo=FALSE, eval=FALSE, fig.align="center", message=FALSE, warning=FALSE}
+```{r view_q4, echo=FALSE, fig.align="center"}
 
-df_q4 <- as.data.frame(q4)
+colnames(q4) <- c("","Disease in progress","Healed")
+knitr::kable(q4, align = "c",
+             format = "html",
+             table.attr = "style='width:75%;'") %>%
+        kableExtra::kable_styling(position = "center")
 
-knitr::kable(df_q4)
 ```
-
 \
 
 <div style="text-align: justify">
@@ -129,16 +141,18 @@ knitr::kable(df_q4)
 
 </div>
 
-```{r q5, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+```{r q5}
 
 q5 <- arrange(raw_covid, Date.of.diagnosis)
 
-# kable(head(q5))
-# 
-head(q5)
-glimpse(q5)
+```
+
+```{r view_q5, echo=FALSE}
+
+glimpse(q5$Date.of.diagnosis)
 
 ```
+\
 
 <div style="text-align: justify">
 
@@ -156,49 +170,46 @@ for (i in 1:nrow(df_q6)){
    && (df_q6[i, "Symptoms"] == "Asymptomatic"))) {
       df_q6[i,"q6"] <- "Home_Asymptomatic"
       } else {
-         df_q6[i,"q6"] <- "Non_Home_Asymptomatic"
+      df_q6[i,"q6"] <- "Non_Home_Asymptomatic"
       }
-   }
-
-## aparece o main maso y axis fica esquisito
-plot_q6 <- table(df_q6$q6)
-
-barplot(plot_q6, xlab="Asymptomatic", names.arg=c("Home","Non-Home"), ylim=c(0,1000))
-axis(2,at=seq(0,1000,200))
+}
 
 ```
 
-<!--
+```{r view_q6, fig.align="center"}
 
-#fica bom mas nao aparece o 'main':
-par(mfrow=c(1,1))
-barplot(plot_q6, main="Asymptomatic", names.arg=c("Home","Non-Home"), ann=FALSE,axes=FALSE)
-usr <- par("usr")
-par(usr=c(usr[1:2], 0, 900))
-axis(2,at=seq(0,900,100))
+plot_q6 <- table(df_q6$q6)
 
--->
+barplot(plot_q6, xlab="Asymptomatic",
+        names.arg=c("Home","Non-Home"),
+        ylim=c(0,1000))
+axis(2,at=seq(0,1000,200))
+
+```
+\
+
 <div style="text-align: justify">
 
 ### 7: Count the number of cases of people born after 1981 and that have healed.
 
 </div>
 
-```{r q7, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+```{r q7}
 
 q7 <- raw_covid %>%
      filter(Date.of.birth >= "1981-01-01") %>%
-     filter(Outcome == "Healed") %>%
-     summarize(n())
+     filter(Outcome == "Healed") 
 
 ```
 
-```{r view_q7, echo=FALSE, eval=TRUE, fig.align="center", message=FALSE, warning=FALSE}
-colnames(q7) <- "Number of people born after 1981 and healed:"
-knitr::kable(q7, align = "c", format = "html", table.attr = "style='width:50%;'") %>%
+```{r view_q7, echo=FALSE}
+q7 <- summarize(q7, n())
+colnames(q7) <- "Number of people born after 1981 and healed"
+knitr::kable(q7, align = "c",
+             format = "html",
+             table.attr = "style='width:65%;'") %>%
         kableExtra::kable_styling(position = "center")
 ```
-
 \
 
 <div style="text-align: justify">
@@ -209,17 +220,36 @@ knitr::kable(q7, align = "c", format = "html", table.attr = "style='width:50%;'"
 
 ```{r q8, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
 
+q8 <- raw_covid %>%
+   filter(Date.of.birth >= "1982-01-01") %>%
+   filter(xor(Symptoms == "Asymptomatic",
+              Hospitalization.type == "Home isolation"))
 
 ```
+
+```{r view_q8, echo=FALSE}
+q8 <- summarize(q8, n())
+colnames(q8) <- "Number of people born after 1982, Asymptomatic or in Home isolation"
+knitr::kable(q8, align = "c",
+             format = "html",
+             table.attr = "style='width:65%;'") %>%
+        kableExtra::kable_styling(position = "center")
+```
+\
 
 <div style="text-align: justify">
 
 ### 9: Create a new dataset including only the rows where “Epidemiological.link…Notes” includes the words “contact” OR “symptom” (or both). Hint: you can use the grep() function and tolower().
 
+Here I used the `tolower` function to make sure I will not mismatch due to differences on typing
+
 </div>
 
 ```{r q9, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
 
+q9 <- raw_covid %>%
+     filter(grepl("contact", tolower(Notes)) |
+            grepl("symptom", tolower(Notes)))
 
 ```
 

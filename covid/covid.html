@@ -31,6 +31,201 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+<script>$(document).ready(function(){
+    if (typeof $('[data-toggle="tooltip"]').tooltip === 'function') {
+        $('[data-toggle="tooltip"]').tooltip();
+    }
+    if ($('[data-toggle="popover"]').popover === 'function') {
+        $('[data-toggle="popover"]').popover();
+    }
+});
+</script>
+<style type="text/css">
+.lightable-minimal {
+border-collapse: separate;
+border-spacing: 16px 1px;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-minimal td {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal th {
+margin-left: 5px;
+margin-right: 5px;
+}
+.lightable-minimal thead tr:last-child th {
+border-bottom: 2px solid #00000050;
+empty-cells: hide;
+}
+.lightable-minimal tbody tr:first-child td {
+padding-top: 0.5em;
+}
+.lightable-minimal.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-minimal.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic {
+border-top: 0.16em solid #111111;
+width: 100%;
+margin-bottom: 10px;
+margin: 10px 5px;
+}
+.lightable-classic caption {
+color: #222222;
+}
+.lightable-classic td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic thead tr:last-child th {
+border-bottom: 0.10em solid #111111;
+}
+.lightable-classic tbody tr:last-child td {
+border-bottom: 0.14em solid #111111;
+}
+.lightable-classic.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-classic-2 {
+border-top: 3px double #111111;
+width: 100%;
+margin-bottom: 10px;
+}
+.lightable-classic-2 caption {
+color: #222222;
+}
+.lightable-classic-2 td {
+padding-left: 5px;
+padding-right: 5px;
+color: #222222;
+}
+.lightable-classic-2 th {
+padding-left: 5px;
+padding-right: 5px;
+font-weight: normal;
+color: #222222;
+}
+.lightable-classic-2 tbody tr:last-child td {
+border-bottom: 3px double #111111;
+}
+.lightable-classic-2 thead tr:last-child th {
+border-bottom: 1px solid #111111;
+}
+.lightable-classic-2.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-classic-2.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #EEE;
+border-collapse: collapse;
+margin-bottom: 10px;
+}
+.lightable-material th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+}
+.lightable-material td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+border-top: 1px solid #eeeeee;
+}
+.lightable-material.lightable-hover tbody tr:hover {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+.lightable-material.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #ddd;
+}
+.lightable-material-dark {
+min-width: 100%;
+white-space: nowrap;
+table-layout: fixed;
+font-family: Roboto, sans-serif;
+border: 1px solid #FFFFFF12;
+border-collapse: collapse;
+margin-bottom: 10px;
+background-color: #363640;
+}
+.lightable-material-dark th {
+height: 56px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF60;
+}
+.lightable-material-dark td {
+height: 52px;
+padding-left: 16px;
+padding-right: 16px;
+color: #FFFFFF;
+border-top: 1px solid #FFFFFF12;
+}
+.lightable-material-dark.lightable-hover tbody tr:hover {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody tr:nth-child(even) {
+background-color: #FFFFFF12;
+}
+.lightable-material-dark.lightable-striped tbody td {
+border: 0;
+}
+.lightable-material-dark.lightable-striped thead tr:last-child th {
+border-bottom: 1px solid #FFFFFF12;
+}
+.lightable-paper {
+width: 100%;
+margin-bottom: 10px;
+color: #444;
+}
+.lightable-paper thead tr:last-child th {
+color: #666;
+vertical-align: bottom;
+border-bottom: 1px solid #00000020;
+line-height: 1.15em;
+padding: 10px 5px;
+}
+.lightable-paper td {
+vertical-align: middle;
+border-bottom: 1px solid #00000010;
+line-height: 1.15em;
+padding: 7px 5px;
+}
+.lightable-paper.lightable-hover tbody tr:hover {
+background-color: #F9EEC1;
+}
+.lightable-paper.lightable-striped tbody tr:nth-child(even) {
+background-color: #00000008;
+}
+.lightable-paper.lightable-striped tbody td {
+border: 0;
+}
+</style>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -144,7 +339,7 @@ a.sourceLine {
 
 <section class="page-header">
 <h1 class="title toc-ignore project-name">Homework 3: covid-19</h1>
-<h3 class="subtitle project-tagline">STAT 6250 AU Fall 2020</h3>
+<h3 class="subtitle project-tagline">STAT 6210 AU Fall 2020</h3>
 <h4 class="author project-author">Ana Gabriela Itokazu</h4>
 </section>
 
@@ -155,14 +350,11 @@ a.sourceLine {
 <h3 id="the-covid.csv-file-contains-data-on-covid-19-cases-in-a-province-of-italy.-for-the-following-exercises-only-provide-first-rows-or-elements-in-the-output-if-the-results-are-too-large.">The <code>covid.csv</code> file contains data on Covid-19 cases in a province of Italy. For the following exercises, only provide first rows or elements in the output if the results are too large.</h3>
 </div>
 <div style="text-align: justify">
-<p>We need to import the <code>.csv</code> file into the environment for us to play with it. I made sure that the file was in the same working directory as my project, so there is no file path in the command. I make the first row as the columns names, and the first column, as the rows names. I also re-name the “Epidemiological.link…Notes” column as “Notes”, just for the sake of tidiness…</p>
+<p>I made sure that the <code>.csv</code> file was in the same working directory as my project, so there was no file path in the command. I make the first row of the <code>raw_covid</code> data frame as the columns names, and the first column, as the rows names. I also re-named the “Epidemiological.link…Notes” column as “Notes”, just for the sake of tidiness…</p>
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>raw_data &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;covid.csv&quot;</span>, <span class="dt">row.names=</span><span class="dv">1</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>raw_covid &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;covid.csv&quot;</span>, <span class="dt">row.names=</span><span class="dv">1</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">colnames</span>(raw_data)[<span class="dv">8</span>] &lt;-<span class="st"> &quot;Notes&quot;</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Take a look:</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">glimpse</span>(raw_data)</span></code></pre></div>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">colnames</span>(raw_covid)[<span class="dv">8</span>] &lt;-<span class="st"> &quot;Notes&quot;</span></span></code></pre></div>
 <pre><code>## Rows: 1,106
 ## Columns: 8
 ## $ Date.of.birth         &lt;chr&gt; &quot;1956-01-22&quot;, &quot;1943-05-03&quot;, &quot;1996-10-16&quot;, &quot;1989…
@@ -173,79 +365,188 @@ a.sourceLine {
 ## $ Date.of.outcome       &lt;chr&gt; &quot;2020-04-15&quot;, &quot;2020-03-14&quot;, &quot;2020-04-15&quot;, &quot;2020…
 ## $ Date.of.diagnosis     &lt;chr&gt; &quot;2020-03-05&quot;, &quot;2020-03-06&quot;, &quot;2020-03-07&quot;, &quot;2020…
 ## $ Notes                 &lt;chr&gt; &quot;In contact with a positive patient (outside pr…</code></pre>
+<p><br />
+</p>
 <div style="text-align: justify">
 <h3 id="and-2-correctly-format-the-dates-in-date.of.birth-first.day.of.symptoms-date.of.outcome-and-date.of.diagnosis-format-hospitalization.type-symptoms-and-outcome-as-factors-and-epidemiological.linknotes-as-character.">1 and 2: Correctly format the dates in “Date.of.birth”, “First.day.of.symptoms”, “Date.of.outcome” and “Date.of.diagnosis”; Format “Hospitalization.type”, “Symptoms” and “Outcome” as factors and “Epidemiological.link…Notes” as character.</h3>
-<p>Because all modifications were in the same file, I made them using piping within the <code>raw_data</code> data frame and using the <code>mutate</code> function for each type of modification. For the modifications in more than one variable, I used the <code>across</code> function applied to a vector of them.</p>
+<p>Because all modifications were in the same object, I made them using piping (<code>%&gt;%</code>) and the <code>mutate</code> function for each type of modification. For the modifications in more than one variable, I used the <code>across</code> function applied to a vector of them.</p>
 </div>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>raw_data &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>raw_covid &lt;-<span class="st"> </span>raw_covid <span class="op">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="st">     </span><span class="kw">mutate</span>(<span class="kw">across</span>(<span class="kw">c</span>(Date.of.birth,</span>
 <span id="cb3-3"><a href="#cb3-3"></a>                     First.day.of.symptoms,</span>
 <span id="cb3-4"><a href="#cb3-4"></a>                     Date.of.outcome,</span>
 <span id="cb3-5"><a href="#cb3-5"></a>                     Date.of.diagnosis), as.Date)) <span class="op">%&gt;%</span></span>
 <span id="cb3-6"><a href="#cb3-6"></a><span class="st">     </span><span class="kw">mutate</span>(<span class="kw">across</span>(<span class="kw">c</span>(Hospitalization.type,</span>
 <span id="cb3-7"><a href="#cb3-7"></a>                     Symptoms,Outcome), as.factor)) <span class="op">%&gt;%</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a><span class="st">     </span><span class="kw">mutate</span>(<span class="dt">Notes =</span> <span class="kw">as.character</span>(Notes))</span>
-<span id="cb3-9"><a href="#cb3-9"></a></span>
-<span id="cb3-10"><a href="#cb3-10"></a><span class="co"># Take another look to see the modifications:</span></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="kw">glimpse</span>(raw_data)</span></code></pre></div>
-<div style="text-align: justify">
-<h3 id="create-a-three-dimensional-table-reporting-the-three-factors-from-the-previous-question.">3: Create a three-dimensional table reporting the three factors from the previous question.</h3>
-<p>For this, I did not used the <code>table</code> function. Instead, I selected the data based on the class of the variable. To use the <code>table</code> function, it would look something like the <code>#commented</code> line below.</p>
-</div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>q3 &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="st">     </span><span class="kw">select_if</span>(is.factor)</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># q3 &lt;- with(raw_data,table(raw_data$Hospitalization.type,</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">#                          raw_data$Symptoms,</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">#                          raw_data$Outcome))</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="kw">glimpse</span>(q3)</span></code></pre></div>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="st">     </span><span class="kw">mutate</span>(<span class="dt">Notes =</span> <span class="kw">as.character</span>(Notes))</span></code></pre></div>
 <pre><code>## Rows: 1,106
-## Columns: 0</code></pre>
+## Columns: 8
+## $ Date.of.birth         &lt;date&gt; 1956-01-22, 1943-05-03, 1996-10-16, 1989-10-21…
+## $ Hospitalization.type  &lt;fct&gt; Home isolation, Intensive care, Home isolation,…
+## $ Symptoms              &lt;fct&gt; Symptomatic, Symptomatic, Symptomatic, Symptoma…
+## $ First.day.of.symptoms &lt;date&gt; 2020-02-25, 2020-02-27, 2020-02-27, 2020-02-28…
+## $ Outcome               &lt;fct&gt; Healed, Deceased, Healed, Healed, Healed, Heale…
+## $ Date.of.outcome       &lt;date&gt; 2020-04-15, 2020-03-14, 2020-04-15, 2020-04-19…
+## $ Date.of.diagnosis     &lt;date&gt; 2020-03-05, 2020-03-06, 2020-03-07, 2020-03-07…
+## $ Notes                 &lt;chr&gt; &quot;In contact with a positive patient (outside pr…</code></pre>
+<div style="text-align: justify">
+<p><br />
+</p>
+<h3 id="create-a-three-dimensional-table-reporting-the-three-factors-from-the-previous-question.">3: Create a three-dimensional table reporting the three factors from the previous question.</h3>
+<p>For this, I did not used the <code>table</code> function. Instead, I selected the data based on the class of the variable. To use said function, I would do something that looks like the <code>#commented</code> line below.</p>
+</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>q3 &lt;-<span class="st"> </span><span class="kw">select_if</span>(raw_covid, is.factor)</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># q3 &lt;- table(raw_covid[c(&quot;Hospitalization.type&quot;,</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co">#                          &quot;Symptoms&quot;,</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="co">#                          &quot;Outcome&quot;)])</span></span></code></pre></div>
+<pre><code>## Rows: 1,106
+## Columns: 3
+## $ Hospitalization.type &lt;fct&gt; Home isolation, Intensive care, Home isolation, …
+## $ Symptoms             &lt;fct&gt; Symptomatic, Symptomatic, Symptomatic, Symptomat…
+## $ Outcome              &lt;fct&gt; Healed, Deceased, Healed, Healed, Healed, Healed…</code></pre>
+<p><br />
+</p>
 <div style="text-align: justify">
 <h3 id="using-the-table-object-created-in-the-previous-question-subset-it-in-order-to-create-the-table-presented-in-the-homework-assignment.">4: Using the table object created in the previous question, subset it in order to create the table presented in the homework assignment.</h3>
-<p>To be able to reproduce the table, we need to <code>filter</code> the data to the set represented there. The whole table is only representing the data for the “Asymptomatic”, and it does not represent the data that includes “Deceased” or “Non-Intensive care hospitalization”. Once filtering all this, we can <code>group_by</code> the “Hospitalization Type” and “Outcome”. This, summarized by the “Symptoms” column, gives us the counts for this overlap. In a separate piping, I use the function <code>spread</code> to move the “Outcome” values in a column based on the “Symptoms” values. Now, this looks like the table provided already, but because the <code>summarize</code> function did not provided a zero-value count, we need to <code>replace</code> the NA values for zero:</p>
+<p>To be able to reproduce the table, I <code>filtered</code> the data to the set represented there. The whole table is only representing the data for the “Asymptomatic”, and it does not represent the data that includes “Deceased” or “Non-Intensive care hospitalization”. Once filtering all this, I could <code>group_by</code> the “Hospitalization Type” and “Outcome”. This, summarized by the “Symptoms” column, gives us the counts for this overlap. In a separate piping, I use the function <code>spread</code> to move the “Outcome” values in a column based on the “Symptoms” values. Now, this looks like the table provided already, but because the <code>summarize</code> function did not provided a zero-value count, we need to <code>replace</code> the NA values for zero. This is long, and honestly can be done in like one line of subsetting, but I find it easier to understand and use when I know exactly what I’m taking out and modifying. Also, if I need to use the same function to extract different types of information, it is easier to change small bits. Like that, I can filter out different levels, or group by different variables.</p>
 </div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>q4 &lt;-<span class="st"> </span>q3 <span class="op">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="st">     </span><span class="kw">filter</span>(Symptoms <span class="op">!=</span><span class="st"> &quot;Symptomatic&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="st">     </span><span class="kw">filter</span>(Outcome <span class="op">!=</span><span class="st"> &quot;Deceased&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="st">     </span><span class="kw">filter</span>(Hospitalization.type <span class="op">!=</span><span class="st"> &quot;Non-Intensive care hospitalization&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="st">     </span><span class="kw">group_by</span>(Hospitalization.type, Outcome) <span class="op">%&gt;%</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="st">     </span><span class="kw">summarize</span>(<span class="dt">Symptoms =</span> <span class="kw">n</span>())</span>
-<span id="cb6-7"><a href="#cb6-7"></a></span>
-<span id="cb6-8"><a href="#cb6-8"></a>q4 &lt;-<span class="st"> </span>q4 <span class="op">%&gt;%</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="st">     </span><span class="kw">spread</span>(Outcome,Symptoms) <span class="op">%&gt;%</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="st">     </span><span class="kw">replace</span>(<span class="kw">is.na</span>(.), <span class="dv">0</span>)</span>
-<span id="cb6-11"><a href="#cb6-11"></a></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="kw">kable</span>(q4)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a> q4 &lt;-<span class="st"> </span>q3 <span class="op">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="st">      </span><span class="kw">filter</span>(Symptoms <span class="op">!=</span><span class="st"> &quot;Symptomatic&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="st">      </span><span class="kw">filter</span>(Outcome <span class="op">!=</span><span class="st"> &quot;Deceased&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="st">      </span><span class="kw">filter</span>(Hospitalization.type <span class="op">!=</span><span class="st"> &quot;Non-Intensive care hospitalization&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="st">      </span><span class="kw">group_by</span>(Hospitalization.type, Outcome) <span class="op">%&gt;%</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="st">      </span><span class="kw">summarize</span>(<span class="dt">Symptoms =</span> <span class="kw">n</span>())</span>
+<span id="cb7-7"><a href="#cb7-7"></a> </span>
+<span id="cb7-8"><a href="#cb7-8"></a> q4 &lt;-<span class="st"> </span>q4 <span class="op">%&gt;%</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="st">      </span><span class="kw">spread</span>(Outcome,Symptoms) <span class="op">%&gt;%</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="st">      </span><span class="kw">replace</span>(<span class="kw">is.na</span>(.), <span class="dv">0</span>)</span></code></pre></div>
+<table style="width:75%; margin-left: auto; margin-right: auto;" class="table">
+<thead>
+<tr>
+<th style="text-align:center;">
+</th>
+<th style="text-align:center;">
+Disease in progress
+</th>
+<th style="text-align:center;">
+Healed
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+Home isolation
+</td>
+<td style="text-align:center;">
+64
+</td>
+<td style="text-align:center;">
+153
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+Intensive care
+</td>
+<td style="text-align:center;">
+0
+</td>
+<td style="text-align:center;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
 <div style="text-align: justify">
-<h3 id="order-the-data-based-on-the-date-of-diagnosis-from-first-to-most-recent.">5 Order the data based on the date of diagnosis (from first to most recent).</h3>
+<h3 id="order-the-data-based-on-the-date-of-diagnosis-from-first-to-most-recent.">5: Order the data based on the date of diagnosis (from first to most recent).</h3>
 </div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>q5 &lt;-<span class="st"> </span><span class="kw">arrange</span>(raw_data, Date.of.outcome)</span>
-<span id="cb7-2"><a href="#cb7-2"></a></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># kable(head(q5))</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>q5 &lt;-<span class="st"> </span><span class="kw">arrange</span>(raw_covid, Date.of.diagnosis)</span></code></pre></div>
+<pre><code>##  Date[1:1106], format: &quot;2020-03-05&quot; &quot;2020-03-06&quot; &quot;2020-03-07&quot; &quot;2020-03-07&quot; &quot;2020-03-07&quot; ...</code></pre>
+<p><br />
+</p>
 <div style="text-align: justify">
-<h3 id="add-a-column-that-reports-whether-or-not-a-case-was-asymptomatic-and-in-home-isolation.-name-the-observation-home_asymptomatic-if-the-conditions-apply-and-non_home_asymptomatic-if-not-and-then-produce-a-bar-plot-of-this-new-variable.">6 Add a column that reports whether or not a case was asymptomatic AND in home isolation. Name the observation “Home_Asymptomatic” if the conditions apply and “Non_Home_Asymptomatic” if not and then produce a bar plot of this new variable.</h3>
+<h3 id="add-a-column-that-reports-whether-or-not-a-case-was-asymptomatic-and-in-home-isolation.-name-the-observation-home_asymptomatic-if-the-conditions-apply-and-non_home_asymptomatic-if-not-and-then-produce-a-bar-plot-of-this-new-variable.">6: Add a column that reports whether or not a case was asymptomatic AND in home isolation. Name the observation “Home_Asymptomatic” if the conditions apply and “Non_Home_Asymptomatic” if not and then produce a bar plot of this new variable.</h3>
 </div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">#NAO PODE ESQUECER DO BARPLOT HEIN</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>df_q6 &lt;-<span class="st"> </span>raw_covid <span class="op">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="st">   </span><span class="kw">mutate</span>(<span class="dt">q6 =</span> <span class="kw">character</span>(<span class="kw">nrow</span>(raw_covid)))</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">nrow</span>(df_q6)){</span>
+<span id="cb10-5"><a href="#cb10-5"></a>   <span class="cf">if</span>(<span class="kw">isTRUE</span>((df_q6[i,<span class="st">&quot;Hospitalization.type&quot;</span>] <span class="op">==</span><span class="st"> &quot;Home isolation&quot;</span>)</span>
+<span id="cb10-6"><a href="#cb10-6"></a>   <span class="op">&amp;&amp;</span><span class="st"> </span>(df_q6[i, <span class="st">&quot;Symptoms&quot;</span>] <span class="op">==</span><span class="st"> &quot;Asymptomatic&quot;</span>))) {</span>
+<span id="cb10-7"><a href="#cb10-7"></a>      df_q6[i,<span class="st">&quot;q6&quot;</span>] &lt;-<span class="st"> &quot;Home_Asymptomatic&quot;</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a>      } <span class="cf">else</span> {</span>
+<span id="cb10-9"><a href="#cb10-9"></a>      df_q6[i,<span class="st">&quot;q6&quot;</span>] &lt;-<span class="st"> &quot;Non_Home_Asymptomatic&quot;</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a>      }</span>
+<span id="cb10-11"><a href="#cb10-11"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>plot_q6 &lt;-<span class="st"> </span><span class="kw">table</span>(df_q6<span class="op">$</span>q6)</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="kw">barplot</span>(plot_q6, <span class="dt">xlab=</span><span class="st">&quot;Asymptomatic&quot;</span>,</span>
+<span id="cb11-4"><a href="#cb11-4"></a>        <span class="dt">names.arg=</span><span class="kw">c</span>(<span class="st">&quot;Home&quot;</span>,<span class="st">&quot;Non-Home&quot;</span>),</span>
+<span id="cb11-5"><a href="#cb11-5"></a>        <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1000</span>))</span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="kw">axis</span>(<span class="dv">2</span>,<span class="dt">at=</span><span class="kw">seq</span>(<span class="dv">0</span>,<span class="dv">1000</span>,<span class="dv">200</span>))</span></code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAYAAAB6jN80AAAEGWlDQ1BrQ0dDb2xvclNwYWNlR2VuZXJpY1JHQgAAOI2NVV1oHFUUPrtzZyMkzlNsNIV0qD8NJQ2TVjShtLp/3d02bpZJNtoi6GT27s6Yyc44M7v9oU9FUHwx6psUxL+3gCAo9Q/bPrQvlQol2tQgKD60+INQ6Ium65k7M5lpurHeZe58853vnnvuuWfvBei5qliWkRQBFpquLRcy4nOHj4g9K5CEh6AXBqFXUR0rXalMAjZPC3e1W99Dwntf2dXd/p+tt0YdFSBxH2Kz5qgLiI8B8KdVy3YBevqRHz/qWh72Yui3MUDEL3q44WPXw3M+fo1pZuQs4tOIBVVTaoiXEI/MxfhGDPsxsNZfoE1q66ro5aJim3XdoLFw72H+n23BaIXzbcOnz5mfPoTvYVz7KzUl5+FRxEuqkp9G/Ajia219thzg25abkRE/BpDc3pqvphHvRFys2weqvp+krbWKIX7nhDbzLOItiM8358pTwdirqpPFnMF2xLc1WvLyOwTAibpbmvHHcvttU57y5+XqNZrLe3lE/Pq8eUj2fXKfOe3pfOjzhJYtB/yll5SDFcSDiH+hRkH25+L+sdxKEAMZahrlSX8ukqMOWy/jXW2m6M9LDBc31B9LFuv6gVKg/0Szi3KAr1kGq1GMjU/aLbnq6/lRxc4XfJ98hTargX++DbMJBSiYMIe9Ck1YAxFkKEAG3xbYaKmDDgYyFK0UGYpfoWYXG+fAPPI6tJnNwb7ClP7IyF+D+bjOtCpkhz6CFrIa/I6sFtNl8auFXGMTP34sNwI/JhkgEtmDz14ySfaRcTIBInmKPE32kxyyE2Tv+thKbEVePDfW/byMM1Kmm0XdObS7oGD/MypMXFPXrCwOtoYjyyn7BV29/MZfsVzpLDdRtuIZnbpXzvlf+ev8MvYr/Gqk4H/kV/G3csdazLuyTMPsbFhzd1UabQbjFvDRmcWJxR3zcfHkVw9GfpbJmeev9F08WW8uDkaslwX6avlWGU6NRKz0g/SHtCy9J30o/ca9zX3Kfc19zn3BXQKRO8ud477hLnAfc1/G9mrzGlrfexZ5GLdn6ZZrrEohI2wVHhZywjbhUWEy8icMCGNCUdiBlq3r+xafL549HQ5jH+an+1y+LlYBifuxAvRN/lVVVOlwlCkdVm9NOL5BE4wkQ2SMlDZU97hX86EilU/lUmkQUztTE6mx1EEPh7OmdqBtAvv8HdWpbrJS6tJj3n0CWdM6busNzRV3S9KTYhqvNiqWmuroiKgYhshMjmhTh9ptWhsF7970j/SbMrsPE1suR5z7DMC+P/Hs+y7ijrQAlhyAgccjbhjPygfeBTjzhNqy28EdkUh8C+DU9+z2v/oyeH791OncxHOs5y2AtTc7nb/f73TWPkD/qwBnjX8BoJ98VQNcC+8AAAA4ZVhJZk1NACoAAAAIAAGHaQAEAAAAAQAAABoAAAAAAAKgAgAEAAAAAQAAAqCgAwAEAAAAAQAAAeAAAAAAEl/b3AAAP7tJREFUeAHt3Q28VGWdB/A/cCN5EQ0hlNgogQ1RI8IVzYwF38uCCoIte1HTSM03arXVWs1ys01Fs7JV07I+VJtlln0SsXcxCpToBctIAV8ADS2RkJTZec7nM3fvvc7lzjhz5865fM/nc5k55zznOed8zzD8eJ5zntunUJzCRIAAAQIECBAgQKBBAn0btB+7IUCAAAECBAgQIJAJCKA+CAQIECBAgAABAg0VEEAbym1nBAgQIECAAAECAqjPAAECBAgQIECAQEMFBNCGctsZAQIECBAgQICAAOozQIAAAQIECBAg0FABAbSh3HZGgAABAgQIECAggPoMECBAgAABAgQINFRAAG0ot50RIECAAAECBAgIoD4DBAgQIECAAAECDRUQQBvKbWcECBAgQIAAAQICqM8AAQIECBAgQIBAQwUE0IZy2xkBAgQIECBAgIAA6jNAgAABAgQIECDQUAEBtKHcdkaAAAECBAgQICCA+gwQIECAAAECBAg0VEAAbSi3nREgQIAAAQIECAigPgMECBAgQIAAAQINFRBAG8ptZwQIECBAgAABAgKozwABAgQIECBAgEBDBQTQhnLbGQECBAgQIECAgADqM0CAAAECBAgQINBQAQG0odx2RoAAAQIECBAgIID6DBAgQIAAAQIECDRUQABtKLedESBAgAABAgQICKA+AwQIECBAgAABAg0VEEAbym1nBAgQIECAAAECAqjPAAECBAgQIECAQEMFBNCGctsZAQIECBAgQICAAOozQIAAAQIECBAg0FABAbSh3HZGgAABAgQIECAggPoMECBAgAABAgQINFRAAG0ot50RIECAAAECBAgIoD4DBAgQIECAAAECDRUQQBvKbWcECBAgQIAAAQICqM8AAQIECBAgQIBAQwUE0IZy2xkBAgQIECBAgIAA6jNAgAABAgQIECDQUAEBtKHcdkaAAAECBAgQICCA+gwQIECAAAECBAg0VEAAbSi3nREgQIAAAQIECAigPgMECBAgQIAAAQINFRBAG8ptZwQIECBAgAABAgKozwABAgQIECBAgEBDBQTQhnLbGQECBAgQIECAgADqM0CAAAECBAgQINBQAQG0odx2RoAAAQIECBAgIID6DBAgQIAAAQIECDRUQABtKLedESBAgAABAgQICKA+AwQIECBAgAABAg0VEEAbym1nBAgQIECAAAECAqjPAAECBAgQIECAQEMFBNCGctsZAQIECBAgQICAAOozQIAAAQIECBAg0FABAbSh3HZGgAABAgQIECAggPoMECBAgAABAgQINFRAAG0ot50RIECAAAECBAgIoD4DBAgQIECAAAECDRUQQBvKbWcECBAgQIAAAQICqM8AAQIECBAgQIBAQwVyH0C3b98eq1atitWrVzcUzs4IECBAgAABAgSen0AuA+iyZctiypQp0dLSEv369YsJEybE2LFjo0+fPjFgwICYPHlyrF+//vmJ2IoAAQIECBAgQKBbBfoUilO37qHOld95550xderUrNaJEyfGmDFjYsSIEVn43LhxY9YSumLFikintWjRopg+fXqdj0B1BAgQIECAAAECtQjkLoDuv//+sXbt2li3bl0MGTKk7Llv2bIlRo0aFansT37yk7JlLCRAgAABAgQIEOgZgdx1wa9ZsyZmzJjRafhMjAMHDow5c+bE8uXLe0bVXgkQIECAAAECBDoVyF0AHT9+fCxZsqTTEyqtWLx48Q5DaqmcVwIECBAgQIAAgcYKtDR2d7Xvbf78+TF37twYPnx4zJo1KyZNmhSjR4/OHkhKXfMrV66MhQsXxoYNG2LBggW171ANBAgQIECAAAECdRXI3T2g6ezvuOOOmD17djz++ONlMYYOHRrnnXdenH322WXXW0iAAAECBAgQINBzArkMoCWuzZs3x9KlS7N7Pbdu3Rqpez61iI4bN65UxCsBAgQIECBAgECTCeQ6gCbLNBD9H/7wh+jfv382JFOT+TocAgQIECBAgACBDgK5ewgpHb+B6DtcRbMECBAgQIAAgRwJ5K4F1ED0Ofp0OVQC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gAABAgQI1E1AAK0bpYoIECBAgAABAgQqERBAK1FShgABAgQIECBAoG4CAmjdKFVEgAABAgQIECBQiYAAWomSMgQIECBAgAABAnUTEEDrRqkiAgQIECBAgACBSgQE0EqUlCFAgAABAgQIEKibgABaN0oVESBAgAABAgQIVCIggFaipAwBAgQIECBAgEDdBATQulGqiAABAgQIECBAoBIBAbQSJWUIECBAgAABAgTqJiCA1o1SRQQIECBAgAABApUICKCVKClDgAABAgQIECBQNwEBtG6UKiJAgAABAgQIEKhEQACtREkZAgQIECBAgACBugkIoHWjVBEBAgQIECBAgEAlAgJoJUrKECBAgAABAgQI1E1AAK0bpYoIECBAgAABAgQqERBAK1FShgABAgQIECBAoG4CAmjdKFVEgAABAgQIECBQiYAAWomSMgQIECBAgAABAnUTEEDrRqkiAgQIECBAgACBSgQE0EqUlCFAgAABAgQIEKibgABaN0oVESBAgAABAgQIVCIggFaipAwBAgQIECBAgEDdBATQulGqiAABAgQIECBAoBIBAbQSJWUIECBAgAABAgTqJiCA1o1SRQQIECBAgAABApUI5D6Abt++PVatWhWrV6+u5HyVIUCAAAECBAgQ6GGBXAbQZcuWxZQpU6KlpSX69esXEyZMiLFjx0afPn1iwIABMXny5Fi/fn0P09o9AQIECBAgQIBAOYGWcgubedmdd94ZU6dOzQ5x4sSJMWbMmBgxYkQWPjdu3Ji1hK5YsSJGjRoVixYtiunTpzfz6Tg2AgQIECBAgMBOJ5C7ADpv3rwYNGhQrFu3LoYMGVL2gm3ZsiULoBdeeKEAWlbIQgIECBAgQIBAzwnkrgt+zZo1MWPGjE7DZ6IcOHBgzJkzJ5YvX95zsvZMgAABAgQIECBQViB3AXT8+PGxZMmSsifTduHixYt3GFLblvWeAAECBAgQIECgcQK564KfP39+zJ07N4YPHx6zZs2KSZMmxejRo7MHktauXRsrV66MhQsXxoYNG2LBggWNk7QnAgQIECBAgACBigRyF0BT1/qwYcNi9uzZcfXVV5c9yaFDh8all14aZ5xxRtn1FhIgQIAAAQIECPScQO4CaKI67LDDYtOmTbF58+ZYunRpdq/n1q1bI3XPpxbRcePG9ZyoPRMgQIAAAQIECOxQIJcBtHRGgwcPjmnTpsXIkSOjf//+2ZBMpXVeCRAgQIAAAQIEmlMgdw8hJUYD0Tfnh8lRESBAgAABAgQqEchdC6iB6Cu5rMoQIECAAAECBJpXIHcBtLsHor/lllvihhtu6PKK/f3vf88Gw++yoAIECBAgQIAAAQLtBHIXQNNA9DNnztzhGJ+lgehvvPHGdidbycxf/vKXuP/++7ssWigUIj34ZCJAgAABAgQIEKhOIHcBtLsHoj/++OMj/XQ17brrrp627wrJegIECBAgQIBAGYHcBVAD0Ze5ihYRIECAAAECBHIkkLsAaiD6HH26HCoBAgQIECBAoIxA7gJoOgcD0Ze5khYRIECAAAECBHIikMsAWrJNA9GnMJp+0vS73/0u0r2ZJgIECBAgQIAAgeYVyOVA9Ndff32MGDEiHn744Uz2Ix/5SLS0tMR+++0Xe+21V6Sn4K+66qrmVXdkBAgQIECAAIGdWCB3AfS6666LE044IbZv355dtmuvvTY+/vGPZ7+K8w1veEO89a1vzd5/4AMfEEJ34g+2UydAgAABAgSaVyB3XfCpZTO1fq5fvz5TveSSS6Jv376xadOm2GWXXVqlhw4dGldeeWWcdtpprcu8IUCAAAECBAgQ6HmB3LWArl69Ov71X/+1Ve6pp56KCRMmtAufaeWMGTPiwQcfbC3nDQECBAgQIECAQHMI5C6AvvSlL43bbrstnnjiiUzw4IMPjlWrVsW2bdtaRVP3/O233561lLYu9IYAAQIECBAgQKApBHIXQL/whS/EX//61+xho9NPPz1r6dxtt91i2LBh8Z73vCfOOuusGDlyZDz00ENx0UUXNQWygyBAgAABAgQIEPh/gdzdA3rIIYfEzTffHCl8fuYzn/n/Mym++9KXvpTNDxgwIC6++OI47rjj2q03Q4AAAQIECBAg0PMCuQugiexNb3pT9nPffffFXXfdFffee2889thjMXbs2Nh///3jmGOO6XlZR0CAAAECBAgQIFBWIJcBtHQm48aNi/RjIkCAAAECBAgQyI9A7u4BzQ+tIyVAgAABAgQIECgnIICWU7GMAAECBAgQIECg2wQE0G6jVTEBAgQIECBAgEA5AQG0nIplBAgQIECAAAEC3SYggHYbrYoJECBAgAABAgTKCQig5VQsI0CAAAECBAgQ6DYBAbTbaFVMgAABAgQIECBQTkAALadiGQECBAgQIECAQLcJCKDdRqtiAgQIECBAgACBcgICaDkVywgQIECAAAECBLpNQADtNloVEyBAgAABAgQIlBMQQMupWEaAAAECBAgQINBtAgJot9GqmAABAgQIECBAoJyAAFpOxTICBAgQIECAAIFuExBAu41WxQQIECBAgAABAuUEBNByKpYRIECAAAECBAh0m4AA2m20KiZAgAABAgQIECgnIICWU7GMAAECBAgQIECg2wQE0G6jVTEBAgQIECBAgEA5AQG0nIplBAgQIECAAAEC3SYggHYbrYoJECBAgAABAgTKCQig5VQsI0CAAAECBAgQ6DYBAbTbaFVMgAABAgQIECBQTkAALadiGQECBAgQIECAQLcJCKDdRqtiAgQIECBAgACBcgICaDkVywgQIECAAAECBLpNQADtNloVEyBAgAABAgQIlBMQQMupWEaAAAECBAgQINBtAgJot9GqmAABAgQIECBAoJyAAFpOxTICBAgQIECAAIFuExBAu41WxQQIECBAgAABAuUEBNByKpYRIECAAAECBAh0m4AA2m20KiZAgAABAgQIECgnkPsAun379li1alWsXr263PlZRoAAAQIECBAg0GQCuQygy5YtiylTpkRLS0v069cvJkyYEGPHjo0+ffrEgAEDYvLkybF+/fomo3Y4BAgQIECAAAECSaAlbwx33nlnTJ06NTvsiRMnxpgxY2LEiBFZ+Ny4cWPWErpixYoYNWpULFq0KKZPn563U3S8BAgQIECAAIFeLZC7ADpv3rwYNGhQrFu3LoYMGVL24mzZsiULoBdeeKEAWlbIQgIECBAgQIBAzwnkrgt+zZo1MWPGjE7DZ6IcOHBgzJkzJ5YvX95zsvZMgAABAgQIECBQViB3AXT8+PGxZMmSsifTduHixYt3GFLblvWeAAECBAgQIECgcQK564KfP39+zJ07N4YPHx6zZs2KSZMmxejRo7MHktauXRsrV66MhQsXxoYNG2LBggWNk7QnAgQIECBAgACBigRyF0BT1/qwYcNi9uzZcfXVV5c9yaFDh8all14aZ5xxRtn1FhIgQIAAAQIECPScQO4CaKI67LDDYtOmTbF58+ZYunRpdq/n1q1bI3XPpxbRcePG9ZyoPRMgQIAAAQIECOxQIJcBtHRGgwcPjmnTpsXIkSOjf//+2ZBMpXVeCRAgQIAAAQIEmlMgdw8hJUYD0Tfnh8lRESBAgAABAgQqEchdC6iB6Cu5rMoQIECAAAECBJpXIHcBtLsHok+D11922WVdXrF0/2n6jUsmAgQIECBAgACB6gRyF0DTQPQzZ87c4RifpYHob7zxxuo0iqXT0E5piKeuprPOOisb/qmrctYTIECAAAECBAi0F8hdAO3ugej33XffSD9dTeecc0686EUv6qqY9QQIECBAgAABAh0EchdADUTf4QqaJUCAAAECBAjkTCB3AdRA9Dn7hDlcAgQIECBAgEAHgdwF0HT8BqLvcBXNEiBAgAABAgRyJJDLAFryTQPRpzCaftK0cePGuP/++0urvRIgQIAAAQIECDShQC4Hou/M8SMf+UgcfPDBna22nAABAgQIECBAoAkEctcCeuyxx0Yaiqnc9PDDD0ehUIj9998/W33AAQfE9ddfX66oZQQIECBAgAABAj0kkLsA+pvf/CbWrl0bffr0yX7/e1u3Z555Jpu97777stf0++FNBAgQIECAAAECzSWQuy741atXx5FHHpm1dKZ7P9NvJNq6dWv2c+KJJ2bBtDS/fPny5tJ2NAQIECBAgAABApG7ANrS0hK33XZbpN9ydPvtt8ewYcMi/X54EwECBAgQIECAQD4EchdAS6zHHXdcpHs+R40aFa997WvjpJNOKq3ySoAAAQIECBAg0MQCubsHtK1lav387W9/GxdccEF87GMfi759c5un256W9wQIECBAgACBXi3QKxJbCqDp4aSXvOQlsfvuu/fqC+bkCBAgQIAAAQJ5F8h1C2hb/H333bfT4ZnalvOeAAECBAgQIECgZwV6RQtozxLaOwECBAgQIECAQDUCAmg1WsoSIECAAAECBAjULCCA1kyoAgIECBAgQIAAgWoEBNBqtJQlQIAAAQIECBCoWUAArZlQBQQIECBAgAABAtUICKDVaClLgAABAgQIECBQs4AAWjOhCggQIECAAAECBKoREECr0VKWAAECBAgQIECgZgEBtGZCFRAgQIAAAQIECFQjIIBWo6UsAQIECBAgQIBAzQICaM2EKiBAgAABAgQIEKhGQACtRktZAgQIECBAgACBmgUE0JoJVUCAAAECBAgQIFCNgABajZayBAgQIECAAAECNQsIoDUTqoAAAQIECBAgQKAaAQG0Gi1lCRAgQIAAAQIEahYQQGsmVAEBAgQIECBAgEA1AgJoNVrKEiBAgAABAgQI1CwggNZMqAICBAgQIECAAIFqBATQarSUJUCAAAECBAgQqFlAAK2ZUAUECBAgQIAAAQLVCAig1WgpS4AAAQIECBAgULOAAFozoQoIECBAgAABAgSqERBAq9FSlgABAgQIECBAoGYBAbRmQhUQIECAAAECBAhUIyCAVqOlLAECBAgQIECAQM0CAmjNhCogQIAAAQIECBCoRkAArUZLWQIECBAgQIAAgZoFBNCaCVVAgAABAgQIECBQjYAAWo2WsgQIECBAgAABAjULCKA1E6qAAAECBAgQIECgGgEBtBotZQkQIECAAAECBGoWyH0A3b59e6xatSpWr15dM4YKCBAgQIAAAQIEul8glwF02bJlMWXKlGhpaYl+/frFhAkTYuzYsdGnT58YMGBATJ48OdavX9/9evZAgAABAgQIECBQtUBL1Vv08AZ33nlnTJ06NTuKiRMnxpgxY2LEiBFZ+Ny4cWPWErpixYoYNWpULFq0KKZPn97DR2z3BAgQIECAAAECbQVyF0DnzZsXgwYNinXr1sWQIUPankvr+y1btmQB9MILLxRAW1W8IUCAAAECBAg0h0DuuuDXrFkTM2bM6DR8JtaBAwfGnDlzYvny5c2h7CgIECBAgAABAgRaBXIXQMePHx9LlixpPYHO3ixevHiHIbWz7SwnQIAAAQIECBDoXoHcdcHPnz8/5s6dG8OHD49Zs2bFpEmTYvTo0dkDSWvXro2VK1fGwoULY8OGDbFgwYLu1VM7AQIECBAgQIBA1QK5C6Cpa33YsGExe/bsuPrqq8ue8NChQ+PSSy+NM844o+z6Zlz40EMPxb777hu77757Mx6eYyKw0wuk23/uvffeeMUrXrHTWwAgQIBArQK5C6DphA877LDYtGlTbN68OZYuXZrd67l169ZI3fOpRXTcuHG1ujR8+3vuuSd7ov+kk05q+L7tkACBrgVuvvnmuO222wTQrqmUIECAQJcCuQygpbMaPHhwTJs2LUaOHBn9+/fPAlxpXR5f0znstddeeTx0x0yg1wukv58mAgQIEKiPQO4eQkqnbSD6+lx8tRAgQIAAAQIEekIgdy2gBqLviY+JfRIgQIAAAQIE6ieQuwDa3QPRP/HEE/Hggw92Kfzss8/Gtm3buiynAAECBAgQIECAQHuB3AXQ9CTqzJkzdzjGZ2kg+htvvLH92VYw99GPfjQ++9nPdlly+/btcffdd3dZTgECBAgQIECAAIH2Arm7B7S7B6K/8sorI7VudvWTHoA66KCD2muaI0CAAAECBAgQ6FIgdy2gBqLv8poqQIAAAQIECBBoaoHcBdDeOhB9U39KHBwBAgQIECBAoI4CuQug6dx740D0dbymqiJAgAABAgQINLVALgNoSTQ9bJTCaPrpOKXflJSm9Gs5TQQIECBAgAABAs0jkLuHkBLdySefHC94wQuiX79+seuuu8bnP//554jut99+MXHixOcst4AAAQIECBAgQKBnBXIXQD/5yU/GNddcE4MGDYpDDjkk0u+AP+WUU2L27Nk9K2nvBAgQIECAAAECFQnkLoBeddVVsccee0QaMP7nP/95PP3003HooYfGN7/5zTjppJMqOmmFCBAgQIAAAQIEek4gdwH08ccfj2nTprWK9e3bN37605/Ga17zmrj22mvjU5/6VOs6bwgQIECAAAECBJpPIHcPIaV7PtPvg+84pWV77713nHPOOdlrx/XmCRAgQIAAAQIEmkMgdy2gaRzQRx55JNJvRFq4cGE7xd///vex5557xtve9rZ49NFH260zQ4AAAQIECBAg0BwCuQugV1xxRUyfPj3+8Ic/xKc//el2irvssku2fMyYMfHMM8+0W2eGAAECBAgQIECgOQRy1wWf2O64447sIaS1a9c+R3HIkCFx3333xXXXXRd//vOfn7PeAgIECBAgQIAAgZ4VyGUATWS777579tMZ34knntjZKssJECBAgAABAgR6UCB3XfA9aGXXBAgQIECAAAECdRAQQOuAqAoCBAgQIECAAIHKBQTQyq2UJECAAAECBAgQqIOAAFoHRFUQIECAAAECBAhULiCAVm6lJAECBAgQIECAQB0EBNA6IKqCAAECBAgQIECgcgEBtHIrJQkQIECAAAECBOogIIDWAVEVBAgQIECAAAEClQsIoJVbKUmAAAECBAgQIFAHAQG0DoiqIECAAAECBAgQqFxAAK3cSkkCBAgQIECAAIE6CAigdUBUBQECBAgQIECAQOUCAmjlVkoSIECAAAECBAjUQUAArQOiKggQIECAAAECBCoXEEArt1KSAAECBAgQIECgDgICaB0QVUGAAAECBAgQIFC5gABauZWSBAgQIECAAAECdRAQQOuAqAoCBAgQIECAAIHKBQTQyq2UJECAAAECBAgQqIOAAFoHRFUQIECAAAECBAhULiCAVm6lJAECBAgQIECAQB0EBNA6IKqCAAECBAgQIECgcgEBtHIrJQkQIECAAAECBOogIIDWAVEVBAgQIECAAAEClQsIoJVbKUmAAAECBAgQIFAHAQG0DoiqIECAAAECBAgQqFxAAK3cSkkCBAgQIECAAIE6CAigdUBUBQECBAgQIECAQOUCAmjlVkoSIECAAAECBAjUQUAArQOiKggQIECAAAECBCoXEEArt1KSAAECBAgQIECgDgICaB0QVUGAAAECBAgQIFC5gABauZWSBAgQIECAAAECdRAQQOuAqAoCBAgQIECAAIHKBQTQyq2UJECAAAECBAgQqIOAAFoHRFUQIECAAAECBAhULiCAVm6lJAECBAgQIECAQB0EBNA6IKqCAAECBAgQIECgcgEBtHIrJQkQIECAAAECBOogIIDWAVEVBAgQIECAAAEClQsIoJVbKUmAAAECBAgQIFAHAQG0DoiqIECAAAECBAgQqFwg9wF0+/btsWrVqli9enXlZ60kAQIECBAgQIBAjwnkMoAuW7YspkyZEi0tLdGvX7+YMGFCjB07Nvr06RMDBgyIyZMnx/r163sM1Y4JECBAgAABAgQ6F2jpfFVzrrnzzjtj6tSp2cFNnDgxxowZEyNGjMjC58aNG7OW0BUrVsSoUaNi0aJFMX369OY8EUdFgAABAgQIENhJBXIXQOfNmxeDBg2KdevWxZAhQ8peti1btmQB9MILL6w6gH7/+9+PG264oWy9bRdu3bo1HnroobaLan7/+OOPx6233lpzPSogQKD+Auk/tIcffnj9K25Ajc8884zvlgY42wWB5yPw5JNPxmOPPfZ8Ns31NrkLoGvWrImZM2d2Gj7T1Rg4cGDMmTMnbrzxxqovzsMPP5zdU9rVhqmrf9iwYV0Vq3j9UUcdFUuWLIkUQk0ECDSfwPHHHx8nn3xy8x1YF0fUv3//uOaaa2L58uVdlLSaAIGeENhtt90qavjqiWPrzn32KRSn7txBves+8MADY9OmTfGnP/1ph1WPGzcunnrqqUiB0kSAAAECBAgQINA8ArlrAZ0/f37MnTs3hg8fHrNmzYpJkybF6NGjsweS1q5dGytXroyFCxfGhg0bYsGCBc0j7UgIECBAgAABAgQygdy1gKajvuOOO2L27NmddlcPHTo0zjvvvDj77LNdZgIECBAgQIAAgSYTyGUALRlu3rw5li5dmt3blB4KGj9+fNYimrrfTQQIECBAgAABAs0pkOsA2pykjooAAQIECBAgQGBHArkciH5HJ2QdAQIECBAgQIBAcwsIoM19fRwdAQIECBAgQKDXCQigve6SOiECBAgQIECAQHMLCKDNfX0cHQECBAgQIECg1wkIoL3ukjohAgQIECBAgEBzCwigzX19HB0BAgQIECBAoNcJCKC97pI6IQIECBAgQIBAcwsIoM19fRwdAQIECBAgQKDXCQigve6SOiECBAgQIECAQHMLCKDNfX0cHQECBAgQIECg1wkIoL3ukjohAgQIECBAgEBzCwigzX19HB0BAgQIECBAoNcJCKC97pI6IQIECBAgQIBAcwsIoM19fRwdAQIECBAgQKDXCQigve6SOiECBAgQIECAQHMLCKDNfX0cHQECBAgQIECg1wkIoL3ukjohAgQIECBAgEBzCwigzX19HF0DBY455pj4l3/5l7J7/MlPfhJ9+vSJO+64o+x6CwkQ6J0CBx98cAwaNCj+/Oc/P+cEf/WrX2XfCz/72c+es67eC5588slsX5/61KfKVn3qqafG0KFDy66zkEAzCgigzXhVHBMBAgQINI3Ali1bYt68eU1zPA6EQG8QEEB7w1V0DgQIECDQbQIvfvGL4/bbb48vf/nL3bYPFRPY2QQE0J3tijvfugls2LAh3vOe98RLXvKSGD58eMyYMSNWr17dWv9dd90VBx10UPzud7+LI444IuseO/LII+P++++P5cuXx9SpU2PPPfeM0047LR588MHW7dKb6667LiZNmhS77rprHHjggXHLLbe0W2+GAIHGCbzuda+LN7/5zXH22WfHo48+usMdd/W9cNFFF8V5550XX/3qV7O/47vvvnuk238eeOCBHdb7fFamWwPSse+2224xbty4OOecc+Lpp59urSp9B/3gBz+I973vfbHXXnvFxIkT42tf+1o89dRT8e53vztGjBgRxx57bPzwhz9s3Sa9+c1vfhPpuyx1+ad6/+M//iP+8Y9/tCtjhkBXAgJoV0LW71QCW7dujT/+8Y/P+Vm7dm07h/Rle9hhh0W6N/Tiiy+Oz33uc/HII4/E5MmT4+GHH87K/u1vf4t0j9jRRx8d6T6y9I/Or3/96+wfstmzZ2f3m55//vlZq8pnP/vZ1vr/+7//O+vumzBhQnzlK1+J1772tTFz5sy46aabWst4Q4BAYwU+85nPZCHrzDPP7HTHlXwvrFmzJq6//vrs+yCF2gsuuCB+8YtfRPpOqGRKAbjcd9QTTzzRbvP0n9xp06bFi170ouw75gMf+EB84QtfiLe85S2t5VasWBHHH398FqpTME73up5wwgnZf5hTff/1X/+VrTv55JNbt1m1alVMmTIlHn/88bjsssviQx/6UFxzzTXxrne9q7WMNwQqEiiYCBDIBIpBsVD8S7PDn8WLF2dlr7zyykK/fv0KxX8IWvX+8pe/ZMuKX9bZsmLLQlbXxz/+8dYyxRaIbNknP/nJ1mXz588v7L///tl88Uu9MGTIkELxH4XW9enNnDlzCmPHjm23zAwBAt0vUOzFKMyaNSvb0VVXXZX9/f3+97+fzf/yl7/M5n/6059m85V8L5x44onZ98Sf/vSn1oMvBrmsnk2bNrUu6/im+B/arMyOvqOKYbN1s0MPPbRwwAEHFLZv3966rBgUszqKtxNky9J3zatf/erCM888k80XQ2u2vvgf6dZtli5dmi0rBs9sWTHAFvbYY49C8T/rrWW++c1vZmXS9iYClQq0VJRSFSKwkwik7qQFCxY852xTl9O5557bujy1bKYn5lP50pS6o1J3+ZIlS0qLstfiPwSt88Wgmb1//etf37ps5MiRUfzHKJtPLRKp5TR1hbWtJ+3n61//etYakbr7TQQINF7g/e9/f9YrkV7TrTUdp0q/F0aNGhVjxoxp3bz4n8vsfXrSffDgwfHQQw+1rktv0m0+pSm1WBYDcWm29TX1wpS+M4oBIJYtWxaf+MQnsifnS4VSb0yaUrnDDz88e/+a17wmiv+Zzt7vt99+2WvH76e0MN1eNH78+CiG7TjkkEOy24iywsU/Uhd/3759s5bcYqAtLfZKYIcCAugOeazc2QTSF2nbL9/S+aeuqbZTuo+z7T8KpXXpnqrUzdV2alsufUmnafTo0a1FSl/+aUHqnktTZ9186T4xATQj8geBhgukv7//8z//k91qk26fefvb397uGCr9Xuj4d/iFL3xhVs+zzz6bBb199tmnXb2///3vI4XWNKUQWO476tZbb20NoOk+1L///e+R/nPbdkp17L333q23CaV1bcuUvos6+35KowE89thj2T3p5e5L7477WNsev/e9S0AA7V3X09k0SCD9A1LsLnvO3lILRqk1o7Sy9KVemt/Ra2kcv3RPWGpN7TilsUhNBAj0nEDqxfjgBz8Yl1xySbtWzHRE1XwvdHYG6WGgL37xi+1Wtw2J7VZ0MpO+R1JYLvcdtXnz5nbH3dJSeQwYMGBApJ9TTjkl0r3qHSffTx1FzO9IwENIO9KxjkAnAvvuu2/WxZVuxC9NxXutsoHqX/nKV5YWVf2a6k1f4qm7Pb2Wfq6++ursIYX0kJSJAIGeFfjoRz+atSSmBwvbTvX4Xki9MKmbve1PWlbN1L9//+z2oOI96+02Sw9Bbty4MZ7vd1T6PkoPR37jG9/I6i19P6WHotJDmWnkDxOBSgUE0EqllCPQRiA9UZqmd77znVm3eXoy9fTTT4/0tPx73/veNiWre5u6x4oPHGUtIJ/+9KcjdaXdfPPNWYtL+uLfZZddqqtQaQIE6i6Q/h6m/xSm+7XTlO65TFN3fS9klVf5Rxoa6dvf/nb2pPpf//rXbOikNLRSukczjazxfKcUutetW5cF5HRrwD333JM9OZ++Azv7TXLPd1+2690CAmjvvr7OrpsE0sDUixYtysb0fNnLXpaNl/fjH/84vvWtb2Vjf9ay23QPaRqe5cMf/nA2Tmjq7nrHO96RzddSr20JEKifQGrx6zj0UHd+L1R75Ok/x5dffnk2zFMaazTd0pPGHU7jfna8p72autN3U7oP9rvf/W6kFt/0QFIa6umGG26Iarrzq9mnsr1ToE96XL53npqzItAYgXRTfvpr1PHBglr3vm3btuxp2BRwU1eXiQCB/Ah01/dCtQLpuyk93JjuLS097FRtHZ2VTz0+6Xsv3RdqIlCtgABarZjyBAgQIECAAAECNQnogq+Jz8YECBAgQIAAAQLVCgig1YopT4AAAQIECBAgUJOAAFoTn40JECBAgAABAgSqFRBAqxVTngABAgQIECBAoCYBAbQmPhsTIECAAAECBAhUKyCAViumPAECBAgQIECAQE0CAmhNfDYmQIAAAQIECBCoVkAArVZMeQIECBAgQIAAgZoEBNCa+GxMgAABAgQIECBQrYAAWq2Y8gQIECBAgAABAjUJCKA18dmYAAECBAgQIECgWgEBtFox5QkQIECAAAECBGoSEEBr4rMxAQIECBAgQIBAtQICaLViyhMgQIAAAQIECNQkIIDWxGdjAgQIECBAgACBagUE0GrFlCdAgAABAgQIEKhJQACtic/GBAgQIECAAAEC1QoIoNWKKU+AAAECBAgQIFCTgABaE5+NCRAgQIAAAQIEqhUQQKsVU54AAQIECBAgQKAmAQG0Jj4bEyBAgAABAgQIVCsggFYrpjwBAgQIECBAgEBNAgJoTXw2JkCAAAECBAgQqFZAAK1WTHkCBAgQIECAAIGaBATQmvhsTIAAAQIECBAgUK2AAFqtmPIECDStwH333Rd9+vSJMWPGRKFQaNrjLHdgS5cujZ///OflVjV82fbt2+Pzn/98bN26Ndv37bffnrn++c9/bvix2CEBAr1TQADtndfVWRHYKQVuvPHG2H///eOBBx6IH/3oR7kxeOaZZ+Lggw+OP/3pT01xzN/4xjfilFNOiWeffTY7npEjR8a73vWu2HXXXZvi+BwEAQL5FxBA838NnQEBAkWB1OL5la98Jd7xjnfE6173urj22mtz45KOvZlabFMLaNtp3333jS996UsxfPjwtou9J0CAwPMWEECfN50NCRBoJoHUfX3//ffHMcccE29729viW9/6VmzatKndIf71r3+N448/Pvbcc88YOnRoTJs2LX7xi19kZX75y1/GAQccEPfcc0+7bW677baYMmVKPPnkk3HRRRfF+eefH1/84hfjla98ZaSWwdNOOy0Lj1dddVWMHz8+Uli77LLLWuu46667snp/9atfZa2cw4YNizlz5sTdd9+dldmyZUscdNBB2fsLLrgga2lMM6n18fLLL4999tkna3k88MAD46abbsrKlf6YOnVq/OAHP4j3ve99sddee8XEiRPja1/7Wjz11FPx7ne/O0aMGBHHHnts/PCHPyxtkr0mm9e+9rWZQbJIZqtWrcrW3XLLLdk5pplUJrUqp9sDks1DDz2UlUl/pPNJ5/HiF784c/zsZz8bHYNra2FvCBAg0FGg+L9uEwECBHIv8N73vrdQDGvZeTz66KOFlpaWwhVXXNHuvN75zncWRo8eXSje31j43//938L06dML/fv3Lzz22GOFbdu2FfbYY4/CBz/4wXbbFMNs4fDDD8+WnXjiiYViqCu84hWvKHzuc58rvP/97083mhaKQTbb95VXXlmYN29etqwYMLNtigExmy8GtUIxUBZ+/OMfF17/+tcXRo0ale33H//4R+H666/Pypx00kmFW2+9NdvuvPPOK7zgBS8o/Od//mfhu9/9bqEYMrMyxfDbenxDhgwpFANk4c1vfnPhmmuuKRS78QsDBgzIXt/0pjcVrrvuukIxuBaK98S2bpPOOx1zsYu9UAyihWLozeoo2RXvo209h1Tn7373u8KiRYuybVavXp3VU7wXtFAM0oViuC185zvfyepIjsWw2rofbwgQILAjgfQ/dxMBAgRyLfD3v/+9sNtuuxWKLZSt55FCXvF+0Nb59CaFzw9/+MOtyx5++OFCCpUpZKUpBcpUptiSl81v3ry5MHDgwEIp9KWyKbz94Q9/yNanP/bee+924Swte+lLX1r42Mc+lt4WSgH04x//eDaf/kjHm4JsKeym8JvqTUE0TWvXrs3C5yc/+clsvvTHEUccUUhB9umnn84WpQD66le/ulC8hzSbX758eVbP5MmTS5sUiq2X2bJiC2e27KyzziqkcNp2uvjii7Myjz/+eLb4q1/9ajafzj9NHQPov/3bvxWKrb2FYitttj79kQJt8daH1nlvCBAgsCMBXfDFb30TAQL5Fii2wkXqXi8Go9YTefvb3x6/+c1vInWtl6bUlX7ppZdmD9ikrvVii2d2r+iECROyIscdd1ysWbMm63JOC1J3dOpWfstb3lKqIuty/ud//ufW+f322y/rei8G0dZlqWu+4wNFbY9tl112iaOPPvo53f2lClasWBHFltHsftbSsvSauso3btwYxZbI1sWvec1rol+/ftl8OpY0FcN39pr+SMeSptI26faA5JWmYgCP9IT773//+2w+3Q5QyZSOr9jqGn37/v8/IakL/ic/+UklmytDgACB+P9vDxgECBDIqcCXv/zl7MjT/Zcp3KWfE044IVvW9mGkYpdyzJo1K4pd01kATA/VnHPOOa1Pe6cw9/KXvzzSU+BpSvdTvuENb4hi62o2n/54yUte0vo+vUnhr9ji+Zxl7RYUZ4pd7u0WpXsnO4bUUoF0L2saTird19l2Svd8pikFx9JUCphpvhREi624pdWty0oL/vKXv2Q26R7YdC7vec974o9//GO2uthaUSrW6WsK5Kl8unfURIAAgecrIIA+XznbESDQFAIbNmyIYhdxFO8BjRtuuKH1Jz21feSRR7Y+lJMOtthlHcXu5UghLD3Qc9RRR8WnPvWp7GGf0smkltO0Lj10lB7wSfNtp1LIa7uskvephbbtlI4hhd1yUwrGKQwWu8TbrU7HlKY0zmlpKt7rWnpb0WsaJeB73/teXHLJJZHGTU0PFp166qnZtpUE0NTqmRyfeOKJdvtLDz498sgj7ZaZIUCAQGcCAmhnMpYTIJALgYULF2YtmB/5yEdi7ty57X7OPvvsLEh+/etfzwZVnzFjRta6OXjw4KxbPbV0pjDX9sn3FNCK92BmobT4QE/WAloPiJ/97Get1aRWxNRd/apXvSpbVurKLo27mVpy07R48eLstfRHmk/h72Uve1lpUVWvxXtNszrTk/vFB55i7Nix2falJ/JL+0+tr2lKx1luSrcsdBw0P3XtF+9HbR28vtx2lhEgQKAkIICWJLwSIJBLgdT9nrrOO3aDp5MpPr2edWOnbvjULZ9aFotPl8cdd9yRtS6m1tD0231KXdtpmzTsUQpSqYXwrW99a7zwhS9Mi2uePvShD0XxIaFsv2eeeWb2+oEPfCCrN7WqpuNLLblpyKM0xFMaPmn+/PlRfGo+G1Ypheg0LNPpp5/+vI+l+KR6NuRTagFN97r+7W9/i3RbQhpCKk2le0BLA86ncVXL/fajf//3f8/uHV2wYEF2723xyf0ojgoQxYeqsvN43gdoQwIEdhoBAXSnudROlEDvE/jtb3+btV6mls9yUwp2qQs9jcVZfNI9ikMaZeEu3Qea7oE8+eST49xzz82679tun1pBUxjr2P3etky172fOnNk69mYKwMXhkKLtg0vFJ/CzsUvf+MY3ZlWn2wkOPfTQLESnFtsUPNNPGou0lqn4dH62eer+Tw9hpQCfWmOTVQq/aUrjf6bW2fTbkNJDWx2n4lP0WeBMnrvvvnsWltNYpsUhqDoWNU+AAIGyAn3SI/Jl11hIgACBXiqQuppTN3t6WKfU/d32VFN3cmrdS7/Ss9z6tmW7ep+etk9PvKcHi9JDRcUxR5/zIFOpjuLwTFm396BBg0qLsi7tdG9lZ/eLthas8s369eujOMRU1qXf2abpPs8Ufju7zzT985GMXvSiF2VBtLN6LCdAgEBHgeruXu+4tXkCBAjkUCC19pULdMVxLyM91FQcUD5rHa01fHakSd35HZ+ib1sm3XPacUpd8+WOtWO5aucreYo9tW7uaEr3inbHse1on9YRINA7BHTB947r6CwIEKiDQBpyKT2Yk7qm0wNMJgIECBDoHgFd8N3jqlYCBHIokAauT2NsFn+jT5RrjXw+p5RaVVP3e/o98cVfrfl8qrANAQIEep2AANrrLqkTIkCAAAECBAg0t4Au+Oa+Po6OAAECBAgQINDrBATQXndJnRABAgQIECBAoLkFBNDmvj6OjgABAgQIECDQ6wQE0F53SZ0QAQIECBAgQKC5BQTQ5r4+jo4AAQIECBAg0OsEBNBed0mdEAECBAgQIECguQUE0Oa+Po6OAAECBAgQINDrBATQXndJnRABAgQIECBAoLkFBNDmvj6OjgABAgQIECDQ6wQE0F53SZ0QAQIECBAgQKC5BQTQ5r4+jo4AAQIECBAg0OsEBNBed0mdEAECBAgQIECguQUE0Oa+Po6OAAECBAgQINDrBATQXndJnRABAgQIECBAoLkFBNDmvj6OjgABAgQIECDQ6wQE0F53SZ0QAQIECBAgQKC5BQTQ5r4+jo4AAQIECBAg0OsEBNBed0mdEAECBAgQIECguQUE0Oa+Po6OAAECBAgQINDrBP4PSa8co5Mr6T8AAAAASUVORK5CYII=" style="display: block; margin: auto;" /><br />
+</p>
 <div style="text-align: justify">
-<h3 id="count-the-number-of-cases-of-people-born-after-1981-and-that-have-healed.">7 Count the number of cases of people born after 1981 and that have healed.</h3>
+<h3 id="count-the-number-of-cases-of-people-born-after-1981-and-that-have-healed.">7: Count the number of cases of people born after 1981 and that have healed.</h3>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>q7 &lt;-<span class="st"> </span>raw_data <span class="op">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="st">     </span><span class="kw">filter</span>(Date.of.birth <span class="op">&gt;=</span><span class="st"> &quot;1981-01-01&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="st">     </span><span class="kw">filter</span>(Outcome <span class="op">==</span><span class="st"> &quot;Healed&quot;</span>) <span class="op">%&gt;%</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="st">     </span><span class="kw">summarize</span>(<span class="kw">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>q7 &lt;-<span class="st"> </span>raw_covid <span class="op">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="st">   </span><span class="kw">filter</span>(Date.of.birth <span class="op">&gt;=</span><span class="st"> &quot;1981-01-01&quot;</span> <span class="op">&amp;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="st">              </span>Outcome <span class="op">==</span><span class="st"> &quot;Healed&quot;</span>)</span></code></pre></div>
+<table style="width:65%; margin-left: auto; margin-right: auto;" class="table">
+<thead>
+<tr>
+<th style="text-align:center;">
+Number of people born after 1981 and healed
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+158
+</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
 <div style="text-align: justify">
-<h3 id="count-the-number-of-cases-that-are-asymptomatic-or-in-home-isolation-but-not-both-and-were-born-before-1982.">8 Count the number of cases that are asymptomatic OR in home isolation (but not both) AND were born before 1982.</h3>
+<h3 id="count-the-number-of-cases-that-are-asymptomatic-or-in-home-isolation-but-not-both-and-were-born-before-1982.">8: Count the number of cases that are asymptomatic OR in home isolation (but not both) AND were born before 1982.</h3>
+</div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>q8 &lt;-<span class="st"> </span>raw_covid <span class="op">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="st">   </span><span class="kw">filter</span>(Date.of.birth <span class="op">&gt;=</span><span class="st"> &quot;1982-01-01&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="st">   </span><span class="kw">filter</span>(<span class="kw">xor</span>(Symptoms <span class="op">==</span><span class="st"> &quot;Asymptomatic&quot;</span>,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>              Hospitalization.type <span class="op">==</span><span class="st"> &quot;Home isolation&quot;</span>))</span></code></pre></div>
+<table style="width:65%; margin-left: auto; margin-right: auto;" class="table">
+<thead>
+<tr>
+<th style="text-align:center;">
+Number of people born after 1982, Asymptomatic or in Home isolation
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+104
+</td>
+</tr>
+</tbody>
+</table>
+<p><br />
+</p>
+<div style="text-align: justify">
+<h3 id="create-a-new-dataset-including-only-the-rows-where-epidemiological.linknotes-includes-the-words-contact-or-symptom-or-both.-hint-you-can-use-the-grep-function-and-tolower.">9: Create a new dataset including only the rows where “Epidemiological.link…Notes” includes the words “contact” OR “symptom” (or both). Hint: you can use the grep() function and tolower().</h3>
 </div>
 <div style="text-align: justify">
-<h3 id="create-a-new-dataset-including-only-the-rows-where-epidemiological.linknotes-includes-the-words-contact-or-symptom-or-both.-hint-you-can-use-the-grep-function-and-tolower.">9 Create a new dataset including only the rows where “Epidemiological.link…Notes” includes the words “contact” OR “symptom” (or both). Hint: you can use the grep() function and tolower().</h3>
+<h3 id="in-the-previous-dataset-add-a-column-reporting-the-age-in-years-therefore-in-integer-format-of-each-patient-as-of-october-2nd-2020.-save-this-dataset-into-a-.csv-file-and-make-it-available-on-your-github-repository-for-this-assignment.">10: In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.</h3>
 </div>
 <div style="text-align: justify">
-<h3 id="in-the-previous-dataset-add-a-column-reporting-the-age-in-years-therefore-in-integer-format-of-each-patient-as-of-october-2nd-2020.-save-this-dataset-into-a-.csv-file-and-make-it-available-on-your-github-repository-for-this-assignment.">10 In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.</h3>
-</div>
-<div style="text-align: justify">
-<h3 id="produce-a-pie-chart-for-the-type-of-hospitalization-for-cases-born-between-1960-and-1980.">11 Produce a pie chart for the type of hospitalization for cases born between 1960 and 1980.</h3>
+<h3 id="produce-a-pie-chart-for-the-type-of-hospitalization-for-cases-born-between-1960-and-1980.">11: Produce a pie chart for the type of hospitalization for cases born between 1960 and 1980.</h3>
 </div>
 </section>
 
