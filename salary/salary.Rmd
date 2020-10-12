@@ -134,7 +134,7 @@ fit <- glm(salary ~.,data=raw_salary,family=binomial)
 
 ### 6: Using the information in fit (hint: you can use the functions coef() and summary() to extract information), create a dataframe collecting: The names of the variables (names of the rows of the dataframe); The value of the coefficients (first column); A logical vector stating which coefficients are positive (second column); The p-values (third column).
 
-Again, I did it in a long way, and I'm sure there are ways of doing it in less lines. This piece of code extracts the information using `summary.glm`, which outputs a matrix with the values of `Estimates`, `Standard Errors`, `z-value`, and `p-values` for all variables. In the first line, I proceeded to extract only the `Estimates` and `p-values` columns. The second line binds this matrix with a new column that states a logical vector for values of `Estimates` bigger than zero (positive). The third line simply renames the TRUE/FALSE for Positive/Negative for tidiness. Finally, the last line reorders the data frame to the requested order.
+Again, I did it in a long way, and I'm sure there are ways of doing it in less lines. This piece of code extracts the information using `summary.glm()`, which outputs a matrix with the values of `Estimates`, `Standard Errors`, `z-value`, and `p-values` for all variables. In the first line, I proceeded to extract only the `Estimates` and `p-values` columns. The second line binds this matrix with a new column that states a logical vector for values of `Estimates` bigger than zero (positive). The third line simply renames the TRUE/FALSE for Positive/Negative for tidiness. Finally, the last line reorders the data frame to the requested order.
 
 </div>
 
@@ -165,7 +165,15 @@ kable(head(q6))
 
 ### 7: Subset the dataframe created in the previous question to only show the rows where the p-values are strictly smaller than 0.05. Knowing that (i) the remaining rows are statistically significant and that (ii) positive coefficients contribute to increase the probability of a salary larger than $50,000 (the opposite for negative values), comment on those variables that negatively contribute to salary..
 
-Code-wise, I simply filter the `p-values` smaller than 0.05.
+Code-wise, I simply filter the `p-values` smaller than 0.05. This gives us an interesting overview though (see Table below)...
+
+It is worth note that this data set was donated to the repository in 1996, so the data is not the most updated.
+
+The only negative effect that a marital status has on one's income is when it corresponds to "never-married". This is probably due to the taxes system in the U.S., as the marital status interfere on the tiers that one belongs when filing, meaning that if someone that does not reaches 50 K is married to someone that makes more than double that, can still belong to the > 50 K tier. Being a parent also impacts negatively the salary, which agrees to common sense: children are expensive.
+
+The education up to 7<sup>th</sup> and 8<sup>th</sup> grade is tricky because it probably does not mean that "if you have education up to 7<sup>th</sup> and 8<sup>th</sup> grade you will be affected negatively on your income", rather means that people who did not have more than said grades on their education were affected negatively - theory that can be supported by the fact that all other higher level education were marked as a positive factor, contributing to a higher salary.
+
+Two of the saddest variables to impact negatively the income are occupation and country of origin. I will ignore the origin "South", because I'm honestly not sure what it means, and the data base did not provide enough information. Being originated from Colombia corresponds to a negative effect, which can be due to the visa type, the prejudice suffered, or just the how the average population that migrates from this country fits into all the other variables presented (and in others). For occupation, farming and cleaning come up as negative effects on income, and this may be due purely to the average payment for this type of service.
 
 </div>
 
@@ -182,9 +190,7 @@ q7 %>%
         kable(booktabs = T) %>%
         kable_styling() %>%
         row_spec(which(q7$q6 == "Negative"),
-                 color = "black", background = "white") %>%
-        row_spec(which(q7$q6 == "Positive"),
-                 color = "black", background = "lightgrey") 
+                 color = "black", background = "lightgrey")
 
 ```
 
