@@ -1,28 +1,191 @@
 ---
-title: "salary"
-author: "Gabi Itokazu"
-date: "10/3/2020"
-output: html_document
+title: "Homework 3: Salary"
+subtitle: "STAT 6210 AU Fall 2020"
+author: "Ana Gabriela Itokazu"
+output:
+     prettydoc::html_pretty:
+     theme: cayman
+highlight: github
 ---
-The “adult.csv” dataset was downloaded from the UCI data repository and collects census information paired with a variable determining whether an individual’s salary is larger or smaller than (or equal to) $50,000. To do so, we will use logistic regression which can be generally represented as follows:
 
-y=g(Xβ)
+```{r chunksetup, include=FALSE}
+knitr::opts_chunk$set(
+   echo=TRUE, eval=TRUE, include=TRUE,
+   warning=FALSE, message=FALSE,
+   fig.align="center"
+)
+```
 
-where y is a dichotomous variable with two levels, g(⋅) is a known function, X is the matrix/dataframe containing the independent (census) variables and β is the coefficient vector determining how each variable contributes to determining y. Our goal is to estimate the coefficient vector β and check which coefficients are statistically significant.
+```{r clear_genv, echo=FALSE}
+rm(list = ls())
+```
 
-1 Load the data and check the formatting of the variables.
+<div style="text-align: justify">
 
-2 Rename the last column (currently called “NA”) containing the dichotomous salary information. Assign the name salary to it.
+### The `covid.csv` file contains data on Covid-19 cases in a province of Italy. For the following exercises, only provide first rows or elements in the output if the results are too large.
 
-3 The values in salary have a space in front of them (e.g. " >50K"): remove the space from all values (hint: you can use substring()).
+</div>
 
-4 Again, in the variable salary, replace “>50K” with the value 1 and “<=50K” with 0. Make sure to format it as a factor with two levels.
+```{r install, echo=FALSE, include=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(tibble)
+```
 
-5 Use the glm() function to estimate this logistic model. Only specify the arguments formula = salary ~ ., data and family = binomial. Save the result of the estimation in an object called fit.
+<div style="text-align: justify">
 
-6 Using the information in fit (hint: you can use the functions coef() and summary() to extract information), create a dataframe collecting:
-     The names of the variables (names of the rows of the dataframe);
-     The value of the coefficients (first column);
-     A logical vector stating which coefficients are positive (second column);
-     The p-values (third column). .
-7 Subset the dataframe created in the previous question to only show the rows where the p-values are strictly smaller than 0.05. Knowing that (i) the remaining rows are statistically significant and that (ii) positive coefficients contribute to increase the probability of a salary larger than $50,000 (the opposite for negative values), comment on those variables that negatively contribute to salary.
+### 1: Load the data and check the formatting of the variables.
+
+I made sure that the `.csv` file was in the same working directory as my project, so there was no file path in the command. I make the first row of the `raw_salary` data frame as the columns names, and the first column, as the rows names.
+
+</div>
+
+```{r q1}
+
+raw_salary <- read.csv(file = "adult.csv",
+                       sep = ";",
+                       row.names = 1,
+                       header = TRUE)
+
+```
+
+```{r view_q1, echo=FALSE}
+
+glimpse(raw_salary)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 2: Rename the last column (currently called “NA”) containing the dichotomous salary information. Assign the name salary to it.
+
+</div>
+
+```{r q1q2}
+
+colnames(raw_salary)[15] <- "salary"
+
+```
+
+```{r view_q1q2, echo=FALSE}
+
+glimpse(raw_salary[15])
+
+```
+<div style="text-align: justify">
+\
+
+### 3: The values in salary have a space in front of them (e.g. " >50K"): remove the space from all values (hint: you can use substring()).
+
+Because it was a leading space, I choose to use `trimws()`. The argument `which` could be `"right"` for trailing spaces, `"both"` for leading and trailing and to remove all spaces.
+
+</div>
+
+```{r q3}
+
+raw_salary$salary <- trimws(raw_salary$salary, which = "left")
+
+```
+
+```{r view_q3, echo=FALSE}
+
+glimpse(raw_salary[15])
+
+```
+\
+
+<div style="text-align: justify">
+
+### 4: Again, in the variable salary, replace “>50K” with the value 1 and “<=50K” with 0. Make sure to format it as a factor with two levels.
+
+Here, I chose to factorize the `salary` variable, giving it two levels with the labels "0" and "1".
+
+</div>
+
+```{r q4}
+
+raw_salary$salary <- factor(raw_salary$salary, levels = c("<=50K",">50K"), labels = c(0,1))
+
+```
+
+```{r view_q4, echo=FALSE}
+
+glimpse(raw_salary$salary)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 5: Use the glm() function to estimate this logistic model. Only specify the arguments formula = salary ~ ., data and family = binomial. Save the result of the estimation in an object called fit.
+
+</div>
+
+```{r q5}
+
+fit <- glm(salary ~.,data=raw_salary,family=binomial)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 6: Using the information in fit (hint: you can use the functions coef() and summary() to extract information), create a dataframe collecting: The names of the variables (names of the rows of the dataframe); The value of the coefficients (first column); A logical vector stating which coefficients are positive (second column); The p-values (third column).
+
+Again, I did it in a long way, and I'm sure there are ways of doing it in less lines. This piece of code extracts the information using `summary.glm`, which outputs a matrix with the values of `Estimates`, `Standard Errors`, `z-value`, and `p-values` for all variables. In the first line, I proceeded to extract only the `Estimates` and `p-values` columns. The second line binds this matrix with a new column that states a logical vector for values of `Estimates` bigger than zero (positive). The third line simply renames the TRUE/FALSE for Positive/Negative for tidiness. Finally, the last line reorders the data frame to the requested order.
+
+</div>
+
+```{r q6}
+
+fit_results <- as.data.frame(summary.glm(fit)$coefficients[,c(1,4)])
+
+q6 <- cbind(fit_results, coeff=fit_results[,1] > 0)
+
+q6$coeff <- factor(q6$coeff,
+                   levels = c("FALSE","TRUE"),
+                   labels = c("Negative","Positive"))
+
+q6 <- q6[c(1,3,2)]
+
+```
+
+```{r view_q6, echo=FALSE}
+
+colnames(q6) = c("Coefficients","q6","p-values")
+
+kable(head(q6))
+
+```
+\
+
+<div style="text-align: justify">
+
+### 7: Subset the dataframe created in the previous question to only show the rows where the p-values are strictly smaller than 0.05. Knowing that (i) the remaining rows are statistically significant and that (ii) positive coefficients contribute to increase the probability of a salary larger than $50,000 (the opposite for negative values), comment on those variables that negatively contribute to salary..
+
+Code-wise, I simply filter the `p-values` smaller than 0.05.
+
+</div>
+
+```{r q7}
+
+q7 <- q6 %>%
+        filter(`p-values` < 0.05)
+
+```
+
+```{r view_q7, echo=FALSE}
+
+q7 %>%
+        kable(booktabs = T) %>%
+        kable_styling() %>%
+        row_spec(which(q7$q6 == "Negative"),
+                 color = "black", background = "white") %>%
+        row_spec(which(q7$q6 == "Positive"),
+                 color = "black", background = "lightgrey") 
+
+```
+
+
