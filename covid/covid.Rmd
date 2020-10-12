@@ -20,6 +20,16 @@ knitr::opts_chunk$set(
 rm(list = ls())
 ```
 
+```{css, echo=FALSE}
+ 
+  .image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+```
+
 <div style="text-align: justify">
 
 ### The `covid.csv` file contains data on Covid-19 cases in a province of Italy. For the following exercises, only provide first rows or elements in the output if the results are too large.
@@ -29,6 +39,7 @@ rm(list = ls())
 ```{r install, echo=FALSE, include=FALSE}
 library(tidyverse)
 library(knitr)
+library(eeptools)
 ```
 
 <div style="text-align: justify">
@@ -131,7 +142,7 @@ To be able to reproduce the table, I `filtered` the data to the set represented 
 colnames(q4) <- c("","Disease in progress","Healed")
 knitr::kable(q4, align = "c",
              format = "html",
-             table.attr = "style='width:75%;'") %>%
+             table.attr = "style='width:65%;'") %>%
         kableExtra::kable_styling(position = "center")
 
 ```
@@ -159,6 +170,8 @@ glimpse(q5$Date.of.diagnosis)
 <div style="text-align: justify">
 
 ### 6: Add a column that reports whether or not a case was asymptomatic AND in home isolation. Name the observation “Home_Asymptomatic” if the conditions apply and “Non_Home_Asymptomatic” if not and then produce a bar plot of this new variable.
+
+Here I used a `if` `else` sentence nested in a `for` loop to knowingly waste computational capacity, but also to train myself doing it without pain. Because this is not an extensive data set, the amount of time used is not that different than using another method, such as a `ifelse` statement in a `mutate()` function.
 
 </div>
 
@@ -193,6 +206,8 @@ axis(2,at=seq(0,1000,200))
 <div style="text-align: justify">
 
 ### 7: Count the number of cases of people born after 1981 and that have healed.
+
+For questions 7 and 8 I used the same method: a piping with filters nesting the logical operators that fulfill the requirements.
 
 </div>
 
@@ -246,7 +261,7 @@ knitr::kable(q8, align = "c",
 
 ### 9: Create a new dataset including only the rows where “Epidemiological.link…Notes” includes the words “contact” OR “symptom” (or both). Hint: you can use the grep() function and tolower().
 
-Here I used the `tolower` function to make sure I will not mismatch due to differences on typing
+Here I used the `tolower` function to make sure I will not mismatch due to differences on typing (even though it excludes typos!), in a `grepl()` function. I chose this instead of `grep()` because (the last does not work in this dataset and) `grepl()` returns a logical vector matching each element of my data frame.
 
 </div>
 
@@ -268,13 +283,11 @@ glimpse(q9)
 
 ### 10: In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.
 
-I simplified the path for tidiness and privacy.
+I simplified the path for tidiness and privacy, and it follows an `glimpse` of what the "age" column looks like:
 
 </div>
 
-```{r q10}
-
-library(eeptools)
+```{r q10, eval=FALSE}
 
 q10 <- q9 %>%
    mutate("age" = floor(age_calc(q9$Date.of.birth,
@@ -283,9 +296,23 @@ q10 <- q9 %>%
 
 ```
 
+```{r view_q10, echo=FALSE}
+
+q10 <- q9 %>%
+   mutate("age" = floor(age_calc(q9$Date.of.birth,
+                                 units = "years")))
+
+glimpse(q10$age)
+
+```
+
 <div style="text-align: justify">
 
 ### 11: Produce a pie chart for the type of hospitalization for cases born between 1960 and 1980.
+
+I used again the piping with filters and logical operators to select the requested data and used the `base` pie type chart with the `RColorBrewer` package for prettier colors. I added the labels as percentages, simply calculating those in a separate object by hand, and added the names of the variables as a legend.
+
+I cheated to put the legend in the place that it shows in this document. Because of the length of the names, even if I surpass the nominal values for the argument position by playing with coordinates, I get the legend either on top of the pie, or cut off the chart area. The code I've actually used can be seen after the said plot.!
 
 </div>
 
@@ -296,6 +323,9 @@ q11 <- raw_covid %>%
           Date.of.birth <= "1980-12-31") %>%
    filter(!is.na(Hospitalization.type))
 
+```
+
+```{r pie_q11, eval=FALSE}
 
 library(RColorBrewer)
 
@@ -307,8 +337,43 @@ pie(pie_q11,
     labels=piepercent,
     main="Hospitalization type in cases born between 1960 and 1980 (%)",
     border="white",
+    cex=0.7,
     col=myPalette)
-legend("left",
+legend("bottom",
+       c("Home isolation", "Intensive Care Hospitalization", "Non-Intensive Care Hospitalization"),
+       cex = 0.8,
+       fill=myPalette)
+
+```
+
+  <div class="image" id="pie!">
+  <img src="pie.png"/>
+  </div>
+
+```{r pie_locator, eval=FALSE}  
+
+# this first line creates the outer margin
+# in my case, I wanted more space on the bottom, so c(5,0,0,0)
+# if one would want more space on the left, c(0,5,0,0)
+# this is a common fix for the legend position, as it gives you
+# more space in general, but take a look at the code in legend()
+
+par(xpd=T, mar=par()$mar+c(5,0,0,0))
+
+pie(pie_q11,
+    labels=piepercent,
+    main="Hospitalization type in cases born between 1960 and 1980 (%)",
+    border="white",
+    col=myPalette)
+
+# so this locator() function gives you a little arrow that you can
+# click on your plot are and choose **exactly** where you want to put
+# your legend. It is honestly probably not useful academically,
+# when we are trying to make similar plots altogether, but it is pretty
+# neat and cool!
+
+legend(locator(1),
+       inset=c(-0.2,0),
        c("Home isolation", "Intensive Care Hospitalization", "Non-Intensive Care Hospitalization"),
        cex = 0.8,
        fill=myPalette)

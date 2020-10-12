@@ -216,7 +216,19 @@ legend("top", c("Home isolation", "Intensive Care Hospitalization", "Non-Intensi
        fill=myPalette)
 
 
+###------ THIS IS GOLD-------------------------------------
+par(xpd=T, mar=par()$mar+c(5,0,0,0))
 
+pie(pie_q11,
+    labels=piepercent,
+    border="white",
+    col=myPalette)
+legend(locator(1),
+       inset=c(-0.2,0),
+       c("Home isolation", "Intensive Care Hospitalization", "Non-Intensive Care Hospitalization"),
+       cex = 0.8,
+       fill=myPalette)
+###--------SERIOUSLY-----------------------------------------
 
 
 
