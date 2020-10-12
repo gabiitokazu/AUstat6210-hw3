@@ -1,0 +1,728 @@
+"","Date.of.birth","Hospitalization.type","Symptoms","First.day.of.symptoms","Outcome","Date.of.outcome","Date.of.diagnosis","Notes","age"
+"1",1956-01-22,"Home isolation","Symptomatic",2020-02-25,"Healed",2020-04-15,2020-03-05,"In contact with a positive patient (outside province) in a club. Pediatrician",64
+"2",1943-05-03,"Intensive care","Symptomatic",2020-02-27,"Deceased",2020-03-14,2020-03-06,"None of the common COVID symptoms",77
+"3",1996-10-16,"Home isolation","Symptomatic",2020-02-27,"Healed",2020-04-15,2020-03-07,"Works in the Police. Has been close contact with positive patient (outside province)",23
+"4",1964-12-14,"Non-Intensive care hospitalization","Symptomatic",2020-02-25,"Healed",2020-04-19,2020-03-07,"Contact with covid positive patients during the course firefighters outside of province on 20.02.2020",55
+"5",1960-10-11,"Home isolation","Symptomatic",2020-02-28,"Healed",2020-04-27,2020-03-10,"In contact with positive patient (daughter living in Lombardia)",60
+"6",1933-03-19,"Non-Intensive care hospitalization","Symptomatic",2020-03-11,"Healed",2020-04-22,2020-03-12,"Healthcare worker - In contact with positive patient",87
+"7",1940-11-05,"Non-Intensive care hospitalization","Symptomatic",2020-03-05,"Healed",2020-04-22,2020-03-12,"Flu symptoms",79
+"8",1928-01-14,"Non-Intensive care hospitalization","Symptomatic",2020-03-08,"Healed",2020-04-11,2020-03-12,"In contact with positive patient",92
+"9",1936-09-29,"Intensive care","Symptomatic",2020-03-10,"Deceased",2020-03-13,2020-03-13,"In contact with positive patient at the hospital",84
+"10",1935-11-17,"Non-Intensive care hospitalization","Symptomatic",2020-03-02,"Healed",2020-05-13,2020-03-13,"Flu symptoms",84
+"11",1936-11-05,"Non-Intensive care hospitalization","Symptomatic",2020-03-12,"Healed",2020-06-08,2020-03-14,"Possible contact with positive patient - ongoing investigation",83
+"12",1953-02-13,"Non-Intensive care hospitalization","Symptomatic",2020-03-04,"Healed",2020-04-28,2020-03-14,"Flu symptoms",67
+"13",1953-08-24,"Home isolation","Symptomatic",2020-03-14,"Healed",2020-04-21,2020-03-15,"Flu symptoms",67
+"14",1952-04-09,"Home isolation","Symptomatic",2020-03-05,"Healed",2020-04-26,2020-03-15,"In contact with positive patient",68
+"15",1979-12-30,"Non-Intensive care hospitalization","Symptomatic",2020-03-14,"Healed",2020-04-15,2020-03-15,"In contact with positive patient",40
+"16",1934-12-15,"Non-Intensive care hospitalization","Symptomatic",2020-02-25,"Deceased",2020-03-28,2020-03-15,"Tested negative the first time.
+In contact with positive patient afterwards",85
+"17",1962-06-11,"Home isolation","Symptomatic",2020-03-16,"Healed",2020-03-24,2020-03-15,"In contact with positive patient",58
+"18",1948-01-03,"Non-Intensive care hospitalization","Symptomatic",2020-03-07,"Healed",2020-04-20,2020-03-15,"In contact with positive patient",72
+"19",1997-08-25,"Home isolation","Symptomatic",2020-03-11,"Healed",2020-04-18,2020-03-16,"Flu symptoms",23
+"20",1949-05-01,"Non-Intensive care hospitalization","Symptomatic",2020-03-10,"Healed",2020-04-13,2020-03-16,"Flu symptoms",71
+"21",1952-01-17,"Non-Intensive care hospitalization","Symptomatic",2020-03-12,"Deceased",2020-03-21,2020-03-16,"In contact with positive patient",68
+"22",1987-09-20,"Home isolation","Symptomatic",2020-03-10,"Healed",2020-04-20,2020-03-16,"Flu symptoms",33
+"23",1974-08-25,"Home isolation","Symptomatic",2020-03-16,"Healed",2020-03-24,2020-03-16,"Flu symptoms",46
+"24",1967-02-23,"Home isolation","Symptomatic",2020-03-14,"Healed",2020-04-19,2020-03-17,"In contact with positive patient",53
+"25",1951-11-28,"Non-Intensive care hospitalization","Symptomatic",2020-02-16,"Deceased",2020-05-08,2020-03-17,"In contact with positive patient 
+Deceased hospital delta - pneumonia, acute respiratory failure, cardiovascular failure with metastasized lung cancer",68
+"26",1928-04-14,"Non-Intensive care hospitalization","Symptomatic",2020-03-09,"Deceased",2020-03-27,2020-03-17,"In contact with positive patient",92
+"27",1933-01-02,"Non-Intensive care hospitalization","Symptomatic",2020-03-07,"Deceased",2020-03-24,2020-03-17,"Flu symptoms",87
+"28",1969-03-02,"Non-Intensive care hospitalization","Symptomatic",2020-03-15,"Healed",2020-04-26,2020-03-17,"Flu symptoms",51
+"29",1963-07-05,"Non-Intensive care hospitalization","Symptomatic",2020-03-09,"Healed",2020-04-27,2020-03-17,"Flu symptoms",57
+"30",1988-03-28,"Non-Intensive care hospitalization","Symptomatic",2020-03-15,"Healed",2020-04-22,2020-03-17,"In contact with positive patient",32
+"31",1956-01-31,"Non-Intensive care hospitalization","Symptomatic",2020-03-07,"Healed",2020-05-02,2020-03-17,"Flu symptoms - Trasferred to the health center of a different province",64
+"32",1991-04-08,"Home isolation","Symptomatic",2020-03-13,"Healed",2020-04-19,2020-03-17,"Flu symptoms",29
+"33",1980-05-05,"Non-Intensive care hospitalization","Symptomatic",2020-03-16,"Healed",2020-03-26,2020-03-17,"In contact with positive patient",40
+"34",1960-09-30,"Non-Intensive care hospitalization","Symptomatic",2020-03-08,"Healed",2020-05-07,2020-03-17,"Flu symptoms",60
+"35",1963-01-21,"Home isolation","Asymptomatic",NA,"Healed",2020-06-08,2020-03-17,"In contact with positive patient",57
+"36",1968-08-31,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-04-26,2020-03-17,"Flu symptoms",52
+"37",1942-05-01,"Non-Intensive care hospitalization","Symptomatic",2020-03-10,"Healed",2020-04-20,2020-03-17,"Flu symptoms",78
+"38",1963-03-07,"Non-Intensive care hospitalization","Symptomatic",2020-03-13,"Healed",2020-04-23,2020-03-17,"Flu symptoms",57
+"39",1944-08-29,"Non-Intensive care hospitalization","Symptomatic",2020-03-16,"Deceased",2020-03-30,2020-03-17,"Flu symptoms",76
+"40",1933-08-11,"Intensive care","Symptomatic",2020-02-24,"Deceased",2020-03-24,2020-03-17,"In contact with positive patient",87
+"41",1928-12-21,"Non-Intensive care hospitalization","Symptomatic",2020-03-10,"Deceased",2020-03-26,2020-03-17,"Flu symptoms with past pathologies",91
+"42",1942-08-15,"Non-Intensive care hospitalization","Symptomatic",2020-03-07,"Healed",2020-04-28,2020-03-17,"Flu symptoms",78
+"43",1980-06-26,"Home isolation","Symptomatic",2020-03-15,"Healed",2020-04-23,2020-03-17,"Flu symptoms",40
+"44",1967-05-29,"Non-Intensive care hospitalization","Symptomatic",2020-03-17,"Deceased",2020-03-27,2020-03-17,"In contact with positive patient",53
+"45",1962-10-20,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-05-04,2020-03-17,"In contact with positive patient",57
+"46",1955-11-13,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-05-06,2020-03-17,"In contact with positive patient",64
+"47",1996-10-10,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-05-02,2020-03-17,"In contact with positive patient",24
+"48",1956-02-09,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-05-15,2020-03-17,"In contact with positive patient",64
+"49",1958-08-20,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-05-03,2020-03-17,"In contact with positive patient",62
+"50",1966-10-19,"Home isolation","Symptomatic",2020-03-15,"Healed",2020-04-25,2020-03-17,"In contact with positive patient",53
+"51",1928-03-19,"Home isolation","Symptomatic",2020-03-16,"Healed",2020-04-22,2020-03-17,"In contact with positive patient",92
+"52",1971-08-27,"Non-Intensive care hospitalization","Symptomatic",2020-03-05,"Healed",2020-04-25,2020-03-17,"In contact with positive patient",49
+"53",1940-09-03,"Non-Intensive care hospitalization","Symptomatic",2020-03-13,"Healed",2020-04-20,2020-03-18,"Flu symptoms",80
+"54",1973-09-10,"Home isolation","Symptomatic",2020-03-15,"Healed",2020-06-27,2020-03-18,"In contact with positive patient - Tested positive again on 06/01/2020",47
+"55",1994-12-14,"Home isolation","Symptomatic",2020-03-18,"Healed",2020-04-22,2020-03-18,"In contact with positive patient",25
+"56",1960-07-28,"Non-Intensive care hospitalization","Symptomatic",2020-03-09,"Healed",2020-04-24,2020-03-18,"Flu symptoms",60
+"57",1949-03-13,"Non-Intensive care hospitalization","Symptomatic",2020-03-17,"Healed",2020-04-22,2020-03-18,"Flu symptoms",71
+"58",1951-01-17,"Home isolation","Symptomatic",2020-03-12,"Healed",2020-05-07,2020-03-18,"Flu symptoms",69
+"59",1975-07-24,"Home isolation","Symptomatic",2020-03-18,"Healed",2020-05-08,2020-03-19,"In contact with positive patient",45
+"60",1967-03-28,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Healed",2020-05-13,2020-03-19,"In contact with positive patient",53
+"61",1933-12-06,"Non-Intensive care hospitalization","Symptomatic",2020-03-16,"Deceased",2020-03-27,2020-03-19,"Flu symptoms",86
+"62",1963-06-25,"Home isolation","Symptomatic",2020-03-15,"Healed",2020-04-21,2020-03-19,"In contact with positive patient",57
+"63",1980-02-18,"Non-Intensive care hospitalization","Symptomatic",2020-03-19,"Healed",2020-05-16,2020-03-19,"Flu symptoms",40
+"64",1960-08-22,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-04-29,2020-03-19,"In contact with positive patient",60
+"65",1999-08-13,"Home isolation","Symptomatic",2020-03-06,"Healed",2020-04-16,2020-03-19,"Flu symptoms",21
+"66",1963-10-14,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Healed",2020-05-09,2020-03-19,"In contact with positive patient",56
+"67",1968-05-24,"Non-Intensive care hospitalization","Symptomatic",2020-03-11,"Healed",2020-04-26,2020-03-19,"Flu symptoms",52
+"68",1955-03-17,"Non-Intensive care hospitalization","Symptomatic",2020-03-13,"Healed",2020-05-08,2020-03-19,"Flu symptoms",65
+"69",1978-01-17,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Healed",2020-06-24,2020-03-19,"Flu symptoms",42
+"70",1993-09-22,"Home isolation","Symptomatic",2020-03-15,"Healed",2020-04-26,2020-03-19,"Flu symptoms",27
+"71",1976-01-17,"Non-Intensive care hospitalization","Symptomatic",2020-03-19,"Healed",2020-04-26,2020-03-19,"Flu symptoms",44
+"72",1993-10-29,"Home isolation","Symptomatic",2020-03-19,"Healed",2020-04-20,2020-03-19,"Flu symptoms",26
+"73",1948-12-23,"Home isolation","Symptomatic",2020-03-09,"Healed",2020-04-25,2020-03-19,"Flu symptoms",71
+"74",1942-12-01,"Home isolation","Symptomatic",2020-03-13,"Deceased",2020-04-21,2020-03-19,"Died at the hospital. In contact with positive patient",77
+"75",1968-11-21,"Home isolation","Symptomatic",2020-03-16,"Healed",2020-04-22,2020-03-19,"In contact with positive patient",51
+"76",1994-05-31,"Home isolation","Symptomatic",2020-03-22,"Healed",2020-05-03,2020-03-19,"Flu symptoms",26
+"77",1993-12-18,"Non-Intensive care hospitalization","Symptomatic",2020-03-22,"Healed",2020-05-04,2020-03-19,"Flu symptoms",26
+"78",1985-11-26,"Non-Intensive care hospitalization","Symptomatic",2020-03-13,"Healed",2020-06-29,2020-03-19,"Flu symptoms - Symptoms have worstened on 05/21/2020",34
+"79",1977-12-19,"Home isolation","Symptomatic",2020-03-10,"Healed",2020-04-23,2020-03-20,"In contact with positive patient",42
+"80",1959-06-20,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Healed",2020-04-27,2020-03-20,"Flu symptoms",61
+"81",1950-10-18,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Healed",2020-05-06,2020-03-20,"Flu symptoms",69
+"82",1949-01-21,"Non-Intensive care hospitalization","Symptomatic",2020-03-19,"Healed",2020-04-21,2020-03-20,"Flu symptoms",71
+"83",1974-01-28,"Home isolation","Symptomatic",2020-03-18,"Healed",2020-04-21,2020-03-20,"In contact with positive patient",46
+"84",1993-12-11,"Home isolation","Symptomatic",2020-03-16,"Healed",2020-04-20,2020-03-20,"In contact with positive patient",26
+"85",1960-01-12,"Home isolation","Symptomatic",2020-03-20,"Healed",2020-05-06,2020-03-20,"In contact with positive patient - Healthcare worker in retirement home)",60
+"86",1946-07-29,"Home isolation","Symptomatic",2020-03-20,"Healed",2020-04-21,2020-03-20,"In contact with positive patient",74
+"87",1956-03-28,"Home isolation","Symptomatic",2020-03-22,"Healed",2020-04-22,2020-03-20,"In contact with positive patient",64
+"88",1943-07-11,"Intensive care","Symptomatic",2020-03-20,"Healed",2020-05-11,2020-03-20,"Flu symptoms",77
+"89",1954-02-18,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Healed",2020-04-25,2020-03-20,"In contact with positive patient",66
+"90",1949-10-23,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Deceased",2020-03-23,2020-03-20,"Flu symptoms",70
+"91",1982-07-19,"Home isolation","Symptomatic",2020-03-18,"Healed",2020-04-27,2020-03-20,"In contact with positive patient",38
+"92",1960-12-03,"Home isolation","Symptomatic",2020-03-20,"Healed",2020-05-24,2020-03-20,"In contact with positive patient",59
+"93",1986-05-23,"Non-Intensive care hospitalization","Symptomatic",2020-03-10,"Healed",2020-04-23,2020-03-20,"In contact with positive patient",34
+"94",1944-02-11,"Intensive care","Symptomatic",2020-03-16,"Deceased",2020-03-27,2020-03-21,"Flu symptoms",76
+"95",1977-01-23,"Home isolation","Symptomatic",2020-03-11,"Healed",2020-04-30,2020-03-21,"In contact with positive patient (outside of the province)",43
+"96",1927-08-07,"Non-Intensive care hospitalization","Symptomatic",2020-03-16,"Deceased",2020-05-23,2020-03-21,"In contact with positive patient - Died at the hospital",93
+"97",1947-08-31,"Non-Intensive care hospitalization","Symptomatic",2020-03-07,"Healed",2020-04-27,2020-03-21,"Flu symptoms",73
+"98",1957-08-07,"Non-Intensive care hospitalization","Symptomatic",2020-03-16,"Healed",2020-04-26,2020-03-21,"Flu symptoms",63
+"99",1985-07-17,"Non-Intensive care hospitalization","Symptomatic",2020-03-19,"Healed",2020-04-28,2020-03-21,"Flu symptoms",35
+"100",1969-04-18,"Non-Intensive care hospitalization","Symptomatic",2020-03-19,"Healed",2020-04-10,2020-03-21,"Flu symptoms",51
+"101",1937-03-14,"Intensive care","Symptomatic",2020-03-14,"Deceased",2020-05-17,2020-03-21,"Flu symptoms - Died at the hospital",83
+"102",1990-01-26,"Home isolation","Symptomatic",2020-03-15,"Healed",2020-04-21,2020-03-21,"Flu symptoms",30
+"103",1951-08-20,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Healed",2020-04-29,2020-03-21,"Flu symptoms",69
+"104",1966-06-04,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Healed",2020-04-18,2020-03-21,"Flu symptoms",54
+"105",1970-03-25,"Non-Intensive care hospitalization","Symptomatic",2020-03-23,"Healed",2020-05-02,2020-03-21,"Flu symptoms",50
+"106",1961-04-22,"Home isolation","Symptomatic",2020-03-13,"Healed",2020-04-16,2020-03-21,"Flu symptoms",59
+"107",1977-11-01,"Home isolation","Symptomatic",2020-03-14,"Healed",2020-05-05,2020-03-21,"Flu symptoms",42
+"108",1980-07-29,"Non-Intensive care hospitalization","Symptomatic",2020-03-17,"Healed",2020-05-01,2020-03-22,"Flu symptoms",40
+"109",1930-08-12,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Healed",2020-05-13,2020-03-22,"Flu symptoms",90
+"110",1950-03-11,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Healed",2020-04-28,2020-03-22,"Flu symptoms",70
+"111",1957-11-10,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Healed",2020-05-07,2020-03-22,"Flu symptoms",62
+"112",1956-11-28,"Non-Intensive care hospitalization","Symptomatic",2020-03-12,"Healed",2020-05-02,2020-03-22,"Flu symptoms",63
+"113",1950-02-09,"Non-Intensive care hospitalization","Symptomatic",2020-03-22,"Healed",2020-04-29,2020-03-22,"Flu symptoms",70
+"114",1972-07-18,"Home isolation","Symptomatic",2020-03-22,"Healed",2020-04-29,2020-03-22,"Flu symptoms",48
+"115",1958-04-14,"Home isolation","Symptomatic",2020-03-19,"Healed",2020-04-22,2020-03-22,"In contact with positive patient",62
+"116",1975-07-08,"Home isolation","Symptomatic",2020-03-19,"Healed",2020-04-18,2020-03-22,"In contact with positive patient",45
+"117",1943-08-28,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Deceased",2020-03-24,2020-03-23,"Flu symptoms",77
+"118",1972-12-03,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-04-25,2020-03-23,"In contact with positive patient",47
+"119",1969-02-04,"Home isolation","Symptomatic",2020-03-20,"Healed",2020-05-16,2020-03-23,"Flu symptoms",51
+"120",1939-04-11,"Non-Intensive care hospitalization","Symptomatic",2020-03-22,"Healed",2020-05-10,2020-03-23,"In contact with positive patient",81
+"121",1932-12-05,"Non-Intensive care hospitalization","Symptomatic",2020-03-21,"Deceased",2020-04-02,2020-03-23,"In contact with positive patient",87
+"122",1987-07-15,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Healed",2020-04-23,2020-03-23,"In contact with positive patient",33
+"123",1937-10-29,"Non-Intensive care hospitalization","Symptomatic",2020-03-22,"Healed",2020-04-23,2020-03-23,"Flu symptoms",82
+"124",1962-12-05,"Non-Intensive care hospitalization","Symptomatic",2020-03-17,"Healed",2020-05-09,2020-03-23,"Flu symptoms",57
+"125",1937-05-09,"Non-Intensive care hospitalization","Symptomatic",2020-03-16,"Healed",2020-05-11,2020-03-23,"Flu symptoms",83
+"126",1939-03-30,"Non-Intensive care hospitalization","Symptomatic",2020-03-13,"Healed",2020-04-20,2020-03-23,"Flu symptoms",81
+"127",1937-05-07,"Non-Intensive care hospitalization","Symptomatic",2020-03-01,"Healed",2020-05-18,2020-03-23,"Flu symptoms",83
+"128",1976-07-10,"Home isolation","Symptomatic",2020-03-20,"Healed",2020-04-23,2020-03-23,"Flu symptoms",44
+"129",1961-04-16,"Non-Intensive care hospitalization","Symptomatic",2020-03-16,"Healed",2020-05-02,2020-03-24,"Flu symptoms",59
+"130",1951-06-25,"Non-Intensive care hospitalization","Symptomatic",2020-03-10,"Healed",2020-05-05,2020-03-24,"Flu symptoms",69
+"131",1958-03-28,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Healed",2020-04-24,2020-03-24,"Flu symptoms",62
+"132",1931-04-25,"Non-Intensive care hospitalization","Symptomatic",2020-03-23,"Healed",2020-05-09,2020-03-24,"Flu symptoms",89
+"133",1953-11-24,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Healed",2020-04-25,2020-03-24,"In contact with positive patient",66
+"134",1941-09-05,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Healed",2020-05-03,2020-03-24,"Flu symptoms",79
+"135",1963-11-02,"Intensive care","Symptomatic",2020-03-19,"Deceased",2020-03-24,2020-03-24,"Flu symptoms",56
+"136",1964-05-27,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Healed",2020-05-04,2020-03-24,"Flu symptoms",56
+"137",1946-07-12,"Non-Intensive care hospitalization","Symptomatic",2020-03-16,"Healed",2020-05-02,2020-03-24,"Flu symptoms",74
+"138",1932-12-12,"Non-Intensive care hospitalization","Symptomatic",2020-03-19,"Healed",2020-05-17,2020-03-24,"Flu symptoms",87
+"139",1941-07-25,"Non-Intensive care hospitalization","Symptomatic",2020-03-24,"Healed",2020-05-03,2020-03-24,"Flu symptoms",79
+"140",1945-09-17,"Non-Intensive care hospitalization","Symptomatic",2020-03-23,"Healed",2020-04-28,2020-03-24,"Flu symptoms",75
+"141",1996-01-18,"Home isolation","Symptomatic",2020-03-19,"Healed",2020-04-19,2020-03-24,"In contact with positive patient",24
+"142",1974-04-05,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-04-30,2020-03-24,"Flu symptoms",46
+"143",1957-11-10,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-04-18,2020-03-24,"In contact with positive patient",62
+"144",1962-01-01,"Home isolation","Symptomatic",2020-03-20,"Healed",2020-04-22,2020-03-24,"In contact with positive patient",58
+"145",1948-01-30,"Home isolation","Symptomatic",2020-03-21,"Healed",2020-05-22,2020-03-24,"In contact with positive patient",72
+"146",1977-11-19,"Home isolation","Symptomatic",2020-03-21,"Healed",2020-04-27,2020-03-24,"Flu symptoms",42
+"147",1936-01-25,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-04-27,2020-03-24,"In contact with positive patient",84
+"148",1990-06-18,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-04-26,2020-03-24,"Flu symptoms",30
+"149",1982-03-16,"Home isolation","Symptomatic",2020-03-24,"Healed",2020-05-08,2020-03-24,"In contact with positive patient",38
+"150",1967-06-29,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Healed",2020-04-10,2020-03-25,"Flu symptoms",53
+"151",1934-09-10,"Non-Intensive care hospitalization","Symptomatic",2020-03-24,"Deceased",2020-03-26,2020-03-25,"Flu symptoms. congestive heart failure.",86
+"152",1941-11-25,"Non-Intensive care hospitalization","Symptomatic",2020-03-22,"Healed",2020-05-11,2020-03-25,"In contact with positive patient",78
+"153",1933-10-06,"Non-Intensive care hospitalization","Symptomatic",2020-03-18,"Healed",2020-07-20,2020-03-25,"Flu symptoms - Worstened on 05/17/2020",87
+"154",1985-09-14,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-05-12,2020-03-25,"Healthcare worker In contact with positive patient",35
+"155",1963-02-01,"Non-Intensive care hospitalization","Symptomatic",2020-03-14,"Healed",2020-05-02,2020-03-25,"Flu symptoms",57
+"156",1989-02-15,"Non-Intensive care hospitalization","Symptomatic",2020-03-09,"Healed",2020-04-28,2020-03-26,"Flu symptoms",31
+"157",1933-01-08,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-05-05,2020-03-26,"In contact with positive patient",87
+"158",1990-09-13,"Home isolation","Symptomatic",2020-03-24,"Healed",2020-05-08,2020-03-26,"In contact with positive patient",30
+"159",1973-05-28,"Home isolation","Symptomatic",2020-03-26,"Healed",2020-04-29,2020-03-26,"Flu symptoms",47
+"160",1931-08-05,"Non-Intensive care hospitalization","Symptomatic",2020-03-25,"Healed",2020-04-15,2020-03-26,"In contact with positive patient",89
+"161",1994-01-13,"Home isolation","Symptomatic",2020-03-20,"Healed",2020-04-18,2020-03-26,"Flu symptoms",26
+"162",1982-10-15,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-04-17,2020-03-26,"Flu symptoms",37
+"163",1963-12-08,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-05-07,2020-03-26,"Flu symptoms",56
+"164",1978-04-30,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-05-15,2020-03-26,"In contact with positive patient",42
+"165",1993-05-29,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-05-15,2020-03-26,"Flu symptoms",27
+"166",1976-05-08,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-04-20,2020-03-26,"In contact with positive patient",44
+"167",1961-06-22,"Home isolation","Symptomatic",2020-03-24,"Healed",2020-04-30,2020-03-26,"Flu symptoms",59
+"168",1977-06-07,"Home isolation","Symptomatic",2020-03-15,"Healed",2020-04-28,2020-03-26,"In contact with positive patient",43
+"169",1937-12-05,"Non-Intensive care hospitalization","Symptomatic",2020-03-05,"Healed",2020-05-07,2020-03-26,"Flu symptoms",82
+"170",1962-11-06,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Healed",2020-04-22,2020-03-26,"Flu symptoms",57
+"171",1949-04-16,"Non-Intensive care hospitalization","Symptomatic",2020-03-19,"Healed",2020-04-21,2020-03-26,"Flu symptoms",71
+"172",1962-09-29,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-05-02,2020-03-26,"In contact with positive patient",58
+"173",1985-12-16,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-05-08,2020-03-26,"In contact with positive patient",34
+"174",1987-08-12,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-04-27,2020-03-26,"In contact with positive patient",33
+"175",1978-03-30,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-04-25,2020-03-26,"Flu symptoms",42
+"176",1988-05-16,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-05-12,2020-03-26,"In contact with positive patient",32
+"177",1961-06-17,"Home isolation","Symptomatic",2020-03-21,"Healed",2020-05-21,2020-03-26,"In contact with positive patient",59
+"178",1959-03-14,"Home isolation","Symptomatic",2020-03-16,"Healed",2020-05-07,2020-03-26,"In contact with positive patient",61
+"179",1989-07-17,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-04-21,2020-03-26,"In contact with positive patient",31
+"180",1968-12-23,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-04-25,2020-03-26,"Flu symptoms",51
+"181",1973-01-10,"Home isolation","Symptomatic",2020-03-21,"Healed",2020-04-29,2020-03-26,"Flu symptoms",47
+"182",1976-11-21,"Home isolation","Symptomatic",2020-03-21,"Healed",2020-04-15,2020-03-26,"Flu symptoms",43
+"183",1965-07-09,"Non-Intensive care hospitalization","Symptomatic",2020-03-24,"Healed",2020-04-15,2020-03-27,"Flu symptoms",55
+"184",1965-04-14,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-05-02,2020-03-27,"In contact with positive patient",55
+"185",1939-09-18,"Non-Intensive care hospitalization","Symptomatic",2020-03-16,"Deceased",2020-03-27,2020-03-27,"Flu symptoms",81
+"186",1934-06-15,"Home isolation","Symptomatic",2020-03-26,"Healed",2020-05-11,2020-03-27,"Flu symptoms",86
+"187",1964-08-31,"Non-Intensive care hospitalization","Symptomatic",2020-03-26,"Healed",2020-05-02,2020-03-27,"Flu symptoms",56
+"188",1980-03-24,"Home isolation","Symptomatic",2020-03-24,"Healed",2020-04-27,2020-03-27,"Flu symptoms",40
+"189",1954-09-30,"Home isolation","Symptomatic",2020-03-15,"Healed",2020-07-03,2020-03-27,"Flu symptoms",66
+"190",1977-01-12,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-04-19,2020-03-28,"Flu symptoms",43
+"191",1982-05-03,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-05-17,2020-03-28,"Flu symptoms",38
+"192",1950-01-26,"Non-Intensive care hospitalization","Symptomatic",2020-03-26,"Healed",2020-04-28,2020-03-28,"Flu symptoms",70
+"193",1957-04-11,"Non-Intensive care hospitalization","Symptomatic",2020-03-23,"Healed",2020-04-30,2020-03-28,"Flu symptoms",63
+"194",1986-08-10,"Home isolation","Symptomatic",2020-03-16,"Healed",2020-04-22,2020-03-28,"Healthcare worker - contact with positive patient",34
+"195",1964-07-09,"Home isolation","Symptomatic",2020-03-27,"Healed",2020-05-18,2020-03-28,"Healthcare worker - contact with positive patient",56
+"196",1988-10-25,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-04-30,2020-03-28,"Healthcare worker - contact with positive patient",31
+"197",1926-05-20,"Non-Intensive care hospitalization","Symptomatic",2020-03-27,"Deceased",2020-04-15,2020-03-28,"Interstitial pneumonia - Contact with positive patient",94
+"198",1964-05-10,"Home isolation","Asymptomatic",NA,"Healed",2020-05-01,2020-03-28,"Healthcare worker In contact with positive patient",56
+"199",1964-11-26,"Home isolation","Symptomatic",2020-03-31,"Healed",2020-04-28,2020-03-28,"In contact with positive patient",55
+"200",1960-12-20,"Non-Intensive care hospitalization","Symptomatic",2020-03-28,"Healed",2020-04-11,2020-03-29,"Flu symptoms",59
+"201",1944-09-06,"Non-Intensive care hospitalization","Symptomatic",2020-03-26,"Deceased",2020-04-01,2020-03-29,"Flu symptoms",76
+"202",2000-03-13,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-04-20,2020-03-29,"Flu symptoms",20
+"203",1980-05-03,"Non-Intensive care hospitalization","Symptomatic",2020-03-05,"Healed",2020-05-07,2020-03-29,"Flu symptoms",40
+"204",1968-08-22,"Home isolation","Symptomatic",2020-03-21,"Healed",2020-04-23,2020-03-29,"Healthcare worker - contact with positive patient",52
+"205",1982-08-17,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-04-20,2020-03-29,"Healthcare worker - contact with positive patient",38
+"206",1991-09-27,"Home isolation","Asymptomatic",NA,"Healed",2020-05-04,2020-03-29,"Healthcare worker - contact with positive patient",29
+"207",1990-10-16,"Home isolation","Symptomatic",2020-03-28,"Healed",2020-05-02,2020-03-29,"Healthcare worker - contact with positive patient",29
+"208",1978-09-07,"Home isolation","Asymptomatic",NA,"Healed",2020-05-11,2020-03-29,"Healthcare worker - contact with positive patient",42
+"209",1974-04-25,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-04-21,2020-03-29,"Healthcare worker - contact with positive patient",46
+"210",1957-06-20,"Non-Intensive care hospitalization","Symptomatic",2020-03-28,"Healed",2020-04-17,2020-03-29,"In contact with positive patient",63
+"211",1943-08-30,"Home isolation","Symptomatic",2020-03-22,"Healed",2020-04-23,2020-03-29,"In contact with positive patient",77
+"212",1968-03-23,"Home isolation","Symptomatic",2020-03-19,"Healed",2020-04-25,2020-03-29,"Flu symptoms",52
+"213",1964-11-11,"Home isolation","Symptomatic",2020-03-21,"Healed",2020-04-26,2020-03-29,"Flu symptoms",55
+"214",1978-06-13,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-05-07,2020-03-29,"In contact with positive patient",42
+"215",1940-04-04,"Non-Intensive care hospitalization","Symptomatic",2020-03-29,"Healed",2020-05-28,2020-03-29,"Flu symptoms",80
+"216",1937-05-14,"Non-Intensive care hospitalization","Symptomatic",2020-03-28,"Healed",2020-05-09,2020-03-29,"Flu symptoms",83
+"217",1988-01-03,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-04-15,2020-03-29,"Healthcare worker In contact with positive patient",32
+"218",1957-01-20,"Home isolation","Symptomatic",2020-03-26,"Healed",2020-04-26,2020-03-29,"Flu symptoms",63
+"219",1967-04-16,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-04-15,2020-03-30,"Flu symptoms",53
+"220",1971-03-01,"Home isolation","Symptomatic",2020-03-19,"Healed",2020-05-15,2020-03-30,"In contact with positive patient",49
+"221",1958-04-01,"Home isolation","Symptomatic",2020-03-27,"Healed",2020-04-25,2020-03-30,"In contact with positive patient",62
+"222",1966-03-06,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-04-26,2020-03-30,"Flu symptoms",54
+"223",1976-02-18,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-04-22,2020-03-30,"In contact with positive patient",44
+"224",1963-12-30,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-07,2020-03-30,"Flu symptoms",56
+"225",1959-05-30,"Home isolation","Symptomatic",2020-03-28,"Healed",2020-04-24,2020-03-30,"Flu symptoms",61
+"226",1957-04-03,"Home isolation","Symptomatic",2020-03-17,"Healed",2020-04-24,2020-03-30,"Flu symptoms",63
+"227",1965-12-13,"Home isolation","Symptomatic",2020-03-28,"Disease in progress",2020-07-10,2020-03-30,"Heald covid patient on 05/08/2020 in contact with positive patient (daughter) 06/29 and tested again postive on 07/09/2020",54
+"228",1972-09-01,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-04-20,2020-03-30,"Flu symptoms",48
+"229",1989-10-26,"Home isolation","Asymptomatic",NA,"Healed",2020-05-14,2020-03-31,"Healthcare worker In contact with positive patient",30
+"230",1964-02-12,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-07,2020-03-31,"Healthcare worker In contact with positive patient",56
+"231",1974-06-09,"Home isolation","Asymptomatic",NA,"Healed",2020-04-16,2020-03-31,"Healthcare worker In contact with positive patient",46
+"232",1932-08-29,"Non-Intensive care hospitalization","Symptomatic",2020-03-30,"Healed",2020-06-11,2020-03-31,"Flu symptoms",88
+"233",1945-03-31,"Non-Intensive care hospitalization","Symptomatic",2020-03-29,"Healed",2020-05-18,2020-03-31,"Flu symptoms",75
+"234",1951-02-26,"Non-Intensive care hospitalization","Symptomatic",2020-03-30,"Healed",2020-05-09,2020-03-31,"Flu symptoms",69
+"235",1973-01-29,"Home isolation","Symptomatic",2020-03-27,"Healed",2020-04-28,2020-03-31,"Flu symptoms",47
+"236",1948-06-02,"Non-Intensive care hospitalization","Symptomatic",2020-03-31,"Healed",2020-04-30,2020-04-01,"In contact with positive patient",72
+"237",1934-05-19,"Non-Intensive care hospitalization","Symptomatic",2020-03-30,"Deceased",2020-05-23,2020-04-01,"Flu symptoms - Died at the hospital",86
+"238",1950-02-09,"Non-Intensive care hospitalization","Symptomatic",2020-03-20,"Healed",2020-04-28,2020-04-02,"Flu symptoms",70
+"239",1953-02-07,"Non-Intensive care hospitalization","Symptomatic",2020-03-17,"Deceased",2020-04-23,2020-04-02,"Flu symptoms - Died at the hospital",67
+"240",1967-05-16,"Home isolation","Symptomatic",2020-03-31,"Healed",2020-05-01,2020-04-02,"Flu symptoms",53
+"241",1988-12-31,"Non-Intensive care hospitalization","Symptomatic",2020-03-27,"Healed",2020-04-27,2020-04-02,"Flu symptoms",31
+"242",1957-03-11,"Home isolation","Symptomatic",2020-03-21,"Healed",2020-04-28,2020-04-02,"In contact with positive patient",63
+"243",1958-06-18,"Non-Intensive care hospitalization","Symptomatic",2020-03-27,"Healed",2020-04-25,2020-04-02,"Flu symptoms",62
+"244",1971-06-02,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-05-05,2020-04-02,"Healthcare worker In contact with positive patient",49
+"245",1968-05-20,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-04-25,2020-04-02,"Healthcare worker In contact with positive patient",52
+"246",1934-10-14,"Home isolation","Asymptomatic",NA,"Healed",2020-06-16,2020-04-02,"In contact with positive patient",85
+"247",1926-05-10,"Non-Intensive care hospitalization","Asymptomatic",NA,"Deceased",2020-04-12,2020-04-02,"In contact with positive patient",94
+"248",1959-07-10,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-05-23,2020-04-02,"In contact with positive patient",61
+"249",1966-03-14,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-04-25,2020-04-02,"In contact with positive patient",54
+"250",1975-12-11,"Home isolation","Asymptomatic",NA,"Healed",2020-05-16,2020-04-02,"In contact with positive patient",44
+"251",1963-01-13,"Home isolation","Asymptomatic",NA,"Healed",2020-05-02,2020-04-02,"In contact with positive patient",57
+"252",1961-10-19,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-04-29,2020-04-02,"In contact with positive patient",58
+"253",1990-10-15,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-05-16,2020-04-02,"In contact with positive patient",29
+"254",1967-01-11,"Home isolation","Asymptomatic",NA,"Healed",2020-04-24,2020-04-02,"In contact with positive patient",53
+"255",1979-11-29,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",40
+"256",1956-11-10,"Home isolation","Asymptomatic",NA,"Healed",2020-05-20,2020-04-02,"In contact with positive patient",63
+"257",1963-11-12,"Home isolation","Asymptomatic",NA,"Healed",2020-05-20,2020-04-02,"In contact with positive patient",56
+"258",1997-06-05,"Home isolation","Asymptomatic",NA,"Healed",2020-05-02,2020-04-02,"In contact with positive patient",23
+"259",1973-09-24,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-04-22,2020-04-02,"In contact with positive patient",47
+"260",1915-06-17,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-06-05,2020-04-02,"In contact with positive patient",105
+"261",1943-08-22,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-06-16,2020-04-02,"In contact with positive patient",77
+"262",1929-12-17,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-06-16,2020-04-02,"In contact with positive patient",90
+"263",1926-05-05,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-06-16,2020-04-02,"In contact with positive patient",94
+"264",1946-06-09,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",74
+"265",1931-03-13,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-20,2020-04-02,"In contact with positive patient",89
+"266",1935-01-11,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-06-16,2020-04-02,"In contact with positive patient",85
+"267",1931-02-14,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-06-16,2020-04-02,"In contact with positive patient",89
+"268",1956-05-04,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-06-18,2020-04-02,"In contact with positive patient",64
+"269",2002-09-11,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-04-27,2020-04-02,"In contact with positive patient",18
+"270",1953-05-24,"Non-Intensive care hospitalization","Symptomatic",2020-03-29,"Healed",2020-04-25,2020-04-02,"In contact with positive patient",67
+"271",1939-02-07,"Home isolation","Asymptomatic",NA,"Healed",2020-04-30,2020-04-02,"In contact with positive patient",81
+"272",1982-02-22,"Home isolation","Symptomatic",2020-03-31,"Healed",2020-04-30,2020-04-02,"In contact with positive patient",38
+"273",1935-04-01,"Home isolation","Symptomatic",2020-03-29,"Deceased",2020-05-19,2020-04-02,"In contact with positive patient - Died at the hospital",85
+"274",2016-01-01,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-01,2020-04-02,"In contact with positive patient",4
+"275",1932-05-18,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-06-16,2020-04-02,"In contact with positive patient",88
+"276",1930-01-04,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-06-23,2020-04-02,"In contact with positive patient",90
+"277",1940-03-31,"Home isolation","Symptomatic",2020-03-28,"Healed",2020-06-16,2020-04-02,"In contact with positive patient",80
+"278",1926-02-15,"Home isolation","Symptomatic",2020-03-28,"Healed",2020-06-16,2020-04-02,"In contact with positive patient",94
+"279",1993-11-18,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-02,2020-04-02,"Flu symptoms",26
+"280",1964-02-04,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-02,2020-04-02,"In contact with positive patient",56
+"281",1961-03-09,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-03-07,2020-04-02,"In contact with positive patient",59
+"282",1983-01-22,"Home isolation","Asymptomatic",NA,"Healed",2020-04-26,2020-04-02,"In contact with positive patient",37
+"283",1975-11-20,"Home isolation","Symptomatic",2020-03-31,"Healed",2020-05-12,2020-04-02,"In contact with positive patient",44
+"284",1982-05-12,"Home isolation","Asymptomatic",NA,"Healed",2020-05-02,2020-04-02,"In contact with positive patient",38
+"285",1940-07-24,"Home isolation","Symptomatic",2020-03-24,"Healed",2020-05-04,2020-04-02,"In contact with positive patient",80
+"286",1975-02-17,"Home isolation","Symptomatic",2020-03-26,"Healed",2020-05-07,2020-04-02,"In contact with positive patient",45
+"287",1925-01-23,"Home isolation","Symptomatic",2020-03-30,"Deceased",2020-04-13,2020-04-02,"In contact with positive patient",95
+"288",1927-02-15,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",93
+"289",1930-01-01,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",90
+"290",1993-10-15,"Home isolation","Asymptomatic",NA,"Healed",2020-05-06,2020-04-02,"In contact with positive patient",26
+"291",1960-03-28,"Home isolation","Asymptomatic",NA,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",60
+"292",1928-02-28,"Home isolation","Symptomatic",2020-03-27,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",92
+"293",1942-05-06,"Home isolation","Symptomatic",2020-03-31,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",78
+"294",1931-03-04,"Home isolation","Symptomatic",2020-04-30,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",89
+"295",1973-07-18,"Home isolation","Symptomatic",2020-04-15,"Healed",2020-05-23,2020-04-02,"In contact with positive patient",47
+"296",1964-08-24,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-22,2020-04-02,"In contact with positive patient",56
+"297",1945-12-15,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-11,2020-04-02,"In contact with positive patient",74
+"298",1922-12-01,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-06-16,2020-04-02,"In contact with positive patient",97
+"299",1937-03-14,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-07,2020-04-02,"In contact with positive patient",83
+"300",1928-04-26,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-15,2020-04-02,"In contact with positive patient",92
+"301",1973-07-16,"Home isolation","Symptomatic",2020-04-03,"Healed",2020-04-28,2020-04-02,"In contact with positive patient",47
+"302",1972-02-02,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-05-15,2020-04-02,"In contact with positive patient",48
+"303",1935-06-20,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",85
+"304",1937-03-04,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",83
+"305",1920-04-11,"Home isolation","Symptomatic",2020-03-27,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",100
+"306",1952-10-22,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",67
+"307",1925-05-11,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",95
+"308",1927-11-12,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-14,2020-04-02,"In contact with positive patient",92
+"309",1974-04-17,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-05-18,2020-04-03,"In contact with positive patient",46
+"310",1960-06-13,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-06-12,2020-04-03,"In contact with positive patient",60
+"311",1944-11-12,"Non-Intensive care hospitalization","Symptomatic",2020-04-01,"Deceased",2020-05-03,2020-04-03,"In contact with positive patient hospitalized on 04/15/20 - Died for cirrhosis and Interstitial pneumonia",75
+"312",1940-08-14,"Non-Intensive care hospitalization","Symptomatic",2020-03-30,"Healed",2020-04-23,2020-04-03,"Flu symptoms",80
+"313",1986-01-20,"Home isolation","Symptomatic",2020-03-31,"Healed",2020-05-02,2020-04-03,"In contact with positive patient",34
+"314",1934-03-16,"Non-Intensive care hospitalization","Symptomatic",2020-04-01,"Healed",2020-05-11,2020-04-03,"Flu symptoms",86
+"315",1972-02-08,"Home isolation","Symptomatic",2020-04-04,"Healed",2020-05-02,2020-04-03,"Healthcare worker - In contact with positive patient",48
+"316",1930-06-30,"Non-Intensive care hospitalization","Symptomatic",2020-03-30,"Healed",2020-06-16,2020-04-03,"Flu symptoms",90
+"317",1950-04-24,"Home isolation","Symptomatic",2020-03-31,"Healed",2020-05-28,2020-04-03,"In contact with positive patient",70
+"318",1992-02-11,"Home isolation","Symptomatic",2020-03-20,"Healed",2020-05-07,2020-04-03,"Flu symptoms",28
+"319",1930-01-15,"Home isolation","Symptomatic",2020-04-02,"Healed",2020-05-14,2020-04-03,"In contact with positive patient",90
+"320",1937-11-20,"Non-Intensive care hospitalization","Symptomatic",2020-03-29,"Healed",2020-06-16,2020-04-04,"Flu symptoms",82
+"321",1935-03-15,"Non-Intensive care hospitalization","Symptomatic",2020-03-23,"Healed",2020-07-04,2020-04-04,"Flu symptoms",85
+"322",1929-08-09,"Non-Intensive care hospitalization","Symptomatic",2020-04-03,"Healed",2020-06-11,2020-04-04,"Flu symptoms",91
+"323",1938-12-26,"Non-Intensive care hospitalization","Symptomatic",2020-04-03,"Deceased",2020-04-17,2020-04-04,"Flu symptoms-Died at the hospital",81
+"324",1933-09-27,"Non-Intensive care hospitalization","Symptomatic",2020-03-28,"Healed",2020-04-15,2020-04-04,"Flu symptoms",87
+"325",1970-06-18,"Non-Intensive care hospitalization","Symptomatic",2020-03-31,"Healed",2020-05-05,2020-04-04,"Flu symptoms",50
+"326",1963-03-22,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-05-02,2020-04-04,"Flu symptoms",57
+"327",1985-04-15,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-25,2020-04-04,"Flu symptoms",35
+"328",1931-07-21,"Home isolation","Symptomatic",2020-04-03,"Healed",2020-05-14,2020-04-04,"Flu symptoms",89
+"329",1935-06-16,"Home isolation","Symptomatic",2020-04-02,"Healed",2020-05-14,2020-04-04,"In contact with positive patient",85
+"330",1970-08-24,"Home isolation","Asymptomatic",NA,"Healed",2020-05-05,2020-04-05,"In contact with positive patient - Healthcare worker in retirement home",50
+"331",2004-10-06,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-05-18,2020-04-06,"In contact with positive patient",16
+"332",1970-08-29,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-05-18,2020-04-06,"In contact with positive patient",50
+"333",2010-02-01,"Home isolation","Symptomatic",2020-03-24,"Healed",2020-05-18,2020-04-06,"In contact with positive patient",10
+"334",1986-01-03,"Home isolation","Symptomatic",2020-04-04,"Healed",2020-06-04,2020-04-06,"In contact with positive patient",34
+"335",1931-02-05,"Non-Intensive care hospitalization","Symptomatic",2020-03-30,"Healed",2020-05-16,2020-04-06,"Flu symptoms",89
+"336",1961-03-27,"Home isolation","Symptomatic",2020-04-02,"Healed",2020-05-08,2020-04-06,"Flu symptoms",59
+"337",1991-06-16,"Home isolation","Symptomatic",2020-04-04,"Healed",2020-05-22,2020-04-06,"Flu symptoms",29
+"338",1982-01-18,"Home isolation","Symptomatic",2020-03-21,"Healed",2020-04-29,2020-04-06,"In contact with positive patient",38
+"339",1942-10-30,"Non-Intensive care hospitalization","Symptomatic",2020-03-27,"Healed",2020-05-14,2020-04-06,"Flu symptoms",77
+"340",1983-04-25,"Home isolation","Symptomatic",2020-04-04,"Healed",2020-04-25,2020-04-06,"In contact with positive patient",37
+"341",1968-11-26,"Non-Intensive care hospitalization","Symptomatic",2020-03-29,"Healed",2020-05-18,2020-04-06,"Flu symptoms",51
+"342",1926-03-06,"Non-Intensive care hospitalization","Symptomatic",2020-04-05,"Deceased",2020-04-11,2020-04-07,"In contact with positive patient",94
+"343",1938-09-29,"Non-Intensive care hospitalization","Symptomatic",2020-04-04,"Healed",2020-05-10,2020-04-07,"Flu symptoms",82
+"344",1964-07-04,"Non-Intensive care hospitalization","Symptomatic",2020-03-27,"Healed",2020-04-21,2020-04-07,"In contact with positive patient",56
+"345",1969-09-06,"Home isolation","Symptomatic",2020-03-23,"Healed",2020-05-02,2020-04-07,"In contact with positive patient",51
+"346",1969-03-01,"Home isolation","Symptomatic",2020-03-22,"Healed",2020-04-20,2020-04-07,"In contact with positive patient",51
+"347",1953-05-01,"Home isolation","Symptomatic",2020-03-26,"Healed",2020-04-29,2020-04-07,"In contact with positive patient",67
+"348",1968-10-12,"Home isolation","Symptomatic",2020-03-24,"Healed",2020-05-04,2020-04-07,"In contact with positive patient",52
+"349",1964-03-17,"Home isolation","Symptomatic",2020-03-27,"Healed",2020-04-26,2020-04-07,"In contact with positive patient",56
+"350",1984-09-12,"Home isolation","Symptomatic",2020-03-31,"Healed",2020-05-18,2020-04-07,"Healthcare worker In contact with positive patient",36
+"351",1970-12-02,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-07,2020-04-07,"Healthcare worker In contact with positive patient",49
+"352",2004-05-03,"Non-Intensive care hospitalization","Symptomatic",2020-03-03,"Healed",2020-05-23,2020-04-08,"Flu symptoms",16
+"353",1933-11-30,"Non-Intensive care hospitalization","Symptomatic",2020-04-03,"Healed",2020-04-28,2020-04-08,"Flu symptoms",86
+"354",1950-04-03,"Non-Intensive care hospitalization","Symptomatic",2020-04-02,"Healed",2020-04-23,2020-04-08,"Flu symptoms",70
+"355",1940-12-14,"Non-Intensive care hospitalization","Symptomatic",2020-03-31,"Healed",2020-05-25,2020-04-08,"Flu symptoms",79
+"356",1975-11-07,"Non-Intensive care hospitalization","Symptomatic",2020-04-05,"Healed",2020-05-04,2020-04-08,"In contact with positive patient",44
+"357",2005-10-03,"Home isolation","Asymptomatic",NA,"Healed",2020-05-18,2020-04-09,"In contact with positive patient",15
+"358",1998-04-07,"Home isolation","Asymptomatic",NA,"Healed",2020-05-02,2020-04-09,"In contact with positive patient",22
+"359",1962-06-23,"Home isolation","Symptomatic",2020-04-02,"Healed",2020-05-07,2020-04-09,"Healthcare worker In contact with positive patient",58
+"360",1973-02-20,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Healed",2020-04-28,2020-04-09,"In contact with positive patient",47
+"361",1964-06-19,"Home isolation","Symptomatic",2020-03-28,"Healed",2020-05-07,2020-04-09,"Flu symptoms",56
+"362",1968-09-04,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-05-02,2020-04-09,"Healthcare worker In contact with positive patient",52
+"363",1948-04-24,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-12,2020-04-09,"Flu symptoms",72
+"364",1980-12-16,"Home isolation","Symptomatic",2020-03-18,"Healed",2020-04-28,2020-04-09,"In contact with positive patient",39
+"365",1934-12-30,"Non-Intensive care hospitalization","Symptomatic",2020-04-01,"Healed",2020-06-18,2020-04-09,"Flu symptoms",85
+"366",1998-06-24,"Home isolation","Symptomatic",2020-04-07,"Healed",2020-04-15,2020-04-09,"In contact with positive patient",22
+"367",2017-04-18,"Home isolation","Symptomatic",2020-03-25,"Healed",2020-04-30,2020-04-09,"In contact with positive patient",3
+"368",1963-08-29,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Healed",2020-05-03,2020-04-09,"Flu symptoms",57
+"369",1987-03-07,"Home isolation","Symptomatic",2020-04-02,"Healed",2020-04-29,2020-04-10,"Healthcare worker In contact with positive patient",33
+"370",1974-11-21,"Home isolation","Symptomatic",2020-04-02,"Healed",2020-05-14,2020-04-10,"Flu symptoms",45
+"371",1973-07-15,"Non-Intensive care hospitalization","Symptomatic",2020-04-03,"Healed",2020-05-02,2020-04-11,"Flu symptoms",47
+"372",1938-06-26,"Non-Intensive care hospitalization","Symptomatic",2020-03-13,"Deceased",2020-05-28,2020-04-11,"Flu symptoms - Deceased at the hospital",82
+"373",1940-06-08,"Non-Intensive care hospitalization","Symptomatic",2020-04-05,"Healed",2020-05-11,2020-04-11,"Flu symptoms",80
+"374",1982-03-17,"Non-Intensive care hospitalization","Symptomatic",2020-03-30,"Healed",2020-05-08,2020-04-11,"Flu symptoms",38
+"375",1951-06-26,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-04-15,2020-04-11,"Flu symptoms",69
+"376",1929-03-12,"Home isolation","Symptomatic",2020-04-10,"Healed",2020-06-18,2020-04-11,"In contact with positive patient",91
+"377",1959-04-06,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-07,2020-04-12,"Flu symptoms",61
+"378",1950-07-25,"Non-Intensive care hospitalization","Symptomatic",2020-04-05,"Healed",2020-05-04,2020-04-12,"Flu symptoms",70
+"379",1985-02-16,"Home isolation","Symptomatic",2020-03-31,"Healed",2020-05-12,2020-04-12,"Flu symptoms",35
+"380",1933-09-15,"Non-Intensive care hospitalization","Symptomatic",2020-03-25,"Deceased",2020-04-04,2020-04-12,"Flu symptoms",87
+"381",1973-12-01,"Non-Intensive care hospitalization","Symptomatic",2020-03-01,"Healed",2020-05-16,2020-04-12,"Flu symptoms",46
+"382",1951-03-21,"Non-Intensive care hospitalization","Symptomatic",2020-04-02,"Healed",2020-04-30,2020-04-12,"Flu symptoms",69
+"383",1952-07-25,"Non-Intensive care hospitalization","Symptomatic",2020-04-04,"Healed",2020-05-21,2020-04-12,"Flu symptoms",68
+"384",1939-12-08,"Non-Intensive care hospitalization","Symptomatic",2020-04-07,"Healed",2020-05-17,2020-04-12,"Flu symptoms",80
+"385",1932-03-08,"Non-Intensive care hospitalization","Symptomatic",2020-03-31,"Healed",2020-06-05,2020-04-12,"Flu symptoms",88
+"386",1925-10-22,"Non-Intensive care hospitalization","Symptomatic",2020-04-04,"Healed",2020-05-17,2020-04-12,"Flu symptoms",94
+"387",1932-10-10,"Non-Intensive care hospitalization","Symptomatic",2020-04-07,"Healed",2020-05-15,2020-04-12,"Flu symptoms",88
+"388",1948-11-24,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Healed",2020-06-01,2020-04-12,"Flu symptoms",71
+"389",1971-06-08,"Home isolation","Symptomatic",2020-04-11,"Healed",2020-05-07,2020-04-12,"Flu symptoms",49
+"390",1935-09-17,"Non-Intensive care hospitalization","Symptomatic",2020-04-05,"Deceased",2020-06-09,2020-04-12,"Flu symptoms - Deceased at the hospital",85
+"391",1994-10-27,"Home isolation","Symptomatic",2020-03-26,"Healed",2020-05-07,2020-04-12,"Flu symptoms",25
+"392",1994-11-27,"Home isolation","Asymptomatic",2020-04-11,"Healed",2020-06-03,2020-04-12,"In contact with positive patient",25
+"393",1926-04-05,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Healed",2020-05-14,2020-04-12,"Flu symptoms",94
+"394",1926-04-25,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Deceased",2020-04-30,2020-04-12,"Flu symptoms - Died at the hospital",94
+"395",1942-12-07,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Healed",2020-04-25,2020-04-12,"Flu symptoms",77
+"396",1932-02-02,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Healed",2020-04-25,2020-04-12,"Flu symptoms",88
+"397",1931-09-04,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Healed",2020-04-30,2020-04-12,"Flu symptoms",89
+"398",1978-03-16,"Home isolation","Symptomatic",2020-04-11,"Healed",2020-05-27,2020-04-12,"In contact with positive patient",42
+"399",1946-03-27,"Home isolation","Symptomatic",2020-04-10,"Healed",2020-05-06,2020-04-12,"In contact with positive patient",74
+"400",1966-08-18,"Home isolation","Symptomatic",2020-04-11,"Healed",2020-05-02,2020-04-12,"In contact with positive patient",54
+"401",1995-11-08,"Non-Intensive care hospitalization","Symptomatic",2020-04-11,"Healed",2020-05-27,2020-04-13,"Flu symptoms",24
+"402",1940-10-19,"Non-Intensive care hospitalization","Symptomatic",2020-04-03,"Healed",2020-05-18,2020-04-14,"Flu symptoms",79
+"403",1938-07-23,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Healed",2020-05-14,2020-04-14,"In contact with positive patient",82
+"404",1975-06-13,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Healed",2020-05-18,2020-04-14,"In contact with positive patient",45
+"405",1944-11-13,"Non-Intensive care hospitalization","Symptomatic",2020-03-31,"Healed",2020-05-03,2020-04-14,"Flu symptoms",75
+"406",1922-07-29,"Non-Intensive care hospitalization","Symptomatic",2020-04-10,"Deceased",2020-04-11,2020-04-14,"In contact with positive patient",98
+"407",1939-12-11,"Non-Intensive care hospitalization","Symptomatic",2020-03-27,"Healed",2020-04-27,2020-04-14,"Flu symptoms",80
+"408",1963-06-15,"Home isolation","Symptomatic",2020-04-01,"Healed",2020-05-12,2020-04-14,"Healthcare worker - In contact with positive patient",57
+"409",1963-04-06,"Home isolation","Symptomatic",2020-04-10,"Healed",2020-06-06,2020-04-14,"Healthcare worker In contact with positive patient",57
+"410",2000-09-16,"Home isolation","Symptomatic",2020-04-09,"Healed",2020-05-15,2020-04-14,"In contact with positive patient",20
+"411",1996-07-20,"Home isolation","Symptomatic",2020-04-09,"Healed",2020-05-12,2020-04-14,"In contact with positive patient",24
+"412",1993-01-16,"Home isolation","Symptomatic",2020-04-09,"Healed",2020-05-08,2020-04-14,"Flu symptoms",27
+"413",1944-11-14,"Non-Intensive care hospitalization","Symptomatic",2020-03-24,"Healed",2020-05-08,2020-04-14,"In contact with positive patient",75
+"414",1971-08-09,"Home isolation","Symptomatic",2020-04-02,"Healed",2020-05-11,2020-04-14,"Flu symptoms",49
+"415",1940-12-09,"Non-Intensive care hospitalization","Symptomatic",2020-04-02,"Healed",2020-05-08,2020-04-15,"Flu symptoms",79
+"416",1956-04-23,"Home isolation","Symptomatic",2020-04-06,"Healed",2020-04-15,2020-04-15,"In contact with positive patient",64
+"417",1959-10-14,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-05-12,2020-04-15,"In contact with positive patient",60
+"418",1931-10-24,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-06-18,2020-04-15,"In contact with positive patient",88
+"419",1926-02-19,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-05-15,2020-04-15,"In contact with positive patient",94
+"420",1934-08-21,"Home isolation","Symptomatic",2020-04-07,"Healed",2020-06-18,2020-04-15,"In contact with positive patient",86
+"421",1924-10-10,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-06-18,2020-04-15,"In contact with positive patient",96
+"422",2019-11-18,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-12,2020-04-16,"In contact with positive patient",0
+"423",2019-11-18,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-12,2020-04-16,"In contact with positive patient",0
+"424",1955-08-25,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-06,2020-04-16,"In contact with positive patient",65
+"425",1930-04-21,"Non-Intensive care hospitalization","Symptomatic",2020-04-07,"Healed",2020-06-04,2020-04-16,"In contact with positive patient",90
+"426",1971-10-31,"Home isolation","Asymptomatic",NA,"Healed",2020-05-05,2020-04-16,"In contact with positive patient",48
+"427",1985-06-03,"Home isolation","Symptomatic",2020-04-07,"Healed",2020-05-12,2020-04-16,"In contact with positive patient",35
+"428",1987-01-09,"Home isolation","Symptomatic",2020-04-07,"Healed",2020-05-12,2020-04-16,"In contact with positive patient",33
+"429",1990-08-05,"Home isolation","Symptomatic",2020-04-07,"Healed",2020-07-10,2020-04-16,"In contact with positive patient",30
+"430",1935-01-01,"Non-Intensive care hospitalization","Symptomatic",2020-04-07,"Deceased",2020-05-03,2020-04-16,"In contact with positive patient - Deceased at the hospital - resident in a retirement house - pneumonia",85
+"431",1990-08-05,"Non-Intensive care hospitalization","Symptomatic",2020-04-07,"Healed",2020-05-05,2020-04-16,"In contact with positive patient",30
+"432",1964-06-11,"Non-Intensive care hospitalization","Asymptomatic",NA,"Healed",2020-05-12,2020-04-16,"In contact with positive patient",56
+"433",1940-06-16,"Non-Intensive care hospitalization","Symptomatic",2020-04-08,"Healed",2020-06-04,2020-04-16,"Flu symptoms",80
+"434",1961-12-17,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-11,2020-04-16,"In contact with positive patient",58
+"435",1983-12-19,"Home isolation","Symptomatic",2020-03-31,"Healed",2020-05-15,2020-04-16,"Flu symptoms",36
+"436",1967-12-17,"Home isolation","Symptomatic",2020-03-29,"Healed",2020-05-11,2020-04-16,"Flu symptoms",52
+"437",1961-06-11,"Non-Intensive care hospitalization","Symptomatic",2020-04-13,"Healed",2020-05-08,2020-04-16,"In contact with positive patient",59
+"438",1981-06-23,"Non-Intensive care hospitalization","Symptomatic",2020-04-13,"Healed",2020-05-27,2020-04-16,"In contact with positive patient",39
+"439",1972-08-28,"Home isolation","Symptomatic",2020-04-13,"Healed",2020-05-11,2020-04-16,"In contact with positive patient",48
+"440",2009-02-21,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-18,2020-04-16,"In contact with positive patient",11
+"441",1979-02-14,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-11,2020-04-16,"In contact with positive patient",41
+"442",1968-05-27,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-02,2020-04-16,"In contact with positive patient",52
+"443",1971-10-27,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-11,2020-04-16,"In contact with positive patient",48
+"444",2008-10-09,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-11,2020-04-16,"In contact with positive patient",12
+"445",2013-05-12,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-06-18,2020-04-16,"In contact with positive patient",7
+"446",1991-09-02,"Non-Intensive care hospitalization","Symptomatic",2020-04-13,"Healed",2020-05-12,2020-04-16,"In contact with positive patient",29
+"447",1963-03-08,"Home isolation","Symptomatic",2020-03-28,"Healed",2020-05-04,2020-04-16,"In contact with positive patient",57
+"448",1979-01-14,"Home isolation","Asymptomatic",NA,"Healed",2020-05-18,2020-04-16,"In contact with positive patient",41
+"449",1973-05-24,"Non-Intensive care hospitalization","Symptomatic",2020-04-13,"Healed",2020-05-25,2020-04-16,"Flu symptoms",47
+"450",1930-08-06,"Non-Intensive care hospitalization","Symptomatic",2020-04-13,"Healed",2020-07-07,2020-04-16,"In contact with positive patient",90
+"451",1940-12-17,"Home isolation","Symptomatic",2020-04-13,"Healed",2020-06-18,2020-04-16,"In contact with positive patient",79
+"452",1925-02-19,"Non-Intensive care hospitalization","Symptomatic",2020-04-14,"Healed",2020-06-18,2020-04-16,"In contact with positive patient",95
+"453",1934-11-11,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-06-18,2020-04-16,"In contact with positive patient",85
+"454",1921-12-12,"Home isolation","Symptomatic",2020-04-13,"Healed",2020-06-18,2020-04-16,"In contact with positive patient",98
+"455",1942-12-04,"Non-Intensive care hospitalization","Symptomatic",2020-04-14,"Healed",2020-05-18,2020-04-16,"In contact with positive patient",77
+"456",1943-09-26,"Home isolation","Symptomatic",2020-04-13,"Healed",2020-06-18,2020-04-16,"In contact with positive patient",77
+"457",1934-12-22,"Home isolation","Symptomatic",2020-04-13,"Healed",2020-06-18,2020-04-16,"In contact with positive patient",85
+"458",1923-01-15,"Non-Intensive care hospitalization","Symptomatic",2020-04-14,"Healed",2020-05-18,2020-04-16,"In contact with positive patient",97
+"459",1976-04-16,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-21,2020-04-16,"Flu symptoms",44
+"460",1974-09-02,"Home isolation","Asymptomatic",NA,"Healed",2020-05-16,2020-04-16,"In contact with positive patient",46
+"461",1989-08-09,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-06-18,2020-04-16,"In contact with positive patient",31
+"462",1994-05-14,"Home isolation","Symptomatic",2020-04-04,"Healed",2020-05-07,2020-04-16,"Healthcare worker In contact with positive patient",26
+"463",1931-05-16,"Non-Intensive care hospitalization","Symptomatic",2020-04-01,"Healed",2020-05-04,2020-04-16,"Flu symptoms",89
+"464",1925-12-15,"Non-Intensive care hospitalization","Symptomatic",2020-04-08,"Healed",2020-05-03,2020-04-16,"Flu symptoms",94
+"465",1960-03-05,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-05-11,2020-04-16,"In contact with positive patient",60
+"466",1976-12-27,"Home isolation","Asymptomatic",NA,"Healed",2020-05-13,2020-04-16,"Healthcare worker In contact with positive patient",43
+"467",1954-03-15,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-06-05,2020-04-16,"In contact with positive patient",66
+"468",1979-10-02,"Home isolation","Symptomatic",2020-04-07,"Healed",2020-06-15,2020-04-16,"In contact with positive patient",41
+"469",1933-12-12,"Non-Intensive care hospitalization","Symptomatic",2020-03-24,"Healed",2020-05-09,2020-04-16,"Flu symptoms",86
+"470",1921-03-09,"Non-Intensive care hospitalization","Symptomatic",2020-04-15,"Healed",2020-05-07,2020-04-16,"Flu symptoms - resident in a retirement house",99
+"471",1932-10-11,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-05-07,2020-04-17,"In contact with positive patient",88
+"472",1928-02-04,"Non-Intensive care hospitalization","Symptomatic",2020-04-08,"Healed",2020-05-12,2020-04-17,"Flu symptoms",92
+"473",1937-03-16,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-06-23,2020-04-17,"In contact with positive patient",83
+"474",1971-09-17,"Home isolation","Asymptomatic",NA,"Healed",2020-05-19,2020-04-17,"In contact with positive patient",49
+"475",1988-12-27,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-06-03,2020-04-17,"Flu symptoms",31
+"476",1969-11-07,"Home isolation","Symptomatic",2020-04-07,"Healed",2020-05-02,2020-04-17,"Flu symptoms",50
+"477",1946-05-20,"Intensive care","Symptomatic",2020-04-01,"Deceased",2020-05-20,2020-04-17,"In contact with positive patient - Deceased at the hospital Interstitial pneumonia",74
+"478",1956-04-21,"Home isolation","Symptomatic",2020-04-06,"Healed",2020-04-27,2020-04-17,"In contact with positive patient",64
+"479",1958-08-14,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-06,2020-04-17,"In contact with positive patient",62
+"480",1953-07-12,"Non-Intensive care hospitalization","Symptomatic",2020-04-09,"Healed",2020-05-02,2020-04-17,"Flu symptoms",67
+"481",1970-11-28,"Home isolation","Symptomatic",2020-04-02,"Healed",2020-05-07,2020-04-17,"In contact with positive patient",49
+"482",1927-11-19,"Non-Intensive care hospitalization","Symptomatic",2020-04-08,"Healed",2020-06-19,2020-04-17,"Flu symptoms",92
+"483",1927-08-03,"Home isolation","Symptomatic",2020-04-10,"Healed",2020-06-23,2020-04-17,"In contact with positive patient",93
+"484",1931-07-01,"Home isolation","Symptomatic",2020-04-12,"Healed",2020-06-23,2020-04-17,"In contact with positive patient",89
+"485",1930-03-31,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-06-23,2020-04-17,"In contact with positive patient",90
+"486",1929-05-30,"Home isolation","Symptomatic",2020-04-10,"Healed",2020-06-23,2020-04-17,"In contact with positive patient",91
+"487",1934-08-23,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-06-23,2020-04-17,"In contact with positive patient",86
+"488",1934-05-29,"Home isolation","Symptomatic",2020-04-10,"Healed",2020-06-23,2020-04-17,"In contact with positive patient",86
+"489",1934-07-16,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-06-23,2020-04-17,"In contact with positive patient",86
+"490",1955-07-12,"Home isolation","Symptomatic",2020-04-12,"Healed",2020-07-08,2020-04-17,"In contact with positive patient",65
+"491",1969-08-01,"Home isolation","Asymptomatic",NA,"Healed",2020-05-14,2020-04-17,"In contact with positive patient",51
+"492",1980-09-15,"Home isolation","Asymptomatic",NA,"Healed",2020-05-11,2020-04-17,"In contact with positive patient",40
+"493",1934-03-29,"Non-Intensive care hospitalization","Symptomatic",2020-04-13,"Healed",2020-05-09,2020-04-18,"Flu symptoms",86
+"494",1938-09-21,"Non-Intensive care hospitalization","Symptomatic",2020-04-17,"Healed",2020-05-17,2020-04-18,"Flu symptoms",82
+"495",1969-03-01,"Home isolation","Asymptomatic",NA,"Healed",2020-05-26,2020-04-18,"In contact with positive patient",51
+"496",1966-07-22,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-05-02,2020-04-18,"In contact with positive patient",54
+"497",1968-03-02,"Home isolation","Symptomatic",2020-04-03,"Healed",2020-05-02,2020-04-18,"Healthcare worker probably In contact with positive patient",52
+"498",1955-06-14,"Home isolation","Asymptomatic",NA,"Healed",2020-05-14,2020-04-18,"In contact with positive patient",65
+"499",1987-08-22,"Home isolation","Asymptomatic",NA,"Healed",2020-05-14,2020-04-18,"In contact with positive patient",33
+"500",1942-11-06,"Non-Intensive care hospitalization","Symptomatic",2020-04-08,"Healed",2020-04-29,2020-04-18,"In contact with positive patient",77
+"501",1944-08-12,"Home isolation","Symptomatic",2020-04-08,"Healed",2020-04-28,2020-04-18,"In contact with positive patient",76
+"502",1932-09-17,"Non-Intensive care hospitalization","Symptomatic",2020-04-02,"Healed",2020-05-12,2020-04-19,"Flu symptoms",88
+"503",1940-01-06,"Non-Intensive care hospitalization","Symptomatic",2020-04-14,"Healed",2020-06-23,2020-04-19,"Flu symptoms",80
+"504",1937-09-15,"Non-Intensive care hospitalization","Asymptomatic",NA,"Deceased",2020-05-25,2020-04-19,"Asymptomatic - hospitalized",83
+"505",1936-06-23,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-05-09,2020-04-19,"Flu symptoms",84
+"506",1946-03-08,"Non-Intensive care hospitalization","Symptomatic",2020-04-09,"Healed",2020-05-07,2020-04-19,"Flu symptoms",74
+"507",1974-09-24,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-05-08,2020-04-19,"Flu symptoms",46
+"508",1958-03-09,"Non-Intensive care hospitalization","Symptomatic",2020-04-07,"Healed",2020-05-11,2020-04-19,"Flu symptoms",62
+"509",1940-11-25,"Non-Intensive care hospitalization","Symptomatic",2020-04-10,"Deceased",2020-04-17,2020-04-19,"Died at the hospital - In contact with positive patient",79
+"510",1950-01-07,"Non-Intensive care hospitalization","Symptomatic",2020-04-03,"Healed",2020-05-23,2020-04-20,"In contact with positive patient",70
+"511",1972-05-03,"Non-Intensive care hospitalization","Symptomatic",2020-04-17,"Healed",2020-05-15,2020-04-20,"Flu symptoms",48
+"512",1972-10-02,"Non-Intensive care hospitalization","Symptomatic",2020-04-10,"Healed",2020-06-04,2020-04-20,"Flu symptoms",48
+"513",1965-12-18,"Home isolation","Symptomatic",2020-04-16,"Healed",2020-06-04,2020-04-20,"In contact with positive patient",54
+"514",1967-08-17,"Home isolation","Symptomatic",2020-04-15,"Healed",2020-05-15,2020-04-20,"Flu symptoms",53
+"515",1988-02-23,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-05-16,2020-04-20,"In contact with positive patient",32
+"516",1984-05-13,"Home isolation","Symptomatic",2020-04-11,"Healed",2020-05-11,2020-04-20,"In contact with positive patient",36
+"517",2012-08-15,"Home isolation","Symptomatic",2020-04-20,"Healed",2020-05-16,2020-04-20,"In contact with positive patient",8
+"518",1998-01-18,"Home isolation","Symptomatic",2020-04-03,"Healed",2020-05-27,2020-04-20,"In contact with positive patient",22
+"519",1979-03-24,"Home isolation","Symptomatic",2020-04-14,"Healed",2020-05-22,2020-04-21,"Flu symptoms",41
+"520",1966-09-01,"Home isolation","Asymptomatic",NA,"Healed",2020-05-16,2020-04-21,"In contact with positive patient",54
+"521",1956-09-26,"Home isolation","Symptomatic",2020-04-16,"Healed",2020-05-04,2020-04-21,"Flu symptoms",64
+"522",1948-10-16,"Non-Intensive care hospitalization","Symptomatic",2020-04-18,"Healed",2020-04-15,2020-04-21,"Flu symptoms",71
+"523",1939-02-11,"Intensive care","Symptomatic",2020-04-14,"Healed",2020-05-20,2020-04-21,"Flu symptoms",81
+"524",1943-11-20,"Home isolation","Symptomatic",2020-04-17,"Healed",2020-07-08,2020-04-21,"Flu symptoms",76
+"525",1962-03-10,"Intensive care","Symptomatic",2020-04-01,"Healed",2020-05-09,2020-04-21,"Flu symptoms",58
+"526",1928-09-11,"Non-Intensive care hospitalization","Symptomatic",2020-04-20,"Healed",2020-05-27,2020-04-21,"Flu symptoms",92
+"527",1969-03-17,"Home isolation","Symptomatic",2020-04-16,"Healed",2020-05-25,2020-04-21,"In contact with positive patient",51
+"528",1954-11-20,"Home isolation","Symptomatic",2020-04-18,"Healed",2020-05-06,2020-04-21,"Healthcare worker -In contact with positive patient",65
+"529",1937-03-01,"Home isolation","Symptomatic",2020-04-18,"Deceased",2020-06-11,2020-04-21,"Flu symptoms - Retirement house - Deceased at the hospital",83
+"530",1926-09-13,"Home isolation","Asymptomatic",NA,"Healed",2020-05-22,2020-04-22,"In contact with positive patient - retirement house",94
+"531",1944-11-27,"Non-Intensive care hospitalization","Symptomatic",2020-04-18,"Healed",2020-05-07,2020-04-22,"Flu symptoms",75
+"532",1926-12-26,"Home isolation","Symptomatic",2020-04-18,"Healed",2020-06-23,2020-04-22,"Flu symptoms",93
+"533",1970-09-02,"Home isolation","Symptomatic",2020-04-19,"Healed",2020-05-07,2020-04-22,"Flu symptoms",50
+"534",1927-11-05,"Home isolation","Asymptomatic",NA,"Healed",2020-05-23,2020-04-22,"In contact with positive patient retirement house",92
+"535",1933-03-04,"Home isolation","Asymptomatic",NA,"Deceased",2020-06-25,2020-04-22,"Deceased at the hospital - severe past pathologies  - In contact with positive patient retirement house cluster Cluster CRA",87
+"536",1930-05-29,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-22,"In contact with positive patient retirement house cluster Cluster CRA",90
+"537",1943-08-15,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-22,"In contact with positive patient retirement house cluster Cluster CRA",77
+"538",1931-08-30,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-22,"In contact with positive patient retirement house cluster Cluster CRA",89
+"539",1930-09-12,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-22,"In contact with positive patient retirement house cluster",90
+"540",1928-11-20,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-04-22,"In contact with positive patient retirement house Cluster CRA",91
+"541",1936-06-01,"Home isolation","Asymptomatic",NA,"Deceased",2020-05-02,2020-04-22,"In contact with positive patient retirement house Cluster CRA - Deceased at the hospital - heart failure",84
+"542",1923-06-21,"Home isolation","Asymptomatic",NA,"Healed",2020-06-15,2020-04-22,"In contact with positive patient retirement house Cluster CRA",97
+"543",1923-03-12,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-22,"In contact with positive patient retirement house Cluster CRA",97
+"544",1936-06-02,"Non-Intensive care hospitalization","Symptomatic",2020-05-04,"Deceased",2020-06-16,2020-04-22,"In contact with positive patient retirement house Cluster CRA - Died at the hospital - Severe past pathologies",84
+"545",1931-02-08,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-22,"In contact with positive patient retirement house Cluster CRA",89
+"546",1953-04-05,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-22,"In contact with positive patient retirement house Cluster CRA",67
+"547",1967-01-22,"Home isolation","Asymptomatic",NA,"Healed",2020-05-22,2020-04-22,"In contact with positive patient - Healthcare worker in retirement house",53
+"548",1976-01-09,"Home isolation","Asymptomatic",NA,"Healed",2020-06-18,2020-04-22,"In contact with positive patient - Healthcare worker in retirement house",44
+"549",1962-01-01,"Non-Intensive care hospitalization","Symptomatic",2020-04-18,"Healed",2020-07-07,2020-04-22,"In contact with positive patient - Healthcare worker in retirement house",58
+"550",1976-07-13,"Home isolation","Asymptomatic",NA,"Healed",2020-05-25,2020-04-22,"In contact with positive patient - Healthcare worker in retirement house",44
+"551",1945-05-24,"Non-Intensive care hospitalization","Symptomatic",2020-04-17,"Deceased",2020-05-02,2020-04-22,"In contact with positive patient - retirement house Deceased at the hospital lungs failure",75
+"552",1981-10-16,"Home isolation","Symptomatic",2020-04-21,"Healed",2020-05-18,2020-04-22,"Flu symptoms",38
+"553",1949-06-09,"Non-Intensive care hospitalization","Symptomatic",2020-04-16,"Disease in progress",NA,2020-04-22,"Flu symptoms",71
+"554",1928-04-29,"Non-Intensive care hospitalization","Symptomatic",2020-03-14,"Deceased",2020-05-17,2020-04-23,"Flu symptoms - Deceased at the hospital",92
+"555",1942-01-12,"Non-Intensive care hospitalization","Symptomatic",2020-04-13,"Healed",2020-06-23,2020-04-23,"Flu symptoms",78
+"556",1938-12-01,"Home isolation","Symptomatic",2020-04-21,"Healed",2020-05-22,2020-04-23,"Flu symptoms",81
+"557",1975-08-27,"Home isolation","Asymptomatic",NA,"Healed",2020-05-22,2020-04-23,"Healthcare worker Cluster CRA  - In contact with positive patient",45
+"558",1969-07-06,"Home isolation","Asymptomatic",NA,"Healed",2020-06-24,2020-04-23,"Healthcare worker Cluster CRA  - In contact with positive patient",51
+"559",1966-10-15,"Home isolation","Asymptomatic",NA,"Healed",2020-06-22,2020-04-23,"Healthcare worker Cluster CRA  - In contact with positive patient",53
+"560",1979-11-02,"Home isolation","Asymptomatic",NA,"Healed",2020-05-22,2020-04-23,"Healthcare worker Cluster CRA - In contact with positive patient",40
+"561",1968-06-16,"Home isolation","Asymptomatic",NA,"Healed",2020-05-20,2020-04-23,"Healthcare worker Cluster CRA  - In contact with positive patient",52
+"562",1969-01-22,"Home isolation","Asymptomatic",NA,"Healed",2020-06-01,2020-04-23,"Healthcare worker Cluster CRA  - In contact with positive patient",51
+"563",1977-04-18,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-04-23,"Healthcare worker Cluster CRA - In contact with positive patient - positive again on 07/01/2020",43
+"564",1960-03-26,"Home isolation","Asymptomatic",NA,"Healed",2020-06-01,2020-04-23,"Healthcare worker Cluster CRA - In contact with positive patient",60
+"565",1963-06-24,"Home isolation","Asymptomatic",NA,"Healed",2020-05-20,2020-04-23,"Healthcare worker Cluster CRA - In contact with positive patient",57
+"566",1997-03-17,"Home isolation","Asymptomatic",NA,"Healed",2020-07-07,2020-04-23,"Healthcare worker Cluster CRA - In contact with positive patient - tested positive again on 07/01/2020",23
+"567",1972-06-16,"Home isolation","Asymptomatic",NA,"Healed",2020-06-25,2020-04-23,"Healthcare worker Cluster CRA   - In contact with positive patient",48
+"568",1930-09-29,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-23,"retirement house Cluster CRA   - In contact with positive patient",90
+"569",1926-04-10,"Non-Intensive care hospitalization","Asymptomatic",NA,"Deceased",2020-05-03,2020-04-23,"Deceased at the hospital - retirement house Cluster CRA  - In contact with positive patient - respiratory failure and pneumonia",94
+"570",1934-11-17,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-23,"retirement house Cluster CRA - In contact with positive patient",85
+"571",1929-01-18,"Non-Intensive care hospitalization","Symptomatic",NA,"Disease in progress",NA,2020-04-23,"retirement house Cluster CRA - In contact with positive patient",91
+"572",1934-11-14,"Non-Intensive care hospitalization","Symptomatic",2020-04-09,"Healed",2020-05-28,2020-04-23,"Flu symptoms",85
+"573",1956-06-18,"Non-Intensive care hospitalization","Symptomatic",2020-04-18,"Healed",2020-07-14,2020-04-23,"Flu symptoms",64
+"574",1946-07-12,"Non-Intensive care hospitalization","Symptomatic",2020-04-13,"Healed",2020-05-16,2020-04-23,"Flu symptoms",74
+"575",1958-05-15,"Home isolation","Asymptomatic",NA,"Healed",2020-06-11,2020-04-23,"Healthcare worker Cluster CRA - In contact with positive patient",62
+"576",1929-02-11,"Non-Intensive care hospitalization","Asymptomatic",NA,"Healed",2020-05-25,2020-04-24,"Asymptomatic",91
+"577",1928-08-31,"Home isolation","Asymptomatic",NA,"Healed",2020-05-23,2020-04-24,"retirement house Cluster CRA - In contact with positive patient",92
+"578",1944-06-16,"Non-Intensive care hospitalization","Symptomatic",2020-04-26,"Healed",2020-05-25,2020-04-24,"retirement house Cluster CRA - In contact with positive patient",76
+"579",1936-10-09,"Non-Intensive care hospitalization","Asymptomatic",NA,"Deceased",2020-06-09,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient - Deceased at the hospital",84
+"580",1927-09-30,"Non-Intensive care hospitalization","Symptomatic",2020-05-01,"Healed",2020-05-18,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient",93
+"581",1935-06-23,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient",85
+"582",1925-07-04,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient",95
+"583",1920-03-15,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient",100
+"584",1937-12-05,"Non-Intensive care hospitalization","Symptomatic",2020-04-26,"Deceased",2020-05-17,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient - Deceased at the hospital - Pneumonia",82
+"585",1923-12-26,"Home isolation","Asymptomatic",NA,"Healed",2020-06-15,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient",96
+"586",1942-09-04,"Home isolation","Asymptomatic",NA,"Healed",2020-05-18,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient",78
+"587",1924-11-12,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient",95
+"588",1920-06-01,"Home isolation","Asymptomatic",NA,"Healed",2020-05-24,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient",100
+"589",1937-01-25,"Non-Intensive care hospitalization","Asymptomatic",NA,"Deceased",2020-05-24,2020-04-24,"retirement house Cluster CRA   - In contact with positive patient - Died at the hospital - Interstitial pneumonia COVID 19 respiratory failure",83
+"590",1983-02-22,"Home isolation","Symptomatic",2020-04-15,"Healed",2020-05-18,2020-04-24,"Flu symptoms",37
+"591",1965-07-18,"Home isolation","Symptomatic",2020-04-09,"Healed",2020-05-18,2020-04-24,"Flu symptoms",55
+"592",1963-12-07,"Home isolation","Asymptomatic",NA,"Healed",2020-05-14,2020-04-24,"Flu symptoms",56
+"593",1973-01-19,"Home isolation","Symptomatic",2020-04-23,"Healed",2020-05-18,2020-04-25,"In contact with positive patient",47
+"594",1942-05-23,"Non-Intensive care hospitalization","Symptomatic",2020-04-20,"Healed",2020-05-23,2020-04-26,"Flu symptoms",78
+"595",1987-05-26,"Home isolation","Symptomatic",2020-04-23,"Healed",2020-05-30,2020-04-26,"Flu symptoms",33
+"596",1948-01-02,"Home isolation","Symptomatic",2020-04-23,"Healed",2020-05-21,2020-04-26,"In contact with positive patient",72
+"597",1962-01-17,"Home isolation","Symptomatic",2020-04-12,"Healed",2020-05-18,2020-04-26,"Flu symptoms",58
+"598",1931-03-08,"Non-Intensive care hospitalization","Symptomatic",2020-04-19,"Healed",2020-06-19,2020-04-26,"Flu symptoms",89
+"599",1930-03-27,"Non-Intensive care hospitalization","Symptomatic",2020-04-23,"Disease in progress",NA,2020-04-26,"Retirement house Cluster - Tested for flu symptoms 06/03/2020",90
+"600",1996-03-16,"Home isolation","Symptomatic",2020-04-23,"Healed",2020-05-18,2020-04-26,"In contact with positive patient",24
+"601",1996-01-02,"Home isolation","Symptomatic",2020-04-22,"Healed",2020-05-07,2020-04-26,"In contact with positive patient",24
+"602",1950-08-08,"Home isolation","Symptomatic",2020-04-15,"Healed",2020-05-25,2020-04-26,"In contact with positive patient",70
+"603",1940-08-28,"Non-Intensive care hospitalization","Symptomatic",2020-04-10,"Healed",2020-06-19,2020-04-26,"In contact with positive patient",80
+"604",1972-08-17,"Home isolation","Symptomatic",2020-04-22,"Healed",2020-05-22,2020-04-26,"In contact with positive patient",48
+"605",1942-06-21,"Non-Intensive care hospitalization","Symptomatic",2020-04-15,"Healed",2020-07-01,2020-04-26,"Flu symptoms",78
+"606",1979-11-22,"Home isolation","Symptomatic",2020-04-19,"Healed",2020-06-04,2020-04-27,"In contact with positive patient",40
+"607",2006-11-17,"Home isolation","Symptomatic",2020-04-20,"Healed",2020-06-04,2020-04-27,"In contact with positive patient",13
+"608",1997-07-16,"Home isolation","Symptomatic",2020-03-30,"Healed",2020-05-29,2020-04-28,"Flu symptoms",23
+"609",1994-09-10,"Home isolation","Symptomatic",2020-04-26,"Healed",2020-06-06,2020-04-28,"In contact with positive patient",26
+"610",1931-09-21,"Non-Intensive care hospitalization","Symptomatic",2020-04-25,"Healed",2020-06-01,2020-04-28,"Flu symptoms",89
+"611",1938-08-10,"Non-Intensive care hospitalization","Symptomatic",2020-04-06,"Disease in progress",NA,2020-04-29,"Flu symptoms",82
+"612",2011-01-11,"Home isolation","Symptomatic",2020-04-27,"Healed",2020-05-18,2020-04-29,"In contact with positive patient",9
+"613",1993-11-17,"Home isolation","Asymptomatic",NA,"Healed",2020-05-27,2020-04-29,"In contact with positive patient",26
+"614",1962-10-08,"Non-Intensive care hospitalization","Symptomatic",2020-05-04,"Healed",2020-05-25,2020-04-29,"Healthcare worker Cluster CRA   - In contact with positive patient",58
+"615",1964-06-02,"Non-Intensive care hospitalization","Symptomatic",2020-05-02,"Healed",2020-06-03,2020-04-29,"In contact with positive patient",56
+"616",2005-08-04,"Home isolation","Asymptomatic",NA,"Healed",2020-05-25,2020-04-29,"In contact with positive patient",15
+"617",2004-03-20,"Home isolation","Asymptomatic",NA,"Healed",2020-05-25,2020-04-29,"In contact with positive patient",16
+"618",1927-03-08,"Non-Intensive care hospitalization","Symptomatic",2020-04-18,"Healed",2020-07-03,2020-04-29,"Flu symptoms",93
+"619",1972-10-04,"Home isolation","Symptomatic",2020-04-10,"Healed",2020-05-15,2020-05-01,"Flu symptoms",48
+"620",1931-08-08,"Non-Intensive care hospitalization","Symptomatic",2020-04-29,"Deceased",2020-05-01,2020-05-01,"Flu symptoms - retirement house Cluster CRA. Hospitalized on 04/30 Interstitial pneumonia",89
+"621",1983-01-12,"Home isolation","Asymptomatic",NA,"Healed",2020-05-16,2020-05-02,"In contact with positive patient",37
+"622",1943-12-16,"Non-Intensive care hospitalization","Symptomatic",2020-04-01,"Healed",2020-07-02,2020-05-02,"Flu symptoms",76
+"623",1951-08-18,"Home isolation","Symptomatic",2020-05-02,"Healed",2020-05-22,2020-05-04,"Flu symptoms",69
+"624",1968-09-27,"Home isolation","Symptomatic",2020-05-02,"Healed",2020-05-22,2020-05-04,"Flu symptoms",52
+"625",1952-09-17,"Home isolation","Symptomatic",2020-04-20,"Disease in progress",NA,2020-05-06,"In contact with positive patient",68
+"626",1927-04-10,"Non-Intensive care hospitalization","Symptomatic",2020-05-04,"Healed",2020-05-25,2020-05-07,"Flu symptoms",93
+"627",1994-06-05,"Home isolation","Asymptomatic",NA,"Healed",2020-05-27,2020-05-08,"Flu symptoms",26
+"628",1934-11-03,"Non-Intensive care hospitalization","Symptomatic",2020-05-06,"Healed",2020-05-28,2020-05-08,"Flu symptoms",85
+"629",1932-01-01,"Non-Intensive care hospitalization","Symptomatic",2020-03-24,"Healed",2020-05-25,2020-05-08,"Flu symptoms retirement house",88
+"630",2001-10-25,"Home isolation","Symptomatic",2020-05-02,"Healed",2020-05-25,2020-05-08,"Flu symptoms",18
+"631",1971-06-15,"Home isolation","Symptomatic",2020-05-05,"Healed",2020-06-03,2020-05-08,"In contact with positive patient",49
+"632",1981-12-21,"Home isolation","Symptomatic",2020-04-10,"Healed",2020-06-03,2020-05-08,"Flu symptoms",38
+"633",1925-03-25,"Non-Intensive care hospitalization","Symptomatic",2020-05-06,"Healed",2020-05-25,2020-05-08,"Flu symptoms",95
+"634",1974-11-05,"Non-Intensive care hospitalization","Symptomatic",2020-05-13,"Healed",2020-06-22,2020-05-15,"Healthcare worker  In contact with positive patient",45
+"635",1938-06-20,"Non-Intensive care hospitalization","Asymptomatic",NA,"Healed",2020-06-06,2020-05-18,"In contact with positive patient",82
+"636",1934-11-14,"Non-Intensive care hospitalization","Symptomatic",2020-05-18,"Healed",2020-06-19,2020-05-18,"Flu symptoms",85
+"637",1932-11-19,"Non-Intensive care hospitalization","Symptomatic",2020-05-11,"Deceased",2020-06-09,2020-05-18,"Flu symptoms - Deceased at the hospital for intestine occlusion",87
+"638",1946-01-05,"Non-Intensive care hospitalization","Symptomatic",2020-05-16,"Healed",2020-06-04,2020-05-18,"Flu symptoms",74
+"639",2001-09-17,"Home isolation","Symptomatic",2020-05-21,"Healed",2020-06-15,2020-05-23,"Flu symptoms",19
+"640",1956-01-01,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-05-26,"In contact with positive patient",64
+"641",1987-09-20,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-05-26,"In contact with positive patient",33
+"642",1959-07-13,"Home isolation","Symptomatic",2020-05-27,"Healed",2020-06-16,2020-05-27,"Flu symptoms",61
+"643",1967-01-31,"Home isolation","Symptomatic",2020-05-27,"Healed",2020-06-16,2020-05-27,"In contact with positive patient",53
+"644",1979-10-10,"Home isolation","Symptomatic",2020-05-27,"Healed",2020-06-15,2020-05-27,"In contact with positive patient",41
+"645",1958-02-20,"Home isolation","Symptomatic",2020-05-27,"Healed",2020-06-18,2020-05-27,"Flu symptoms",62
+"646",1967-09-17,"Home isolation","Asymptomatic",NA,"Healed",2020-06-15,2020-06-01,"In contact with positive patient",53
+"647",1989-06-20,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-06-03,"In contact with positive patient",31
+"648",1939-08-28,"Non-Intensive care hospitalization","Symptomatic",2020-06-09,"Disease in progress",NA,2020-06-11,"retirement house - flu symptoms",81
+"649",1985-12-06,"Non-Intensive care hospitalization","Symptomatic",2020-06-17,"Disease in progress",NA,2020-06-18,"Flu symptoms and other pathologies",34
+"650",1966-07-20,"Home isolation","Symptomatic",2020-06-15,"Healed",2020-07-09,2020-06-18,"Flu symptoms",54
+"651",2018-09-29,"Home isolation","Symptomatic",2020-06-20,"Healed",2020-07-10,2020-06-21,"Flu symptoms",2
+"652",1951-05-10,"Non-Intensive care hospitalization","Symptomatic",2020-06-21,"Disease in progress",NA,2020-06-21,"Flu symptoms - heart failure",69
+"653",1951-06-10,"Non-Intensive care hospitalization","Symptomatic",2020-06-21,"Healed",2020-07-12,2020-06-21,"Flu symptoms - cancer patient",69
+"654",1947-10-02,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-06-22,"In contact with positive patient",73
+"655",1967-12-29,"Home isolation","Asymptomatic",NA,"Healed",2020-07-13,2020-06-25,"In contact with positive patient",52
+"656",1958-10-28,"Home isolation","Symptomatic",2020-06-26,"Disease in progress",NA,2020-06-27,"Flu symptoms",61
+"657",1972-06-16,"Home isolation","Symptomatic",2020-06-24,"Disease in progress",NA,2020-06-27,"Flu symptoms",48
+"658",1975-01-01,"Home isolation","Asymptomatic",NA,"Healed",2020-07-13,2020-06-28,"In contact with positive patient - Cluster TNT",45
+"659",1998-11-11,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-06-28,"In contact with positive patient - Cluster TNT",21
+"660",2016-08-21,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-06-28,"In contact with positive patient - Cluster TNT",4
+"661",1999-09-10,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-06-30,"In contact with positive patient",21
+"662",2008-10-21,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-06-30,"In contact with positive patient",11
+"663",1974-09-21,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-06-30,"In contact with positive patient",46
+"664",1994-04-18,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-09,"In contact with positive patient - Cluster TNT",26
+"665",1996-10-15,"Home isolation","Symptomatic",2020-07-08,"Disease in progress",NA,2020-07-10,"Return from Spain - Flu symptoms",23
+"666",1965-08-24,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-10,"In contact with positive patient",55
+"667",1955-04-24,"Home isolation","Symptomatic",2020-07-08,"Disease in progress",NA,2020-07-10,"Tested at ER for flu symptoms",65
+"668",1965-03-01,"Non-Intensive care hospitalization","Symptomatic",NA,"Disease in progress",NA,2020-07-10,"In contact with positive patient",55
+"669",1978-05-14,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-11,"In contact with positive patient - Cluster TNT",42
+"670",2017-04-26,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-11,"In contact with positive patient - Cluster TNT",3
+"671",2006-10-20,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-11,"In contact with positive patient - Cluster TNT",13
+"672",2002-05-17,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-11,"In contact with positive patient - Cluster TNT",18
+"673",1970-02-12,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-11,"In contact with positive patient - Cluster TNT",50
+"674",1970-08-01,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-11,"In contact with positive patient - Cluster TNT",50
+"675",1994-01-24,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-11,"In contact with positive patient",26
+"676",1982-07-31,"Home isolation","Asymptomatic",NA,"Healed",2020-08-05,2020-07-11,"In contact with positive patient",38
+"677",2009-09-20,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-11,"In contact with positive patient",11
+"678",2007-08-05,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-11,"In contact with positive patient - Cluster TNT",13
+"679",2014-12-05,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-11,"In contact with positive patient - Cluster TNT",5
+"680",1989-09-22,"Non-Intensive care hospitalization","Symptomatic",2020-07-07,"Disease in progress",NA,2020-07-13,"Flu symptoms",31
+"681",1968-02-04,"Home isolation","Symptomatic",2020-07-05,"Disease in progress",NA,2020-07-14,"Social worker - symptoms since 07/05/2020",52
+"682",1993-01-28,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-14,"In contact with positive patient",27
+"683",1969-09-19,"Home isolation","Symptomatic",2020-07-05,"Disease in progress",NA,2020-07-14,"In contact with positive patient",51
+"684",1973-09-30,"Home isolation","Symptomatic",2020-07-10,"Disease in progress",NA,2020-07-14,"In contact with positive patient",47
+"685",2017-07-21,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-14,"In contact with positive patient",3
+"686",1990-04-28,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-15,"In contact with positive patient",30
+"687",1962-11-14,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-16,"In contact with positive patient",57
+"688",1992-01-11,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-16,"In contact with positive patient",28
+"689",1999-08-22,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-16,"In contact with positive patient",21
+"690",2011-03-29,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-16,"In contact with positive patient",9
+"691",1980-01-01,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-16,"In contact with positive patient",40
+"692",1996-05-25,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-16,"In contact with positive patient",24
+"693",2000-10-22,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-16,"In contact with positive patient",19
+"694",1976-05-23,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-16,"In contact with positive patient",44
+"695",1975-01-01,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-16,"In contact with positive patient",45
+"696",1979-06-26,"Non-Intensive care hospitalization","Symptomatic",2020-07-13,"Disease in progress",NA,2020-07-16,"In contact with positive patient at a funeral",41
+"697",1995-02-25,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-17,"In contact with positive patient",25
+"698",2006-02-13,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-17,"In contact with positive patient - Works at a retirement house - possible new cluster",14
+"699",2011-12-23,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-17,"In contact with positive patient - Works at a retirement house - possible new cluster",8
+"700",1979-02-08,"Home isolation","Symptomatic",2020-07-07,"Disease in progress",NA,2020-07-18,"In contact with positive patient - Works at a retirement house - possible new cluster",41
+"701",1990-08-21,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-18,"In contact with positive patient - Works at a retirement house - possible new cluster",30
+"702",1956-01-27,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-18,"In contact with positive patient - Works at a retirement house - possible new cluster",64
+"703",1982-04-26,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-21,"In contact with positive patient - Works at a retirement house - possible new cluster",38
+"704",2009-07-05,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-21,"In contact with positive patient",11
+"705",2018-10-28,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-21,"In contact with positive patient",1
+"706",2007-07-07,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-21,"In contact with positive patient",13
+"707",1984-02-29,"Home isolation","Symptomatic",2020-07-17,"Disease in progress",NA,2020-07-21,"In contact with positive patient",36
+"708",1975-12-14,"Non-Intensive care hospitalization","Symptomatic",2020-07-15,"Disease in progress",NA,2020-07-22,"Foreign patient in contact with a positive patient - participated to a funeral (cluster)",44
+"709",1987-12-16,"Non-Intensive care hospitalization","Symptomatic",2020-07-18,"Disease in progress",NA,2020-07-22,"Foreign patient in contact with a positive patient - participated to a funeral (cluster)",32
+"710",1953-07-23,"Home isolation","Symptomatic",2020-07-10,"Disease in progress",NA,2020-07-28,"Showed symptoms on 07/10/2020, the family doctor required the test",67
+"711",1964-02-08,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-31,"In contact with positive patient in Belgium - Currently in isolation",56
+"712",2016-09-15,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-31,"In contact with positive patient",4
+"713",2016-09-15,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-07-31,"In contact with positive patient",4
+"714",1997-05-20,"Non-Intensive care hospitalization","Symptomatic",2020-07-29,"Disease in progress",NA,2020-08-01,"Tested at the ER - Arrived for flu symptoms and fever",23
+"715",1961-05-24,"Non-Intensive care hospitalization","Symptomatic",2020-07-31,"Disease in progress",NA,2020-08-01,"Tested at the ER - Arrived for flu symptoms and interstitial pneumonia. Retourned from Ukrain with other nationals currently under investigation",59
+"716",1960-03-29,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-08-02,"In contact with positive patient - Cluster Retirement house",60
+"717",1965-06-08,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-08-02,"In contact with positive patient - Cluster Retirement house",55
+"718",1978-11-05,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-08-02,"Tested at the hospital for other symptoms and found positive",41
+"719",1999-03-22,"Home isolation","Symptomatic",2020-07-29,"Disease in progress",NA,2020-08-02,"In contact with positive patient outside of the province",21
+"720",1999-04-25,"Home isolation","Symptomatic",2020-08-01,"Disease in progress",NA,2020-08-02,"In contact with positive patient outside of the province",21
+"721",2003-11-21,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-08-06,"In contact with positive patient - Cluster Beach Tennis outside province",16
+"722",1942-01-15,"Home isolation","Symptomatic",2020-08-06,"Disease in progress",NA,2020-08-07,"Flu symptoms",78
+"723",1999-02-23,"Home isolation","Symptomatic",2020-08-07,"Disease in progress",NA,2020-08-08,"In contact with positive patient - Cluster Beach Tennis outside province",21
+"724",1978-06-12,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-08-08,"In contact with positive patient - Cluster Nigerian hairdresser",42
+"725",1986-06-12,"Home isolation","Asymptomatic",NA,"Disease in progress",NA,2020-08-08,"In contact with positive patient - Cluster Nigerian hairdresser",34

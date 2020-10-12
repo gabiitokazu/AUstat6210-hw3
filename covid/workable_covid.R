@@ -167,22 +167,53 @@ q9 <- raw_covid %>%
      filter(grepl("contact", tolower(Notes)) |
             grepl("symptom", tolower(Notes)))
 
-any("contact", tolower(Notes), "symptom", tolower(Notes))
+# nope any()
+#"contact", tolower(Notes) 
+#"symptom", tolower(Notes)
 
-anewdataset <- 
-   exdata_r01 %>%
-   filter( grepl("contact", tolower(exdata_r01$Epidemiological.link...Notes)) | 
-              grepl("symptom", tolower(exdata_r01$Epidemiological.link...Notes)))
+
 
 # 10 In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.
 # 
-anewdataset <- 
-   anewdataset %>%
-   mutate("Age" = as.period(interval(anewdataset$Date.of.birth, ymd("2020 October 2")))$year) %>%
-   write_csv("q1_part10dataset.csv")
+ 
+
+library(eeptools)
+
+q10 <- q9 %>%
+   mutate("age" = floor(age_calc(q9$Date.of.birth,
+                                 units = "years"))) %>%
+   write.csv("covid_q10.csv")
+
+option <- q9 %>%
+   mutate("age" = floor(as.numeric(difftime(as.Date("2020-10-02"),
+                                      q9$Date.of.birth, units = "weeks"))/52.25))
+
+
+df1$Current_age = floor(as.numeric(difftime(Sys.Date(),df1$Date_of_birth, units = "weeks"))/52.25)
+3
+df1
+
+
 
 # 11 Produce a pie chart for the type of hospitalization for cases born between 1960 and 1980.
 
+library(RColorBrewer)
+myPalette <- brewer.pal(3, "Set3") 
+
+q11 <- raw_covid %>%
+   filter(Date.of.birth >= "1960-01-01" &
+          Date.of.birth <= "1980-12-31") %>%
+   filter(!is.na(Hospitalization.type))
+
+pie_q11 <- table(q11$Hospitalization.type)
+piepercent <- round(100*pie_q11/sum(pie_q11), 1)
+
+#lbls <- paste(names(pie_q11), "\n", pie_q11, sep="")
+
+pie(pie_q11, labels=piepercent, main="Hospitalization type in cases born between 1960 and 1980 (%)",
+    border="white", col=myPalette)
+legend("top", c("Home isolation", "Intensive Care Hospitalization", "Non-Intensive Care Hospitalization"), cex = 0.8,
+       fill=myPalette)
 
 
 
@@ -193,15 +224,6 @@ anewdataset <-
 
 
 
-
-
-
-#birth dates to ages:
-#
-# x <- as.Date(c("2011-01-01", "1996-02-29"))
-# age_calc(x[1],x[2]) # default is age in months
-# age_calc(x[1],x[2], units = "years") # but you can set it to years
-# floor(age_calc(x[1],x[2], units = "years"))
 
 
 

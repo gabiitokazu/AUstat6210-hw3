@@ -10,7 +10,9 @@ highlight: github
 
 ```{r chunksetup, include=FALSE}
 knitr::opts_chunk$set(
-   echo=TRUE, eval=TRUE, include=TRUE, warning=FALSE, message=FALSE, fig.align="center"
+   echo=TRUE, eval=TRUE, include=TRUE,
+   warning=FALSE, message=FALSE,
+   fig.align="center"
 )
 ```
 
@@ -124,7 +126,7 @@ To be able to reproduce the table, I `filtered` the data to the set represented 
  
 ```
 
-```{r view_q4, echo=FALSE, fig.align="center"}
+```{r view_q4, echo=FALSE}
 
 colnames(q4) <- c("","Disease in progress","Healed")
 knitr::kable(q4, align = "c",
@@ -160,7 +162,7 @@ glimpse(q5$Date.of.diagnosis)
 
 </div>
 
-```{r q6, echo=TRUE, eval=TRUE, fig.align="center", warning=FALSE, message=FALSE}
+```{r q6}
 
 df_q6 <- raw_covid %>%
    mutate(q6 = character(nrow(raw_covid)))
@@ -176,7 +178,7 @@ for (i in 1:nrow(df_q6)){
 
 ```
 
-```{r view_q6, fig.align="center"}
+```{r view_q6}
 
 plot_q6 <- table(df_q6$q6)
 
@@ -198,12 +200,13 @@ axis(2,at=seq(0,1000,200))
 
 q7 <- raw_covid %>%
      filter(Date.of.birth >= "1981-01-01") %>%
-     filter(Outcome == "Healed") 
+     filter(Outcome == "Healed") %>%
+     summarize(n())
 
 ```
 
 ```{r view_q7, echo=FALSE}
-q7 <- summarize(q7, n())
+
 colnames(q7) <- "Number of people born after 1981 and healed"
 knitr::kable(q7, align = "c",
              format = "html",
@@ -218,22 +221,24 @@ knitr::kable(q7, align = "c",
 
 </div>
 
-```{r q8, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+```{r q8}
 
 q8 <- raw_covid %>%
    filter(Date.of.birth >= "1982-01-01") %>%
    filter(xor(Symptoms == "Asymptomatic",
-              Hospitalization.type == "Home isolation"))
+              Hospitalization.type == "Home isolation")) %>%
+   summarize(n())
 
 ```
 
 ```{r view_q8, echo=FALSE}
-q8 <- summarize(q8, n())
+
 colnames(q8) <- "Number of people born after 1982, Asymptomatic or in Home isolation"
 knitr::kable(q8, align = "c",
              format = "html",
              table.attr = "style='width:65%;'") %>%
         kableExtra::kable_styling(position = "center")
+
 ```
 \
 
@@ -245,7 +250,7 @@ Here I used the `tolower` function to make sure I will not mismatch due to diffe
 
 </div>
 
-```{r q9, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+```{r q9}
 
 q9 <- raw_covid %>%
      filter(grepl("contact", tolower(Notes)) |
@@ -253,14 +258,28 @@ q9 <- raw_covid %>%
 
 ```
 
+```{r view_q9, echo=FALSE}
+
+glimpse(q9)
+
+```
+
 <div style="text-align: justify">
 
 ### 10: In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.
 
+I simplified the path for tidiness and privacy.
+
 </div>
 
-```{r q10, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+```{r q10}
 
+library(eeptools)
+
+q10 <- q9 %>%
+   mutate("age" = floor(age_calc(q9$Date.of.birth,
+                                 units = "years"))) %>%
+   write.csv("covid_q10.csv")
 
 ```
 
@@ -270,7 +289,28 @@ q9 <- raw_covid %>%
 
 </div>
 
-```{r q11, echo=TRUE, eval=TRUE, warning=FALSE, message=FALSE}
+```{r q11}
 
+q11 <- raw_covid %>%
+   filter(Date.of.birth >= "1960-01-01" &
+          Date.of.birth <= "1980-12-31") %>%
+   filter(!is.na(Hospitalization.type))
+
+
+library(RColorBrewer)
+
+myPalette <- brewer.pal(3, "Set3") 
+pie_q11 <- table(q11$Hospitalization.type)
+piepercent <- round(100*pie_q11/sum(pie_q11), 1)
+
+pie(pie_q11,
+    labels=piepercent,
+    main="Hospitalization type in cases born between 1960 and 1980 (%)",
+    border="white",
+    col=myPalette)
+legend("left",
+       c("Home isolation", "Intensive Care Hospitalization", "Non-Intensive Care Hospitalization"),
+       cex = 0.8,
+       fill=myPalette)
 
 ```
