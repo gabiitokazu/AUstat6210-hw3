@@ -286,7 +286,7 @@ glimpse(q9)
 
 ### 10: In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.
 
-I simplified the path for tidiness and privacy, and it follows an `glimpse` of what the "age" column looks like:
+I simplified the path for tidiness and privacy, and it follows an `glimpse` of what the "age" column looks like. The `.csv` file is available on the `/output` folder in the [GitHub repo](https://github.com/AU-R-Programming/HW3-Gabii/blob/main/output):
 
 </div>
 

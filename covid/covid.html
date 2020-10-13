@@ -574,7 +574,7 @@ Number of people born after 1982, Asymptomatic or in Home isolation
 </p>
 <div style="text-align: justify">
 <h3 id="in-the-previous-dataset-add-a-column-reporting-the-age-in-years-therefore-in-integer-format-of-each-patient-as-of-october-2nd-2020.-save-this-dataset-into-a-.csv-file-and-make-it-available-on-your-github-repository-for-this-assignment.">10: In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.</h3>
-<p>I simplified the path for tidiness and privacy, and it follows an <code>glimpse</code> of what the “age” column looks like:</p>
+<p>I simplified the path for tidiness and privacy, and it follows an <code>glimpse</code> of what the “age” column looks like. The <code>.csv</code> file is available on the <code>/output</code> folder in the <a href="https://github.com/AU-R-Programming/HW3-Gabii/blob/main/output">GitHub repo</a>:</p>
 </div>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>q10 &lt;-<span class="st"> </span>q9 <span class="op">%&gt;%</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a><span class="st">   </span><span class="kw">mutate</span>(<span class="st">&quot;age&quot;</span> =<span class="st"> </span><span class="kw">floor</span>(<span class="kw">age_calc</span>(q9<span class="op">$</span>Date.of.birth,</span>
