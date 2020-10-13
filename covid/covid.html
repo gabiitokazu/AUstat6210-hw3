@@ -346,6 +346,7 @@ a.sourceLine {
 
 
 <section class="main-content">
+<p>Final <code>.html</code> file knitted in October 12, 2020 (available in <code>/output</code> folder): Source code available on <a href="https://github.com/AU-R-Programming/HW3-Gabii/blob/main/covid/covid.Rmd">GitHub</a>.!</p>
 <style type="text/css">
  
   .image {
@@ -569,6 +570,8 @@ Number of people born after 1982, Asymptomatic or in Home isolation
 ## $ Date.of.outcome       &lt;date&gt; 2020-04-15, 2020-03-14, 2020-04-15, 2020-04-19…
 ## $ Date.of.diagnosis     &lt;date&gt; 2020-03-05, 2020-03-06, 2020-03-07, 2020-03-07…
 ## $ Notes                 &lt;chr&gt; &quot;In contact with a positive patient (outside pr…</code></pre>
+<p><br />
+</p>
 <div style="text-align: justify">
 <h3 id="in-the-previous-dataset-add-a-column-reporting-the-age-in-years-therefore-in-integer-format-of-each-patient-as-of-october-2nd-2020.-save-this-dataset-into-a-.csv-file-and-make-it-available-on-your-github-repository-for-this-assignment.">10: In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.</h3>
 <p>I simplified the path for tidiness and privacy, and it follows an <code>glimpse</code> of what the “age” column looks like:</p>
@@ -578,10 +581,12 @@ Number of people born after 1982, Asymptomatic or in Home isolation
 <span id="cb16-3"><a href="#cb16-3"></a>                                 <span class="dt">units =</span> <span class="st">&quot;years&quot;</span>))) <span class="op">%&gt;%</span></span>
 <span id="cb16-4"><a href="#cb16-4"></a><span class="st">   </span><span class="kw">write.csv</span>(<span class="st">&quot;covid_q10.csv&quot;</span>)</span></code></pre></div>
 <pre><code>##  num [1:725] 64 77 23 55 60 87 79 92 84 84 ...</code></pre>
+<p><br />
+</p>
 <div style="text-align: justify">
 <h3 id="produce-a-pie-chart-for-the-type-of-hospitalization-for-cases-born-between-1960-and-1980.">11: Produce a pie chart for the type of hospitalization for cases born between 1960 and 1980.</h3>
 <p>I used again the piping with filters and logical operators to select the requested data and used the <code>base</code> pie type chart with the <code>RColorBrewer</code> package for prettier colors. I added the labels as percentages, simply calculating those in a separate object by hand, and added the names of the variables as a legend.</p>
-<p>I cheated to put the legend in the place that it shows in this document. Because of the length of the names, even if I surpass the nominal values for the argument position by playing with coordinates, I get the legend either on top of the pie, or cut off the chart area. The code I’ve actually used can be seen after the said plot.!</p>
+<p>I kind of cheated to put the legend in the place that it shows in this document. Because of the length of the names, even if I surpass the nominal values for the argument position by playing with coordinates, I get the legend either on top of the pie, or cut off the chart area. The code I’ve actually used can be seen after the said plot.!</p>
 </div>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>q11 &lt;-<span class="st"> </span>raw_covid <span class="op">%&gt;%</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="st">   </span><span class="kw">filter</span>(Date.of.birth <span class="op">&gt;=</span><span class="st"> &quot;1960-01-01&quot;</span> <span class="op">&amp;</span></span>

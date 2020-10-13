@@ -4,9 +4,11 @@ subtitle: "STAT 6210 AU Fall 2020"
 author: "Ana Gabriela Itokazu"
 output:
      prettydoc::html_pretty:
-     theme: Tactile
+     theme: cayman
 highlight: github
 ---
+
+Final `.html` file knitted in October 12, 2020 (available in `/output` folder): Source code available on [GitHub](https://github.com/AU-R-Programming/HW3-Gabii/blob/main/covid/covid.Rmd).!
 
 ```{r chunksetup, include=FALSE}
 knitr::opts_chunk$set(
@@ -278,6 +280,7 @@ q9 <- raw_covid %>%
 glimpse(q9)
 
 ```
+\
 
 <div style="text-align: justify">
 
@@ -305,6 +308,7 @@ q10 <- q9 %>%
 glimpse(q10$age)
 
 ```
+\
 
 <div style="text-align: justify">
 
@@ -312,7 +316,7 @@ glimpse(q10$age)
 
 I used again the piping with filters and logical operators to select the requested data and used the `base` pie type chart with the `RColorBrewer` package for prettier colors. I added the labels as percentages, simply calculating those in a separate object by hand, and added the names of the variables as a legend.
 
-I cheated to put the legend in the place that it shows in this document. Because of the length of the names, even if I surpass the nominal values for the argument position by playing with coordinates, I get the legend either on top of the pie, or cut off the chart area. The code I've actually used can be seen after the said plot.!
+I kind of cheated to put the legend in the place that it shows in this document. Because of the length of the names, even if I surpass the nominal values for the argument position by playing with coordinates, I get the legend either on top of the pie, or cut off the chart area. The code I've actually used can be seen after the said plot.!
 
 </div>
 
