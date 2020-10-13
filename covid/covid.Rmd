@@ -4,7 +4,7 @@ subtitle: "STAT 6210 AU Fall 2020"
 author: "Ana Gabriela Itokazu"
 output:
      prettydoc::html_pretty:
-     theme: cayman
+     theme: Tactile
 highlight: github
 ---
 

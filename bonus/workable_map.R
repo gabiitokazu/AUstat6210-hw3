@@ -54,10 +54,6 @@ mapview(map_sf)
 # 
 # 
 # 
-# 
-# 
-# ------------------
-# #fazer mapas dinamicos!!!!!!!!!
 # ------------------
 
 ##--example--------------------------------------------------
@@ -66,6 +62,15 @@ m <- leaflet() %>%
      addMarkers(lng=174.768, lat=-36.852, popup="The birthplace of R")
 
 ##-----------------------------------------------------------
+ExampleCity <- paste(sep = "<br/>",
+                     "<b>Example Team</b>",
+                     "<a href='https://www.exampleteam.com/en/'>Example Team</a>",
+                     "Champions: 100"
+)
+
+
+
+
 
 Barcelona <- paste(sep = "<br/>",
                  "<b>Barcelona</b>",
@@ -103,34 +108,70 @@ n <- leaflet() %>%
 
 
 m <- leaflet() %>%
-     addTiles() %>%  # Add default OpenStreetMap map tiles
+     addTiles() %>%
      addPopups(lng=-3.7037902, lat=40.41678, Madrid,
-               options = popupOptions(closeButton = FALSE)) %>%
+               options = popupOptions(closeButton = TRUE)) %>%
      addPopups(lng=2.1734035, lat=41.38506, Barcelona,
-              options = popupOptions(closeButton = FALSE)) %>%
+              options = popupOptions(closeButton = TRUE)) %>%
      addPopups(lng=-2.9349852, lat=43.26301, Bilbao,
-               options = popupOptions(closeButton = FALSE)) %>%
+               options = popupOptions(closeButton = TRUE)) %>%
      addPopups(lng=-0.3762881, lat=39.46991, Valencia,
-               options = popupOptions(closeButton = FALSE))
-     
+               options = popupOptions(closeButton = TRUE))
 
+LOOP:
+        
+        
+     
+#---------------------------------------------------------
 o <- leaflet() %>%
      addTiles() %>% 
      addMarkers(lng=-3.7037902, lat=40.41678,
                 label= Madrid,
                 labelOptions = labelOptions(noHide = T))
 
+#----# iconzinho bonitinho
+icons <- awesomeIcons(
+        icon = "football-outline",
+        iconColor = 'black',
+        markerColor = "white",
+        library = 'ion'
+)
+leaflet(data = mymap) %>%
+        addTiles() %>%
+        addAwesomeMarkers(icon = icons) %>%
+        frameWidget()
+#----#
+
+####----------------------------------------------------------
+# coisas bonitas:
+
+Madrid2 <- c(lon=-3.7037902, lat=40.41678)
+Barcelona2 <- c(lon=2.1734035, lat=41.38506)
+Bilbao2 <- c(lon=-2.9349852, lat=43.26301)
+Valencia2 <- c(lon=-0.3762881, lat=39.46991)
+
+locus <- "Spain"
+
+MyMap <- get_map(location=locus, zoom=12, source="stamen", maptype="watercolor", crop=TRUE)
+
+MyMap <- get_map(location=locus, zoom=10, source="stamen", maptype="toner", crop=TRUE)
+
+ggmap(MyMap)
+
+p <- ggmap(MyM) %>%  # Add default OpenStreetMap map tiles
+        addPopups(lng=-3.7037902, lat=40.41678, Madrid,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addPopups(lng=2.1734035, lat=41.38506, Barcelona,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addPopups(lng=-2.9349852, lat=43.26301, Bilbao,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addPopups(lng=-0.3762881, lat=39.46991, Valencia,
+                  options = popupOptions(closeButton = FALSE))
 
 
 
 
-
-
-
-
-
-
-
+#####--- totally not totally satisfied, but I want to play with other maps........
 
 
 

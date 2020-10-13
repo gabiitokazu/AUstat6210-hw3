@@ -4,9 +4,17 @@ subtitle: "STAT 6210 AU Fall 2020"
 author: "Ana Gabriela Itokazu"
 output:
      prettydoc::html_pretty:
-     theme: cayman
+     theme: Tactile
 highlight: github
 ---
+
+```{r chunksetup, include=FALSE}
+knitr::opts_chunk$set(
+   echo=TRUE, eval=TRUE, include=TRUE,
+   warning=FALSE, message=FALSE,
+   fig.align="center"
+)
+```
 
 ```{r clear_genv, echo=FALSE}
 rm(list = ls())
@@ -29,15 +37,13 @@ rm(list = ls())
 
 <div style="text-align: justify">
 
-### Using the leaflet and htmltools libraries (or others of your choice), create a simple map to represent the historical champions of La Liga. More specifically, the goal of this problem is to obtain the map below or something similar to it:
+### Using the leaflet and htmltools libraries (or others of your choice), create a simple map to represent the historical champions of La Liga. More specifically, the goal of this problem is to obtain the map below or something similar to:
 
 </div>
-
 
 <div class="image" id="example">
 <img src="mapz.png"/>
 </div>
-
 
 <div style="text-align: justify">
 
@@ -53,23 +59,19 @@ rm(list = ls())
 
 \
 
-In dealing with the type of data that geocoding has, then wrangling the data, then translating that to a map, there are a lot of packages that I used:
-
 </div>
 
-```{r install, echo=TRUE, message=FALSE, warning=FALSE}
+Packages used in this assignment:
 
-# ESCREVER PRAQ SERVE CADA UM
+```{r install}
 
 library(htmltools)
 library(leaflet)
 library(tidyverse)
 library(ggmap)
 library(sf)
-library(mapview)
 library(knitr)
-#rgdal
-#ggplot2
+
 ```
 
 <div style="text-align: justify">
@@ -78,7 +80,7 @@ For me to be able to use the `sf` package to retrieve the coordinates data from 
 
 </div>
 
-```{r APIkey, echo=TRUE, message=FALSE, warning=FALSE}
+```{r APIkey}
 googlemaps_api_key = Sys.getenv("GOOGLEMAPS_API_KEY")
 
 register_google(key = googlemaps_api_key)
@@ -86,11 +88,11 @@ register_google(key = googlemaps_api_key)
 
 <div style="text-align: justify">
 
-I built `tibble()` with the data of each column of the provided table: "Teams", "Champions", and "City". Then I unified them as a "bonus" `data.frame()`. All this seems strange, but it facilitates later, when managing the packages `sf` and `mapview`, saving us some time converting stuff.
+I built a `tibble()` with the data of each column of the provided table: "Teams", "Champions", and "City". Then I unified them as a "bonus" `data.frame()`. All this seems strange, but it facilitates when using the package `sf`.
 
 </div>
 
-```{r tibbles_df, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+```{r tibbles_df}
 
 Teams <- tibble(Teams = c("Real Madrid",
                           "FC Barcelona",
@@ -110,75 +112,24 @@ City <- tibble(City = c("Madrid, Spain",
 
 bonus <- bind_cols(Teams, Champions, City)
 
-```
-
-<div style="text-align: justify">
-
-Which gives us this:
-
-</div>
-
-```{r view_tb_bonus, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
-str(bonus)
-```
-
-<div style="text-align: justify">
-
-<!-- explain (crs = 4326), explain mutate_geocode(), explain sf -->
-
-</div>
-
-```{r mutate_geocode, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+# this goes to googlemaps and brings back the coordinates (lon, lat):
 map <- mutate_geocode(bonus, City)
+
 ```
 
-<div style="text-align: justify">
-
-<!-- blob -->
-
-</div>
-
-```{r view_tb_coords, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
+```{r view_tb_coords, echo=FALSE}
+colnames(map) = c("Teams","Champions","City","Longitude","Latitude")
 kable(map)
 ```
 
 <div style="text-align: justify">
 
-<!-- Now we have all the pretty data we wanted. The map seemed easy enough - it is not.  
-
------------------{era pra estar num chunk}----------------------------
-map_sf <- st_as_sf(map, coords = c("lon","lat"), crs = 4326)
-# AINDA TEM QUE FAZER FUNCIONAR O mapview() PRA MOSTRAR
-#mapview(map_sf)
-#
-#erro:
-#Error in UseMethod("st_as_sf") : 
-#  no applicable method for 'st_as_sf' applied to an object of class "function"
-## mapview(map_sf)@map     --- works here, not there
-## knit_print.mapview(MYMAP)   --- nope
-## MYMAP@map        --- works here, not there
-#
-----------------------------------------------------------------------
-
--->
+From here, I wanted to use the `sf` package, BUT I couldn't make it work knitting in html.! So once I had the coordinates, I build an object to each city, likewise:
 
 </div>
 
-```{r example, echo=TRUE, eval=FALSE, message=FALSE, warning=FALSE}
-#example:
+```{r prep_map}
 
-City <- paste(sep = "<br/>",
-                 "<b>Example Team</b>",
-                 "<a href='https://www.exampleteam.com/en/'>Example Team</a>",
-                 "Champions: 100"
-)
-
-```
-
-```{r prep_map, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
-
-
-# FALAR DAS BANDEIROLAS
 Barcelona <- paste(sep = "<br/>",
                  "<b>Barcelona</b>",
                  "<a href='https://www.fcbarcelona.com/en/'>FC Barcelona</a>",
@@ -209,41 +160,14 @@ Valencia <- paste(sep = "<br/>",
 
 <div style="text-align: justify">
 
-We can use markers to point out the locations (just as a pin in GoogleMaps), in which one can click and then a pop-up will appear with the name of the city, a link that leads to the teams' home page, and the number of times said team has been champion:
+Next I just set up the popups with the information we just put in each object, relating it to their coordinates:
 
 </div>
 
-```{r map1, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
+```{r map}
 
-map1 <- leaflet() %>%
+map <- leaflet() %>%
      addTiles() %>%
-     addMarkers(lng=-3.7037902, lat=40.41678, popup=Madrid) %>%
-     addMarkers(lng=2.1734035, lat=41.38506, popup=Barcelona) %>%
-     addMarkers(lng=-2.9349852, lat=43.26301, popup=Bilbao) %>%
-     addMarkers(lng=-0.3762881, lat=39.46991, popup=Valencia)
-
-
-### arrumar o quadrante, 
-```
-
-```{r view_map1, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
-map1
-```
-
-\
-
-
-<div style="text-align: justify">
-
-... Or we can just throw the pop-ups in there, as the reference map provided:
-
-</div>
-
-```{r map2, echo=TRUE, eval=TRUE, message=FALSE, warning=FALSE}
-
-
-map2 <- leaflet() %>%
-     addTiles() %>%  # Add default OpenStreetMap map tiles
      addPopups(lng=-3.7037902, lat=40.41678, Madrid,
                options = popupOptions(closeButton = FALSE)) %>%
      addPopups(lng=2.1734035, lat=41.38506, Barcelona,
@@ -252,8 +176,10 @@ map2 <- leaflet() %>%
                options = popupOptions(closeButton = FALSE)) %>%
      addPopups(lng=-0.3762881, lat=39.46991, Valencia,
                options = popupOptions(closeButton = FALSE))
+
 ```
 
-```{r view_map2, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE}
-map2
-```
+<div class="image" id="example">
+<img src="map_gabi.png"/>
+</div>
+
