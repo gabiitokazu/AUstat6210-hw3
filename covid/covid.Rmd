@@ -8,7 +8,7 @@ output:
 highlight: github
 ---
 
-Final `.html` file knitted in October 16, 2020 (available in [`/output` folder](https://github.com/AU-R-Programming/HW3-Gabii/tree/main/output): Source code available on [GitHub](https://github.com/AU-R-Programming/HW3-Gabii/blob/main/covid/covid.Rmd).!
+Final `.html` file knitted in October 16, 2020 (available in [`/output` folder](https://github.com/AU-R-Programming/HW3-Gabii/tree/main/output)): Source code available on [GitHub](https://github.com/AU-R-Programming/HW3-Gabii/blob/main/covid/covid.Rmd).!
 
 ```{r chunksetup, include=FALSE}
 knitr::opts_chunk$set(
@@ -34,7 +34,7 @@ rm(list = ls())
 
 <div style="text-align: justify">
 
-### The `covid.csv` file contains data on Covid-19 cases in a province of Italy. For the following exercises, only provide first rows or elements in the output if the results are too large.
+### The "covid.csv" file contains data on Covid-19 cases in a province of Italy. For the following exercises, only provide first rows or elements in the output if the results are too large.
 
 </div>
 
@@ -52,7 +52,9 @@ I made sure that the `.csv` file was in the same working directory as my project
 
 ```{r import}
 
-raw_covid <- read.csv(file = "covid.csv", row.names=1, header=TRUE)
+raw_covid <- read.csv(file = "covid.csv",
+                      row.names=1,
+                      header=TRUE)
 
 colnames(raw_covid)[8] <- "Notes"
 
@@ -343,8 +345,11 @@ pie(pie_q11,
     border="white",
     cex=0.7,
     col=myPalette)
+
 legend("bottom",
-       c("Home isolation", "Intensive Care Hospitalization", "Non-Intensive Care Hospitalization"),
+       c("Home isolation",
+         "Intensive Care Hospitalization",
+         "Non-Intensive Care Hospitalization"),
        cex = 0.8,
        fill=myPalette)
 
@@ -378,7 +383,9 @@ pie(pie_q11,
 
 legend(locator(1),
        inset=c(-0.2,0),
-       c("Home isolation", "Intensive Care Hospitalization", "Non-Intensive Care Hospitalization"),
+       c("Home isolation",
+         "Intensive Care Hospitalization",
+         "Non-Intensive Care Hospitalization"),
        cex = 0.8,
        fill=myPalette)
 
