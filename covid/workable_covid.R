@@ -130,7 +130,7 @@ q7 <- raw_covid %>%
 #### ------ nope---------------------------
 
 q8 <- raw_covid %>%
-      filter(Date.of.birth >= "1982-01-01")
+      filter(Date.of.birth <= "1982-01-01")
 
 q8$but_not_both = factor(rep(NA, nrow(q8)), levels =1:2, labels = c("Asymptomatic", "Home isolation"))
 
@@ -164,8 +164,8 @@ q8 <- raw_covid %>%
 # 9 Create a new dataset including only the rows where “Epidemiological.link…Notes” includes the words “contact” OR “symptom” (or both). Hint: you can use the grep() function and tolower().
 # 
 q9 <- raw_covid %>%
-     filter(grepl("contact", tolower(Notes)) |
-            grepl("symptom", tolower(Notes)))
+     filter(grep("contact", tolower(Notes)) |
+            grep("symptom", tolower(Notes)))
 
 # nope any()
 #"contact", tolower(Notes) 

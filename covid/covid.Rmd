@@ -8,7 +8,7 @@ output:
 highlight: github
 ---
 
-Final `.html` file knitted in October 12, 2020 (available in `/output` folder): Source code available on [GitHub](https://github.com/AU-R-Programming/HW3-Gabii/blob/main/covid/covid.Rmd).!
+Final `.html` file knitted in October 16, 2020 (available in [`/output` folder](https://github.com/AU-R-Programming/HW3-Gabii/tree/main/output): Source code available on [GitHub](https://github.com/AU-R-Programming/HW3-Gabii/blob/main/covid/covid.Rmd).!
 
 ```{r chunksetup, include=FALSE}
 knitr::opts_chunk$set(
@@ -38,7 +38,7 @@ rm(list = ls())
 
 </div>
 
-```{r install, echo=FALSE, include=FALSE}
+```{r install, echo=FALSE}
 library(tidyverse)
 library(knitr)
 library(eeptools)
@@ -209,14 +209,14 @@ axis(2,at=seq(0,1000,200))
 
 ### 7: Count the number of cases of people born after 1981 and that have healed.
 
-For questions 7 and 8 I used the same method: a piping with filters nesting the logical operators that fulfill the requirements.
+For questions 7 and 8 I used the same method: a piping with filters nesting the logical operators that fulfill the requirements. For question 7 I did not include people born during the year 1981, while for question 8 I did not include people born during the year 1982.
 
 </div>
 
 ```{r q7}
 
 q7 <- raw_covid %>%
-     filter(Date.of.birth >= "1981-01-01") %>%
+     filter(Date.of.birth >= "1981-12-01") %>%
      filter(Outcome == "Healed") %>%
      summarize(n())
 
@@ -241,7 +241,7 @@ knitr::kable(q7, align = "c",
 ```{r q8}
 
 q8 <- raw_covid %>%
-   filter(Date.of.birth >= "1982-01-01") %>%
+   filter(Date.of.birth <= "1982-01-01") %>%
    filter(xor(Symptoms == "Asymptomatic",
               Hospitalization.type == "Home isolation")) %>%
    summarize(n())
@@ -382,4 +382,13 @@ legend(locator(1),
        cex = 0.8,
        fill=myPalette)
 
+```
+
+
+If not mentioned in the chunk, the packages used in this assignment were:
+
+```{r obs, eval=FALSE}
+library(tidyverse)
+library(knitr)
+library(eeptools)
 ```
