@@ -25,7 +25,7 @@ knitr::opts_chunk$set(
 rm(list = ls())
 ```
 
-```{r install, echo=FALSE, eval=FALSE}
+```{r install, echo=FALSE}
 library(tidyverse)
 library(dplyr)
 library(knitr)
@@ -80,7 +80,7 @@ glimpse(raw_salary[15])
 <div style="text-align: justify">
 \
 
-### 3: The values in salary have a space in front of them (e.g. " >50K"): remove the space from all values (hint: you can use substring()).
+### 3: The values in salary have a space in front of them (e.g. " >50K"): remove the space from all values.
 
 Because it was a leading space, I choose to use `trimws()`. The argument `which` could be `"right"` for trailing spaces, `"both"` for leading and trailing and to remove all spaces.
 
@@ -88,7 +88,8 @@ Because it was a leading space, I choose to use `trimws()`. The argument `which`
 
 ```{r q3}
 
-raw_salary$salary <- trimws(raw_salary$salary, which = "left")
+raw_salary$salary <- trimws(raw_salary$salary,
+                            which = "left")
 
 ```
 
@@ -109,13 +110,15 @@ Here, I chose to factorize the `salary` variable, giving it two levels with the 
 
 ```{r q4}
 
-raw_salary$salary <- factor(raw_salary$salary, levels = c("<=50K",">50K"), labels = c(0,1))
+raw_salary$salary <- factor(raw_salary$salary,
+                            levels = c("<=50K",">50K"),
+                            labels = c(0,1))
 
 ```
 
 ```{r view_q4, echo=FALSE}
 
-glimpse(raw_salary$salary)
+class(raw_salary$salary)
 
 ```
 \
@@ -128,14 +131,18 @@ glimpse(raw_salary$salary)
 
 ```{r q5}
 
-fit <- glm(salary ~.,data=raw_salary,family=binomial)
+raw_salary <- subset(raw_salary, select = -c(fnlwgt,education.num,capital.loss,capital.gain))
+
+fit <- glm(salary ~.,
+           data = raw_salary,
+           family = binomial)
 
 ```
 \
 
 <div style="text-align: justify">
 
-### 6: Using the information in fit (hint: you can use the functions coef() and summary() to extract information), create a dataframe collecting: The names of the variables (names of the rows of the dataframe); The value of the coefficients (first column); A logical vector stating which coefficients are positive (second column); The p-values (third column).
+### 6: Using the information in fit, create a dataframe collecting: The names of the variables (names of the rows of the dataframe); The value of the coefficients (first column); A logical vector stating which coefficients are positive (second column); The p-values (third column).
 
 First I extract the information using `summary.glm()`, which outputs a matrix with the values of `Estimates`, `Standard Errors`, `z-value`, and `p-values` for all variables. The second line binds this matrix with a new column that states a logical vector for values of `Estimates` bigger than zero (positive). The third line simply renames the TRUE/FALSE for Positive/Negative for tidiness. Finally, the last line reorders the data frame to the requested order.
 
@@ -143,9 +150,12 @@ First I extract the information using `summary.glm()`, which outputs a matrix wi
 
 ```{r q6}
 
-fit_results <- as.data.frame(summary.glm(fit)$coefficients[,c(1,4)])
+fit_results <- as.data.frame(
+                    summary.glm(fit)$coefficients
+                    [,c(1,4)])
 
-q6 <- cbind(fit_results, coeff=fit_results[,1] > 0)
+q6 <- cbind(fit_results,
+            coeff=fit_results[,1] > 0)
 
 q6$coeff <- factor(q6$coeff,
                    levels = c("FALSE","TRUE"),
@@ -168,13 +178,15 @@ kable(head(q6))
 
 ### 7: Subset the dataframe created in the previous question to only show the rows where the p-values are strictly smaller than 0.05. Knowing that (i) the remaining rows are statistically significant and that (ii) positive coefficients contribute to increase the probability of a salary larger than $50,000 (the opposite for negative values), comment on those variables that negatively contribute to salary..
 
-Code-wise, I simply filter the `p-values` smaller than 0.05. This gives us an interesting overview though (see Table below)...
+Code-wise, I simply filter the `p-values` smaller than 0.05. This gives us an interesting overview though (see Table below)... Discussing the why's of the variables that affect positively the salary would probably be inciting, to say the least (*vide* sex - Male, race- White).
 
-The only negative effect that a marital status has on one's income is when it corresponds to "never-married". This is probably due to the taxes system in the U.S., as the marital status interfere on the tiers that one belongs when filing, meaning that if someone that does not reaches `50K` is married to someone that makes more than double that, can still belong to the `> 50K` tier. Being a parent also impacts negatively the salary, which agrees to common sense: children are expensive.
+The only negative effect that a marital status has on one's income is when it corresponds to "never-married". This is probably due to the taxes system in the U.S., as the marital status interfere on the tiers that one belongs when filing, meaning that if someone that does not reaches `50K` is married to someone that makes more than double that, can still belong to the `>50K` tier, super underestimating the "never-married" status.
+
+Being a parent also impacts negatively the salary, which agrees to common sense: children are expensive. But this factor should not affect the salary *per se*, but the liquid income, or general expenses, I think. It is probably reflective on the secondary consequences that having children have on one's life which may affect the salary (not having flexible hours, more picky to choose jobs - as location, cost of family living, and moving have to be accounted for, more time to complete education on average (?)).
 
 The education up to 7<sup>th</sup> and 8<sup>th</sup> grade is tricky because it probably does not mean that "if you have education up to 7<sup>th</sup> and 8<sup>th</sup> grade you will be affected negatively on your income", rather means that people who did not have more than said grades on their education were affected negatively - theory that can be supported by the fact that all other higher level education were marked as a positive factor, contributing to a higher salary.
 
-Two of the saddest variables to impact negatively the income are occupation and country of origin. I will ignore the origin "South", because I'm honestly not sure what it means, and the data base did not provide enough information. Being originated from Colombia (**Columbia**) corresponds to a negative effect, which can be due to the visa type, the prejudice suffered, or just the how the average population that migrates from this country fits into all the other variables presented (such as occupation, relationship, education...). For occupation, farming and cleaning come up as negative effects on income, and this may be due purely to the average payment for this type of service and physical capability of working hours.
+Two of the saddest variables to impact negatively the income are occupation and country of origin. I will ignore the origin "South", because I'm honestly not sure what it means, and the data base did not provide enough information. Being originated from Colombia (*Columbia*) corresponds to a negative effect, which can be due to the visa type, the prejudice suffered, or just the how the average population that migrates from this country fits into all the other variables presented (such as occupation, relationship, education...). For occupation, farming and cleaning come up as negative effects on income, and this may be due purely to the average payment for this type of service and physical capability of working hours.
 
 </div>
 
@@ -191,13 +203,14 @@ q7 %>%
         kable(booktabs = T) %>%
         kable_styling() %>%
         row_spec(which(q7$q6 == "Negative"),
-                 color = "black", background = "lightgrey")
+                 color = "black",
+                 background = "lightgrey")
 
 ```
 
 The packages used in this assignment were:
 
-```{r obs}
+```{r obs, eval=FALSE}
 library(tidyverse)
 library(knitr)
 library(kableExtra)

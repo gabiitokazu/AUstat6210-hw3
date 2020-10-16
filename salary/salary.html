@@ -346,11 +346,11 @@ a.sourceLine {
 
 
 <section class="main-content">
-<p>Final <code>.html</code> file knitted in October 12, 2020 (available in <code>/output</code> folder): Source code available on <a href="https://github.com/AU-R-Programming/HW3-Gabii/blob/main/salary/salary.Rmd">GitHub</a>.!</p>
 <div style="text-align: justify">
-<h3 id="the-covid.csv-file-contains-data-on-covid-19-cases-in-a-province-of-italy.-for-the-following-exercises-only-provide-first-rows-or-elements-in-the-output-if-the-results-are-too-large.">The <code>covid.csv</code> file contains data on Covid-19 cases in a province of Italy. For the following exercises, only provide first rows or elements in the output if the results are too large.</h3>
+<p>Final <code>.html</code> file knitted in October 16, 2020 (available in <a href="https://github.com/AU-R-Programming/HW3-Gabii/tree/main/output."><code>/output</code> folder</a>): Source code available on <a href="https://github.com/AU-R-Programming/HW3-Gabii/blob/main/salary/salary.Rmd">GitHub</a>.!</p>
 </div>
 <div style="text-align: justify">
+<h3 id="the-adult.csv-dataset-was-downloaded-from-the-uci-data-repository-and-collects-census-information-paired-with-a-variable-determining-whether-an-individuals-salary-is-larger-or-smaller-than-or-equal-to-50000.">The “adult.csv” dataset was downloaded from the <a href="https://archive.ics.uci.edu/ml/datasets/Adult">UCI data repository</a> and collects census information paired with a variable determining whether an individual’s salary is larger or smaller than (or equal to) $50,000.</h3>
 <h3 id="load-the-data-and-check-the-formatting-of-the-variables.">1: Load the data and check the formatting of the variables.</h3>
 <p>I made sure that the <code>.csv</code> file was in the same working directory as my project, so there was no file path in the command. I make the first row of the <code>raw_salary</code> data frame as the columns names, and the first column, as the rows names.</p>
 </div>
@@ -387,10 +387,11 @@ a.sourceLine {
 <div style="text-align: justify">
 <p><br />
 </p>
-<h3 id="the-values-in-salary-have-a-space-in-front-of-them-e.g.-50k-remove-the-space-from-all-values-hint-you-can-use-substring.">3: The values in salary have a space in front of them (e.g. &quot; &gt;50K&quot;): remove the space from all values (hint: you can use substring()).</h3>
+<h3 id="the-values-in-salary-have-a-space-in-front-of-them-e.g.-50k-remove-the-space-from-all-values.">3: The values in salary have a space in front of them (e.g. &quot; &gt;50K&quot;): remove the space from all values.</h3>
 <p>Because it was a leading space, I choose to use <code>trimws()</code>. The argument <code>which</code> could be <code>&quot;right&quot;</code> for trailing spaces, <code>&quot;both&quot;</code> for leading and trailing and to remove all spaces.</p>
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>raw_salary<span class="op">$</span>salary &lt;-<span class="st"> </span><span class="kw">trimws</span>(raw_salary<span class="op">$</span>salary, <span class="dt">which =</span> <span class="st">&quot;left&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>raw_salary<span class="op">$</span>salary &lt;-<span class="st"> </span><span class="kw">trimws</span>(raw_salary<span class="op">$</span>salary,</span>
+<span id="cb5-2"><a href="#cb5-2"></a>                            <span class="dt">which =</span> <span class="st">&quot;left&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 32,561
 ## Columns: 1
 ## $ salary &lt;chr&gt; &quot;&lt;=50K&quot;, &quot;&lt;=50K&quot;, &quot;&lt;=50K&quot;, &quot;&lt;=50K&quot;, &quot;&lt;=50K&quot;, &quot;&lt;=50K&quot;, &quot;&lt;=50K&quot;,…</code></pre>
@@ -400,29 +401,38 @@ a.sourceLine {
 <h3 id="again-in-the-variable-salary-replace-50k-with-the-value-1-and-50k-with-0.-make-sure-to-format-it-as-a-factor-with-two-levels.">4: Again, in the variable salary, replace “&gt;50K” with the value 1 and “&lt;=50K” with 0. Make sure to format it as a factor with two levels.</h3>
 <p>Here, I chose to factorize the <code>salary</code> variable, giving it two levels with the labels “0” and “1”.</p>
 </div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>raw_salary<span class="op">$</span>salary &lt;-<span class="st"> </span><span class="kw">factor</span>(raw_salary<span class="op">$</span>salary, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;&lt;=50K&quot;</span>,<span class="st">&quot;&gt;50K&quot;</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
-<pre><code>##  Factor w/ 2 levels &quot;0&quot;,&quot;1&quot;: 1 1 1 1 1 1 1 2 2 2 ...</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>raw_salary<span class="op">$</span>salary &lt;-<span class="st"> </span><span class="kw">factor</span>(raw_salary<span class="op">$</span>salary,</span>
+<span id="cb7-2"><a href="#cb7-2"></a>                            <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;&lt;=50K&quot;</span>,<span class="st">&quot;&gt;50K&quot;</span>),</span>
+<span id="cb7-3"><a href="#cb7-3"></a>                            <span class="dt">labels =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>))</span></code></pre></div>
+<pre><code>## [1] &quot;factor&quot;</code></pre>
 <p><br />
 </p>
 <div style="text-align: justify">
 <h3 id="use-the-glm-function-to-estimate-this-logistic-model.-only-specify-the-arguments-formula-salary-.-data-and-family-binomial.-save-the-result-of-the-estimation-in-an-object-called-fit.">5: Use the glm() function to estimate this logistic model. Only specify the arguments formula = salary ~ ., data and family = binomial. Save the result of the estimation in an object called fit.</h3>
 </div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>fit &lt;-<span class="st"> </span><span class="kw">glm</span>(salary <span class="op">~</span>.,<span class="dt">data=</span>raw_salary,<span class="dt">family=</span>binomial)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>raw_salary &lt;-<span class="st"> </span><span class="kw">subset</span>(raw_salary, <span class="dt">select =</span> <span class="op">-</span><span class="kw">c</span>(fnlwgt,education.num,capital.loss,capital.gain))</span>
+<span id="cb9-2"><a href="#cb9-2"></a></span>
+<span id="cb9-3"><a href="#cb9-3"></a>fit &lt;-<span class="st"> </span><span class="kw">glm</span>(salary <span class="op">~</span>.,</span>
+<span id="cb9-4"><a href="#cb9-4"></a>           <span class="dt">data =</span> raw_salary,</span>
+<span id="cb9-5"><a href="#cb9-5"></a>           <span class="dt">family =</span> binomial)</span></code></pre></div>
 <p><br />
 </p>
 <div style="text-align: justify">
-<h3 id="using-the-information-in-fit-hint-you-can-use-the-functions-coef-and-summary-to-extract-information-create-a-dataframe-collecting-the-names-of-the-variables-names-of-the-rows-of-the-dataframe-the-value-of-the-coefficients-first-column-a-logical-vector-stating-which-coefficients-are-positive-second-column-the-p-values-third-column.">6: Using the information in fit (hint: you can use the functions coef() and summary() to extract information), create a dataframe collecting: The names of the variables (names of the rows of the dataframe); The value of the coefficients (first column); A logical vector stating which coefficients are positive (second column); The p-values (third column).</h3>
-<p>Again, I did it in a long way, and I’m sure there are ways of doing it in less lines. This piece of code extracts the information using <code>summary.glm()</code>, which outputs a matrix with the values of <code>Estimates</code>, <code>Standard Errors</code>, <code>z-value</code>, and <code>p-values</code> for all variables. In the first line, I proceeded to extract only the <code>Estimates</code> and <code>p-values</code> columns. The second line binds this matrix with a new column that states a logical vector for values of <code>Estimates</code> bigger than zero (positive). The third line simply renames the TRUE/FALSE for Positive/Negative for tidiness. Finally, the last line reorders the data frame to the requested order.</p>
+<h3 id="using-the-information-in-fit-create-a-dataframe-collecting-the-names-of-the-variables-names-of-the-rows-of-the-dataframe-the-value-of-the-coefficients-first-column-a-logical-vector-stating-which-coefficients-are-positive-second-column-the-p-values-third-column.">6: Using the information in fit, create a dataframe collecting: The names of the variables (names of the rows of the dataframe); The value of the coefficients (first column); A logical vector stating which coefficients are positive (second column); The p-values (third column).</h3>
+<p>First I extract the information using <code>summary.glm()</code>, which outputs a matrix with the values of <code>Estimates</code>, <code>Standard Errors</code>, <code>z-value</code>, and <code>p-values</code> for all variables. The second line binds this matrix with a new column that states a logical vector for values of <code>Estimates</code> bigger than zero (positive). The third line simply renames the TRUE/FALSE for Positive/Negative for tidiness. Finally, the last line reorders the data frame to the requested order.</p>
 </div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>fit_results &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(<span class="kw">summary.glm</span>(fit)<span class="op">$</span>coefficients[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)])</span>
-<span id="cb10-2"><a href="#cb10-2"></a></span>
-<span id="cb10-3"><a href="#cb10-3"></a>q6 &lt;-<span class="st"> </span><span class="kw">cbind</span>(fit_results, <span class="dt">coeff=</span>fit_results[,<span class="dv">1</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>fit_results &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(</span>
+<span id="cb10-2"><a href="#cb10-2"></a>                    <span class="kw">summary.glm</span>(fit)<span class="op">$</span>coefficients</span>
+<span id="cb10-3"><a href="#cb10-3"></a>                    [,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)])</span>
 <span id="cb10-4"><a href="#cb10-4"></a></span>
-<span id="cb10-5"><a href="#cb10-5"></a>q6<span class="op">$</span>coeff &lt;-<span class="st"> </span><span class="kw">factor</span>(q6<span class="op">$</span>coeff,</span>
-<span id="cb10-6"><a href="#cb10-6"></a>                   <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>,<span class="st">&quot;TRUE&quot;</span>),</span>
-<span id="cb10-7"><a href="#cb10-7"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Negative&quot;</span>,<span class="st">&quot;Positive&quot;</span>))</span>
-<span id="cb10-8"><a href="#cb10-8"></a></span>
-<span id="cb10-9"><a href="#cb10-9"></a>q6 &lt;-<span class="st"> </span>q6[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>)]</span></code></pre></div>
+<span id="cb10-5"><a href="#cb10-5"></a>q6 &lt;-<span class="st"> </span><span class="kw">cbind</span>(fit_results,</span>
+<span id="cb10-6"><a href="#cb10-6"></a>            <span class="dt">coeff=</span>fit_results[,<span class="dv">1</span>] <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>)</span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a>q6<span class="op">$</span>coeff &lt;-<span class="st"> </span><span class="kw">factor</span>(q6<span class="op">$</span>coeff,</span>
+<span id="cb10-9"><a href="#cb10-9"></a>                   <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;FALSE&quot;</span>,<span class="st">&quot;TRUE&quot;</span>),</span>
+<span id="cb10-10"><a href="#cb10-10"></a>                   <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Negative&quot;</span>,<span class="st">&quot;Positive&quot;</span>))</span>
+<span id="cb10-11"><a href="#cb10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12"></a>q6 &lt;-<span class="st"> </span>q6[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>)]</span></code></pre></div>
 <table>
 <thead>
 <tr>
@@ -445,7 +455,7 @@ p-values
 (Intercept)
 </td>
 <td style="text-align:right;">
--9.0738910
+-8.6472973
 </td>
 <td style="text-align:left;">
 Negative
@@ -459,7 +469,7 @@ Negative
 age
 </td>
 <td style="text-align:right;">
-0.0255175
+0.0283594
 </td>
 <td style="text-align:left;">
 Positive
@@ -473,7 +483,7 @@ Positive
 workclass Federal-gov
 </td>
 <td style="text-align:right;">
-1.0967430
+0.9752483
 </td>
 <td style="text-align:left;">
 Positive
@@ -487,13 +497,13 @@ Positive
 workclass Local-gov
 </td>
 <td style="text-align:right;">
-0.4117647
+0.3400908
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0033442
+0.0104502
 </td>
 </tr>
 <tr>
@@ -501,13 +511,13 @@ Positive
 workclass Never-worked
 </td>
 <td style="text-align:right;">
--10.4544734
+-10.7825886
 </td>
 <td style="text-align:left;">
 Negative
 </td>
 <td style="text-align:right;">
-0.9693605
+0.9680698
 </td>
 </tr>
 <tr>
@@ -515,13 +525,13 @@ Negative
 workclass Private
 </td>
 <td style="text-align:right;">
-0.5943741
+0.5338147
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0000021
+0.0000061
 </td>
 </tr>
 </tbody>
@@ -530,11 +540,11 @@ Positive
 </p>
 <div style="text-align: justify">
 <h3 id="subset-the-dataframe-created-in-the-previous-question-to-only-show-the-rows-where-the-p-values-are-strictly-smaller-than-0.05.-knowing-that-i-the-remaining-rows-are-statistically-significant-and-that-ii-positive-coefficients-contribute-to-increase-the-probability-of-a-salary-larger-than-50000-the-opposite-for-negative-values-comment-on-those-variables-that-negatively-contribute-to-salary..">7: Subset the dataframe created in the previous question to only show the rows where the p-values are strictly smaller than 0.05. Knowing that (i) the remaining rows are statistically significant and that (ii) positive coefficients contribute to increase the probability of a salary larger than $50,000 (the opposite for negative values), comment on those variables that negatively contribute to salary..</h3>
-<p>Code-wise, I simply filter the <code>p-values</code> smaller than 0.05. This gives us an interesting overview though (see Table below)…</p>
-<p>It is worth note that this data set was donated to the repository in 1996, so the data is not the most updated.</p>
-<p>The only negative effect that a marital status has on one’s income is when it corresponds to “never-married”. This is probably due to the taxes system in the U.S., as the marital status interfere on the tiers that one belongs when filing, meaning that if someone that does not reaches 50 K is married to someone that makes more than double that, can still belong to the &gt; 50 K tier. Being a parent also impacts negatively the salary, which agrees to common sense: children are expensive.</p>
+<p>Code-wise, I simply filter the <code>p-values</code> smaller than 0.05. This gives us an interesting overview though (see Table below)… Discussing the why’s of the variables that affect positively the salary would probably be inciting, to say the least (<em>vide</em> sex - Male, race- White).</p>
+<p>The only negative effect that a marital status has on one’s income is when it corresponds to “never-married”. This is probably due to the taxes system in the U.S., as the marital status interfere on the tiers that one belongs when filing, meaning that if someone that does not reaches <code>50K</code> is married to someone that makes more than double that, can still belong to the <code>&gt;50K</code> tier, super underestimating the “never-married” status.</p>
+<p>Being a parent also impacts negatively the salary, which agrees to common sense: children are expensive. But this factor should not affect the salary <em>per se</em>, but the liquid income, or general expenses, I think. It is probably reflective on the secondary consequences that having children have on one’s life which may affect the salary (not having flexible hours, more picky to choose jobs - as location, cost of family living, and moving have to be accounted for, more time to complete education on average (?)).</p>
 <p>The education up to 7<sup>th</sup> and 8<sup>th</sup> grade is tricky because it probably does not mean that “if you have education up to 7<sup>th</sup> and 8<sup>th</sup> grade you will be affected negatively on your income”, rather means that people who did not have more than said grades on their education were affected negatively - theory that can be supported by the fact that all other higher level education were marked as a positive factor, contributing to a higher salary.</p>
-<p>Two of the saddest variables to impact negatively the income are occupation and country of origin. I will ignore the origin “South”, because I’m honestly not sure what it means, and the data base did not provide enough information. Being originated from Colombia corresponds to a negative effect, which can be due to the visa type, the prejudice suffered, or just the how the average population that migrates from this country fits into all the other variables presented (and in others). For occupation, farming and cleaning come up as negative effects on income, and this may be due purely to the average payment for this type of service.</p>
+<p>Two of the saddest variables to impact negatively the income are occupation and country of origin. I will ignore the origin “South”, because I’m honestly not sure what it means, and the data base did not provide enough information. Being originated from Colombia (<em>Columbia</em>) corresponds to a negative effect, which can be due to the visa type, the prejudice suffered, or just the how the average population that migrates from this country fits into all the other variables presented (such as occupation, relationship, education…). For occupation, farming and cleaning come up as negative effects on income, and this may be due purely to the average payment for this type of service and physical capability of working hours.</p>
 </div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>q7 &lt;-<span class="st"> </span>q6 <span class="op">%&gt;%</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="st">        </span><span class="kw">filter</span>(<span class="st">`</span><span class="dt">p-values</span><span class="st">`</span> <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.05</span>)</span></code></pre></div>
@@ -560,7 +570,7 @@ p-values
 (Intercept)
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
--9.0738910
+-8.6472973
 </td>
 <td style="text-align:left;color: black !important;background-color: lightgrey !important;">
 Negative
@@ -574,7 +584,7 @@ Negative
 age
 </td>
 <td style="text-align:right;">
-0.0255175
+0.0283594
 </td>
 <td style="text-align:left;">
 Positive
@@ -588,7 +598,7 @@ Positive
 workclass Federal-gov
 </td>
 <td style="text-align:right;">
-1.0967430
+0.9752483
 </td>
 <td style="text-align:left;">
 Positive
@@ -602,13 +612,13 @@ Positive
 workclass Local-gov
 </td>
 <td style="text-align:right;">
-0.4117647
+0.3400908
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0033442
+0.0104502
 </td>
 </tr>
 <tr>
@@ -616,13 +626,13 @@ Positive
 workclass Private
 </td>
 <td style="text-align:right;">
-0.5943741
+0.5338147
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0000021
+0.0000061
 </td>
 </tr>
 <tr>
@@ -630,27 +640,27 @@ Positive
 workclass Self-emp-inc
 </td>
 <td style="text-align:right;">
-0.7694380
+0.7780341
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0000003
+0.0000000
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-fnlwgt
+education 12th
 </td>
 <td style="text-align:right;">
-0.0000007
+0.5233380
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0000393
+0.0347689
 </td>
 </tr>
 <tr>
@@ -658,13 +668,13 @@ Positive
 education 7th-8th
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
--0.4755371
+-0.5016658
 </td>
 <td style="text-align:left;color: black !important;background-color: lightgrey !important;">
 Negative
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
-0.0403932
+0.0248413
 </td>
 </tr>
 <tr>
@@ -672,7 +682,7 @@ Negative
 education Assoc-acdm
 </td>
 <td style="text-align:right;">
-1.3355527
+1.3652579
 </td>
 <td style="text-align:left;">
 Positive
@@ -686,7 +696,7 @@ Positive
 education Assoc-voc
 </td>
 <td style="text-align:right;">
-1.3521041
+1.3911035
 </td>
 <td style="text-align:left;">
 Positive
@@ -700,7 +710,7 @@ Positive
 education Bachelors
 </td>
 <td style="text-align:right;">
-1.9361825
+1.9994392
 </td>
 <td style="text-align:left;">
 Positive
@@ -714,7 +724,7 @@ Positive
 education Doctorate
 </td>
 <td style="text-align:right;">
-2.9894579
+3.1159901
 </td>
 <td style="text-align:left;">
 Positive
@@ -728,13 +738,13 @@ Positive
 education HS-grad
 </td>
 <td style="text-align:right;">
-0.8134141
+0.8244554
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0000001
+0.0000000
 </td>
 </tr>
 <tr>
@@ -742,7 +752,7 @@ Positive
 education Masters
 </td>
 <td style="text-align:right;">
-2.2888927
+2.4024325
 </td>
 <td style="text-align:left;">
 Positive
@@ -756,7 +766,7 @@ Positive
 education Prof-school
 </td>
 <td style="text-align:right;">
-2.7931414
+3.0231262
 </td>
 <td style="text-align:left;">
 Positive
@@ -770,7 +780,7 @@ Positive
 education Some-college
 </td>
 <td style="text-align:right;">
-1.1589568
+1.1746958
 </td>
 <td style="text-align:left;">
 Positive
@@ -784,13 +794,13 @@ Positive
 marital.status Married-AF-spouse
 </td>
 <td style="text-align:right;">
-2.6856609
+2.4851580
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0000012
+0.0000047
 </td>
 </tr>
 <tr>
@@ -798,7 +808,7 @@ Positive
 marital.status Married-civ-spouse
 </td>
 <td style="text-align:right;">
-2.2063232
+2.1155286
 </td>
 <td style="text-align:left;">
 Positive
@@ -812,7 +822,7 @@ Positive
 marital.status Never-married
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
--0.4824575
+-0.4446668
 </td>
 <td style="text-align:left;color: black !important;background-color: lightgrey !important;">
 Negative
@@ -826,13 +836,13 @@ Negative
 occupation Craft-repair
 </td>
 <td style="text-align:right;">
-0.1815830
+0.2077389
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0323921
+0.0103251
 </td>
 </tr>
 <tr>
@@ -840,7 +850,7 @@ Positive
 occupation Exec-managerial
 </td>
 <td style="text-align:right;">
-0.8964718
+0.9371975
 </td>
 <td style="text-align:left;">
 Positive
@@ -854,7 +864,7 @@ Positive
 occupation Farming-fishing
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
--0.8825863
+-0.8371652
 </td>
 <td style="text-align:left;color: black !important;background-color: lightgrey !important;">
 Negative
@@ -868,13 +878,13 @@ Negative
 occupation Handlers-cleaners
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
--0.5698108
+-0.5659049
 </td>
 <td style="text-align:left;color: black !important;background-color: lightgrey !important;">
 Negative
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
-0.0000933
+0.0000511
 </td>
 </tr>
 <tr>
@@ -882,7 +892,7 @@ Negative
 occupation Other-service
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
--0.7151763
+-0.7825634
 </td>
 <td style="text-align:left;color: black !important;background-color: lightgrey !important;">
 Negative
@@ -896,13 +906,13 @@ Negative
 occupation Priv-house-serv
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
--4.0181425
+-2.5409061
 </td>
 <td style="text-align:left;color: black !important;background-color: lightgrey !important;">
 Negative
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
-0.0157212
+0.0238609
 </td>
 </tr>
 <tr>
@@ -910,7 +920,7 @@ Negative
 occupation Prof-specialty
 </td>
 <td style="text-align:right;">
-0.6251431
+0.6563526
 </td>
 <td style="text-align:left;">
 Positive
@@ -924,7 +934,7 @@ Positive
 occupation Protective-serv
 </td>
 <td style="text-align:right;">
-0.6864302
+0.6649121
 </td>
 <td style="text-align:left;">
 Positive
@@ -938,13 +948,13 @@ Positive
 occupation Sales
 </td>
 <td style="text-align:right;">
-0.3908908
+0.4291386
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0000145
+0.0000005
 </td>
 </tr>
 <tr>
@@ -952,7 +962,7 @@ Positive
 occupation Tech-support
 </td>
 <td style="text-align:right;">
-0.7656629
+0.7511904
 </td>
 <td style="text-align:left;">
 Positive
@@ -966,13 +976,13 @@ Positive
 relationship Not-in-family
 </td>
 <td style="text-align:right;">
-0.5694849
+0.5953493
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0301487
+0.0189810
 </td>
 </tr>
 <tr>
@@ -980,13 +990,13 @@ Positive
 relationship Own-child
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
--0.6600702
+-0.6569224
 </td>
 <td style="text-align:left;color: black !important;background-color: lightgrey !important;">
 Negative
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
-0.0111116
+0.0096290
 </td>
 </tr>
 <tr>
@@ -994,7 +1004,7 @@ Negative
 relationship Wife
 </td>
 <td style="text-align:right;">
-1.3627537
+1.3882599
 </td>
 <td style="text-align:left;">
 Positive
@@ -1008,13 +1018,13 @@ Positive
 race Asian-Pac-Islander
 </td>
 <td style="text-align:right;">
-0.6649772
+0.5802242
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0136851
+0.0218571
 </td>
 </tr>
 <tr>
@@ -1022,13 +1032,13 @@ Positive
 race White
 </td>
 <td style="text-align:right;">
-0.5728025
+0.5117745
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0097794
+0.0138578
 </td>
 </tr>
 <tr>
@@ -1036,35 +1046,7 @@ Positive
 sex Male
 </td>
 <td style="text-align:right;">
-0.8617541
-</td>
-<td style="text-align:left;">
-Positive
-</td>
-<td style="text-align:right;">
-0.0000000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-capital.gain
-</td>
-<td style="text-align:right;">
-0.0003193
-</td>
-<td style="text-align:left;">
-Positive
-</td>
-<td style="text-align:right;">
-0.0000000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-capital.loss
-</td>
-<td style="text-align:right;">
-0.0006474
+0.8649859
 </td>
 <td style="text-align:left;">
 Positive
@@ -1078,7 +1060,7 @@ Positive
 hours.per.week
 </td>
 <td style="text-align:right;">
-0.0297040
+0.0303149
 </td>
 <td style="text-align:left;">
 Positive
@@ -1092,13 +1074,13 @@ Positive
 native.country Cambodia
 </td>
 <td style="text-align:right;">
-1.4815955
+1.4868169
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0193640
+0.0151333
 </td>
 </tr>
 <tr>
@@ -1106,13 +1088,13 @@ Positive
 native.country Columbia
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
--1.9301290
+-2.1575021
 </td>
 <td style="text-align:left;color: black !important;background-color: lightgrey !important;">
 Negative
 </td>
 <td style="text-align:right;color: black !important;background-color: lightgrey !important;">
-0.0191946
+0.0102712
 </td>
 </tr>
 <tr>
@@ -1120,13 +1102,13 @@ Negative
 native.country Germany
 </td>
 <td style="text-align:right;">
-0.6196625
+0.5779968
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0293090
+0.0311855
 </td>
 </tr>
 <tr>
@@ -1134,13 +1116,13 @@ Positive
 native.country Italy
 </td>
 <td style="text-align:right;">
-0.9943692
+0.8895616
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0039177
+0.0076877
 </td>
 </tr>
 <tr>
@@ -1148,27 +1130,13 @@ Positive
 native.country Philippines
 </td>
 <td style="text-align:right;">
-0.6104415
+0.5296502
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0298089
-</td>
-</tr>
-<tr>
-<td style="text-align:left;color: black !important;background-color: lightgrey !important;">
-native.country South
-</td>
-<td style="text-align:right;color: black !important;background-color: lightgrey !important;">
--0.8819496
-</td>
-<td style="text-align:left;color: black !important;background-color: lightgrey !important;">
-Negative
-</td>
-<td style="text-align:right;color: black !important;background-color: lightgrey !important;">
-0.0457263
+0.0469031
 </td>
 </tr>
 <tr>
@@ -1176,17 +1144,22 @@ Negative
 native.country United-States
 </td>
 <td style="text-align:right;">
-0.3815260
+0.3532106
 </td>
 <td style="text-align:left;">
 Positive
 </td>
 <td style="text-align:right;">
-0.0057043
+0.0064095
 </td>
 </tr>
 </tbody>
 </table>
+<p>The packages used in this assignment were:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="kw">library</span>(knitr)</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="kw">library</span>(kableExtra)</span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="kw">library</span>(tibble)</span></code></pre></div>
 </section>
 
 
