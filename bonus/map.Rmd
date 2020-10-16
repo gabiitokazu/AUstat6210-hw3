@@ -31,6 +31,13 @@ rm(list = ls())
                 width: 60%;
         }
 
+        .image2 {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 95%;
+        }
+
         .html-widget {
                 margin: auto;
         }
@@ -162,26 +169,36 @@ Valencia <- paste(sep = "<br/>",
 
 <div style="text-align: justify">
 
-Next I just set up the popups with the information we just put in each object, relating it to their coordinates:
+Next I just set up the popups and circles with the information we just put in each object, relating it to their coordinates:
 
 </div>
 
 ```{r map}
 
 map <- leaflet() %>%
-     addTiles() %>%
-     addPopups(lng=-3.7037902, lat=40.41678, Madrid,
-               options = popupOptions(closeButton = FALSE)) %>%
-     addPopups(lng=2.1734035, lat=41.38506, Barcelona,
-              options = popupOptions(closeButton = FALSE)) %>%
-     addPopups(lng=-2.9349852, lat=43.26301, Bilbao,
-               options = popupOptions(closeButton = FALSE)) %>%
-     addPopups(lng=-0.3762881, lat=39.46991, Valencia,
-               options = popupOptions(closeButton = FALSE))
+        addTiles() %>%
+        addPopups(lng=-3.7037902, lat=40.41678, Madrid,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addCircles(lng=-3.7037902, lat=40.41678,
+                   weight = 5, radius = (34000*2)) %>%
+        addCircles(lng=-3.7037902, lat=40.41678,
+                   weight = 5, radius = (10000*2)) %>%
+        addPopups(lng=2.1734035, lat=41.38506, Barcelona,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addCircles(lng=2.1734035, lat=41.38506,
+                   weight = 5, radius = (26000*2)) %>%
+        addPopups(lng=-2.9349852, lat=43.26301, Bilbao,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addCircles(lng=-2.9349852, lat=43.26301,
+                   weight = 5, radius = (8000*2)) %>%
+        addPopups(lng=-0.3762881, lat=39.46991, Valencia,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addCircles(lng=-0.3762881, lat=39.46991,
+                   weight = 5, radius = (6000*2))
 
 ```
 
-<div class="image" id="example">
+<div class="image2" id="example">
 <img src="map_gabi.png"/>
 </div>
 

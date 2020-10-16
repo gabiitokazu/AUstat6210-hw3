@@ -110,17 +110,51 @@ n <- leaflet() %>%
 
 
 m <- leaflet() %>%
-     addTiles() %>%
-     addPopups(lng=-3.7037902, lat=40.41678, Madrid,
-               options = popupOptions(closeButton = TRUE)) %>%
-     addPopups(lng=2.1734035, lat=41.38506, Barcelona,
-              options = popupOptions(closeButton = TRUE)) %>%
-     addPopups(lng=-2.9349852, lat=43.26301, Bilbao,
-               options = popupOptions(closeButton = TRUE)) %>%
-     addPopups(lng=-0.3762881, lat=39.46991, Valencia,
-               options = popupOptions(closeButton = TRUE))
+        addTiles() %>%
+        addPopups(lng=-3.7037902, lat=40.41678, Madrid,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addCircles(lng=-3.7037902, lat=40.41678,
+                   weight = 5, radius = (34000*2)) %>%
+        addCircles(lng=-3.7037902, lat=40.41678,
+                   weight = 5, radius = (10000*2)) %>%
+        addPopups(lng=2.1734035, lat=41.38506, Barcelona,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addCircles(lng=2.1734035, lat=41.38506,
+                   weight = 5, radius = (26000*2)) %>%
+        addPopups(lng=-2.9349852, lat=43.26301, Bilbao,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addCircles(lng=-2.9349852, lat=43.26301,
+                   weight = 5, radius = (8000*2)) %>%
+        addPopups(lng=-0.3762881, lat=39.46991, Valencia,
+                  options = popupOptions(closeButton = FALSE)) %>%
+        addCircles(lng=-0.3762881, lat=39.46991,
+                   weight = 5, radius = (6000*2))
 
-LOOP:
+
+
+m <- leaflet() %>%
+        addTiles() %>%
+        addCircles(lng=-3.7037902, lat=40.41678, popup=paste("Madrid"), weight = 5, radius = (34000*2))
+
+
+     addHomeMarker(){L.circle({lng: -3.7037902, lat: 40.41678},
+                              {color: "steelblue",
+             radius: 200,
+                                      fillcolor:"steelblue",
+             opacity: 0.6}).addTo(m)}
+        
+#html:
+L.circle({lng: -3.7037902, lat: 40.41678}, {color: "steelblue",
+        radius: 200, fillcolor:"steelblue",
+        opacity: 0.6}).addTo(m)
+
+L.circleMaker(lng= 3.7037902, lat= 40.41678, radius = 25)
+#-------
+
+leaflet(m) %>% addTiles() %>%
+        addCircles(lng = ~Long, lat = ~Lat, weight = 1,
+                   radius = ~sqrt(Pop) * 30, popup = ~City
+        )
         
         
      
