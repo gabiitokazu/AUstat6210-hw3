@@ -9,19 +9,21 @@ Prof. Dr. Roberto Molinari
 
 ***
 
-Finalized `.html` files in the `output` directory.
-Final `.html` files generated in October 12, 2020.
+Finalized `hw3final.html` file for Problems 1 and 2 in the `output` directory.
+Finalized `map.html` file for bonus problem in the `output` directory.
+
+Final `.html` files generated in October 16, 2020.
 
 
 In `/covid` directory: 
 
-* See `covid.html` for Problem 1. 
+* See `covid.html` for only Problem 1. 
 * See `covid.csv` for raw data used on Problem 1. 
 * See `workable_covid.R` for messier code, why things worked and why some did not.
 
 In `/salary` directory: 
 
-* See `salary.html` for Problem 2. 
+* See `salary.html` for only Problem 2. 
 * See `adult.csv` for raw data used on Problem 2. 
 * See `workable_salary.R` for messier code, why things worked and why some did not.
 
