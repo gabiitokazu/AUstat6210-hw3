@@ -49,8 +49,19 @@ raw_salary$salary <- raw_salary %>%
 # stats.idre.ucla.edu/r/dae/logit-regression/
 # statmethods.net/advstats/glm.html
 #glm: salary ~ salary_df(all), family = binomial, raw_salary
+##
 
-fit <- glm(salary ~.,data=raw_salary,family=binomial)
+raw_salary1 <- subset(raw_salary, select = -c(fnlwgt,education.num,capital.loss,capital.gain))
+
+raw_salary1 <- as.factor(raw_salary1)
+
+x <- isNA(raw_salary1, na.strings = c(" ?", "?", "N/A"))
+
+raw_salary1[raw_salary1 == " ?"] <- "NA"
+
+filter(raw_salary1, !grepl(" ?", native.country))
+
+fit <- glm(salary ~.,data=raw_salary1,family=binomial, na.action=na.exclude)
 
  
 # 6 Using the information in fit (hint: you can use the functions coef() and summary() to extract information), create a dataframe collecting:
@@ -62,20 +73,35 @@ fit <- glm(salary ~.,data=raw_salary,family=binomial)
 library(tibble)
 library(tidyverse)
 
+coef(fit)
+
 fit_results <- summary.glm(fit)$coefficients
+
 fit_results <- as.data.frame(fit_results[,c(1,4)])
+dim(fit_results)
+
 coeff <- fit_results[,1] > 0
+length(coeff)
+
 q6 <- cbind(fit_results, coeff)
+
 q6$coeff <- factor(q6$coeff, levels = c("FALSE","TRUE"), labels = c("Negative","Positive"))
+
 q6 <- q6[c(1,3,2)]
 colnames(q6) = c("Coefficients","q6","p-values")
+
+
 
 #limpando:
 
 fit_results <- as.data.frame(summary.glm(fit)$coefficients[,c(1,4)])
-q7 <- cbind(fit_results, coeff=fit_results[,1] > 0)
-q7$coeff <- factor(q7$coeff, levels = c("FALSE","TRUE"), labels = c("Negative","Positive"))
-q7 <- q7[c(1,3,2)]
+q6 <- cbind(fit_results, coeff=fit_results[,1] > 0)
+q6$coeff <- factor(q6$coeff, levels = c("FALSE","TRUE"), labels = c("Negative","Positive"))
+q6 <- q6[c(1,3,2)]
+colnames(q6) = c("Coefficients","q6","p-values")
+
+q7 <- q6 %>%
+     filter(`p-values` < 0.05)
 
 
 
@@ -109,7 +135,17 @@ residuals(fit, type="deviance") # residuals
 library(kableExtra)
 
 q7 <- q6 %>%
-        filter(`p-values` < 0.05)
+     filter(`p-values` < 0.05)
+
+
+library(gt) #nope
+q7 <- q6 %>%
+     filter(`p-values` < 0.05) %>%
+     fmt_scientific(
+          columns = vars(num),
+          rows = num <= 0,
+          decimals = 4
+     )
 
 q7 %>%
         kable(booktabs = T) %>%
