@@ -6,6 +6,8 @@ library(ggmap)
 library(sf)
 library(mapview)
 
+GGMAP_GOOGLE_API_KEY
+
 googlemaps_api_key = Sys.getenv("GOOGLEMAPS_API_KEY")
 
 register_google(key = googlemaps_api_key)

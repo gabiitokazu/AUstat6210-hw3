@@ -8,7 +8,7 @@ output:
 highlight: github
 ---
 
-Final `.html` file knitted in October 12, 2020 (available in `/output` folder): Source code available on [GitHub](https://github.com/AU-R-Programming/HW3-Gabii/blob/main/bonus/map.Rmd).
+Final `.html` file knitted in October 16, 2020 (available in [`/output` folder](https://github.com/AU-R-Programming/HW3-Gabii/tree/main/output)): Source code available on [GitHub](https://github.com/AU-R-Programming/HW3-Gabii/blob/main/bonus/map.Rmd).
 
 ```{r chunksetup, include=FALSE}
 knitr::opts_chunk$set(
