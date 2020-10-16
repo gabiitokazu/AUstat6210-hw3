@@ -1,0 +1,594 @@
+---
+title: "Homework 3"
+subtitle: "STAT 6210 AU Fall 2020"
+author: "Ana Gabriela Itokazu"
+output:
+     prettydoc::html_pretty:
+     theme: cayman
+highlight: github
+---
+
+<div style="text-align: justify">
+
+Final `.html` file knitted in October 16, 2020 (source code available in [`/output` folder](https://github.com/AU-R-Programming/HW3-Gabii/tree/main/output)).
+
+</div>
+
+```{r chunksetup, include=FALSE}
+knitr::opts_chunk$set(
+   echo=TRUE, eval=TRUE, include=TRUE,
+   warning=FALSE, message=FALSE,
+   fig.align="center"
+)
+```
+
+
+```{r clear_genv, echo=FALSE}
+rm(list = ls())
+```
+
+```{css, echo=FALSE}
+ 
+  .image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+  }
+```
+
+
+***
+
+<div style="text-align: justify">
+
+### The "covid.csv" file contains data on Covid-19 cases in a province of Italy. For the following exercises, only provide first rows or elements in the output if the results are too large.
+
+</div>
+
+```{r covid_install, echo=FALSE}
+library(tidyverse)
+library(knitr)
+library(eeptools)
+```
+
+<div style="text-align: justify">
+
+I made sure that the `.csv` file was in the same working directory as my project, so there was no file path in the command. I make the first row of the `raw_covid` data frame as the columns names, and the first column, as the rows names. I also re-named the "Epidemiological.link...Notes" column as "Notes", just for the sake of tidiness...
+
+</div>
+
+```{r covid_import}
+
+raw_covid <- read.csv(file = "covid.csv",
+                      row.names=1,
+                      header=TRUE)
+
+colnames(raw_covid)[8] <- "Notes"
+
+```
+
+```{r covid_view_raw, echo=FALSE}
+
+glimpse(raw_covid)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 1 and 2: Correctly format the dates in “Date.of.birth”, “First.day.of.symptoms”, “Date.of.outcome” and “Date.of.diagnosis”; Format “Hospitalization.type”, “Symptoms” and “Outcome” as factors and “Epidemiological.link…Notes” as character.
+
+Because all modifications were in the same object, I made them using piping (`%>%`) and the `mutate` function for each type of modification. For the modifications in more than one variable, I used the `across` function applied to a vector of them.
+
+</div>
+
+```{r covid_q1q2}
+
+raw_covid <- raw_covid %>%
+     mutate(across(c(Date.of.birth,
+                     First.day.of.symptoms,
+                     Date.of.outcome,
+                     Date.of.diagnosis), as.Date)) %>%
+     mutate(across(c(Hospitalization.type,
+                     Symptoms,Outcome), as.factor)) %>%
+     mutate(Notes = as.character(Notes))
+
+```
+
+```{r covid_view_q1q2, echo=FALSE}
+
+glimpse(raw_covid)
+
+```
+<div style="text-align: justify">
+\
+
+### 3: Create a three-dimensional table reporting the three factors from the previous question.
+
+For this, I did not used the `table` function. Instead, I selected the data based on the class of the variable. To use said function, I would do something that looks like the `#commented` line below.
+</div>
+
+```{r covid_q3}
+
+q3 <- select_if(raw_covid, is.factor)
+
+# q3 <- table(raw_covid[c("Hospitalization.type",
+#                          "Symptoms",
+#                          "Outcome")])
+
+```
+
+```{r covid_view_q3, echo=FALSE}
+
+glimpse(q3)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 4: Using the table object created in the previous question, subset it in order to create the table presented in the homework assignment.
+
+To be able to reproduce the table, I `filtered` the data to the set represented there. The whole table is only representing the data for the "Asymptomatic", and it does not represent the data that includes "Deceased" or "Non-Intensive care hospitalization". Once filtering all this, I could `group_by` the "Hospitalization Type" and "Outcome". This, summarized by the "Symptoms" column, gives us the counts for this overlap. In a separate piping, I use the function `spread` to move the "Outcome" values in a column based on the "Symptoms" values. Now, this looks like the table provided already, but because the `summarize` function did not provided a zero-value count, we need to `replace` the NA values for zero. This is long, and honestly can be done in like one line of subsetting, but I find it easier to understand and use when I know exactly what I'm taking out and modifying. Also, if I need to use the same function to extract different types of information, it is easier to change small bits. Like that, I can filter out different levels, or group by different variables.
+
+</div>
+
+```{r covid_q4}
+
+ q4 <- q3 %>%
+      filter(Symptoms != "Symptomatic") %>%
+      filter(Outcome != "Deceased") %>%
+      filter(Hospitalization.type != "Non-Intensive care hospitalization") %>%
+      group_by(Hospitalization.type, Outcome) %>%
+      summarize(Symptoms = n())
+ 
+ q4 <- q4 %>%
+      spread(Outcome,Symptoms) %>%
+      replace(is.na(.), 0)
+ 
+```
+
+```{r covid_view_q4, echo=FALSE}
+
+colnames(q4) <- c("","Disease in progress","Healed")
+knitr::kable(q4, align = "c",
+             format = "html",
+             table.attr = "style='width:65%;'") %>%
+        kableExtra::kable_styling(position = "center")
+
+```
+\
+
+<div style="text-align: justify">
+
+### 5: Order the data based on the date of diagnosis (from first to most recent).
+
+</div>
+
+```{r covid_q5}
+
+q5 <- arrange(raw_covid, Date.of.diagnosis)
+
+```
+
+```{r covid_view_q5, echo=FALSE}
+
+glimpse(q5$Date.of.diagnosis)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 6: Add a column that reports whether or not a case was asymptomatic AND in home isolation. Name the observation “Home_Asymptomatic” if the conditions apply and “Non_Home_Asymptomatic” if not and then produce a bar plot of this new variable.
+
+Here I used a `if` `else` sentence nested in a `for` loop to knowingly waste computational capacity, but also to train myself doing it without pain. Because this is not an extensive data set, the amount of time used is not that different than using another method, such as a `ifelse` statement in a `mutate()` function.
+
+</div>
+
+```{r covid_q6}
+
+df_q6 <- raw_covid %>%
+   mutate(q6 = character(nrow(raw_covid)))
+
+for (i in 1:nrow(df_q6)){
+   if(isTRUE((df_q6[i,"Hospitalization.type"] == "Home isolation")
+   && (df_q6[i, "Symptoms"] == "Asymptomatic"))) {
+      df_q6[i,"q6"] <- "Home_Asymptomatic"
+      } else {
+      df_q6[i,"q6"] <- "Non_Home_Asymptomatic"
+      }
+}
+
+```
+
+```{r covid_view_q6}
+
+plot_q6 <- table(df_q6$q6)
+
+barplot(plot_q6, xlab="Asymptomatic",
+        names.arg=c("Home","Non-Home"),
+        ylim=c(0,1000))
+axis(2,at=seq(0,1000,200))
+
+```
+\
+
+<div style="text-align: justify">
+
+### 7: Count the number of cases of people born after 1981 and that have healed.
+
+For questions 7 and 8 I used the same method: a piping with filters nesting the logical operators that fulfill the requirements. For question 7 I did not include people born during the year 1981, while for question 8 I did not include people born during the year 1982.
+
+</div>
+
+```{r covid_q7}
+
+q7 <- raw_covid %>%
+     filter(Date.of.birth >= "1981-12-01") %>%
+     filter(Outcome == "Healed") %>%
+     summarize(n())
+
+```
+
+```{r covid_view_q7, echo=FALSE}
+
+colnames(q7) <- "Number of people born after 1981 and healed"
+knitr::kable(q7, align = "c",
+             format = "html",
+             table.attr = "style='width:65%;'") %>%
+        kableExtra::kable_styling(position = "center")
+```
+\
+
+<div style="text-align: justify">
+
+### 8: Count the number of cases that are asymptomatic OR in home isolation (but not both) AND were born before 1982.
+
+</div>
+
+```{r covid_q8}
+
+q8 <- raw_covid %>%
+   filter(Date.of.birth <= "1982-01-01") %>%
+   filter(xor(Symptoms == "Asymptomatic",
+              Hospitalization.type == "Home isolation")) %>%
+   summarize(n())
+
+```
+
+```{r covid_view_q8, echo=FALSE}
+
+colnames(q8) <- "Number of people born after 1982, Asymptomatic or in Home isolation"
+knitr::kable(q8, align = "c",
+             format = "html",
+             table.attr = "style='width:65%;'") %>%
+        kableExtra::kable_styling(position = "center")
+
+```
+\
+
+<div style="text-align: justify">
+
+### 9: Create a new dataset including only the rows where “Epidemiological.link…Notes” includes the words “contact” OR “symptom” (or both). Hint: you can use the grep() function and tolower().
+
+Here I used the `tolower` function to make sure I will not mismatch due to differences on typing (even though it excludes typos!), in a `grepl()` function. I chose this instead of `grep()` because (the last does not work in this dataset and) `grepl()` returns a logical vector matching each element of my data frame.
+
+</div>
+
+```{r covid_q9}
+
+q9 <- raw_covid %>%
+     filter(grepl("contact", tolower(Notes)) |
+            grepl("symptom", tolower(Notes)))
+
+```
+
+```{r covid_view_q9, echo=FALSE}
+
+glimpse(q9)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 10: In the previous dataset add a column reporting the age (in years, therefore in integer format) of each patient as of October 2nd, 2020. Save this dataset into a .csv file and make it available on your GitHub repository for this assignment.
+
+I simplified the path for tidiness and privacy, and it follows an `glimpse` of what the "age" column looks like. The `.csv` file is available on the `/output` folder in the [GitHub repo](https://github.com/AU-R-Programming/HW3-Gabii/blob/main/output):
+
+</div>
+
+```{r covid_q10, eval=FALSE}
+
+q10 <- q9 %>%
+   mutate("age" = floor(age_calc(q9$Date.of.birth,
+                                 units = "years"))) %>%
+   write.csv("covid_q10.csv")
+
+```
+
+```{r covid_view_q10, echo=FALSE}
+
+q10 <- q9 %>%
+   mutate("age" = floor(age_calc(q9$Date.of.birth,
+                                 units = "years")))
+
+glimpse(q10$age)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 11: Produce a pie chart for the type of hospitalization for cases born between 1960 and 1980.
+
+I used again the piping with filters and logical operators to select the requested data and used the `base` pie type chart with the `RColorBrewer` package for prettier colors. I added the labels as percentages, simply calculating those in a separate object by hand, and added the names of the variables as a legend.
+
+I kind of cheated to put the legend in the place that it shows in this document. Because of the length of the names, even if I surpass the nominal values for the argument position by playing with coordinates, I get the legend either on top of the pie, or cut off the chart area. The code I've actually used can be seen after the said plot.!
+
+</div>
+
+```{r covid_q11}
+
+q11 <- raw_covid %>%
+   filter(Date.of.birth >= "1960-01-01" &
+          Date.of.birth <= "1980-12-31") %>%
+   filter(!is.na(Hospitalization.type))
+
+```
+
+```{r covid_pie_q11, eval=FALSE}
+
+library(RColorBrewer)
+
+myPalette <- brewer.pal(3, "Set3") 
+pie_q11 <- table(q11$Hospitalization.type)
+piepercent <- round(100*pie_q11/sum(pie_q11), 1)
+
+pie(pie_q11,
+    labels=piepercent,
+    main="Hospitalization type in cases born between 1960 and 1980 (%)",
+    border="white",
+    cex=0.7,
+    col=myPalette)
+
+legend("bottom",
+       c("Home isolation",
+         "Intensive Care Hospitalization",
+         "Non-Intensive Care Hospitalization"),
+       cex = 0.8,
+       fill=myPalette)
+
+```
+
+  <div class="image" id="pie!">
+  <img src="pie.png"/>
+  </div>
+
+```{r covid_pie_locator, eval=FALSE}  
+
+# this first line creates the outer margin
+# in my case, I wanted more space on the bottom, so c(5,0,0,0)
+# if one would want more space on the left, c(0,5,0,0)
+# this is a common fix for the legend position, as it gives you
+# more space in general, but take a look at the code in legend()
+
+par(xpd=T, mar=par()$mar+c(5,0,0,0))
+
+pie(pie_q11,
+    labels=piepercent,
+    main="Hospitalization type in cases born between 1960 and 1980 (%)",
+    border="white",
+    col=myPalette)
+
+# so this locator() function gives you a little arrow that you can
+# click on your plot are and choose **exactly** where you want to put
+# your legend. It is honestly probably not useful academically,
+# when we are trying to make similar plots altogether, but it is pretty
+# neat and cool!
+
+legend(locator(1),
+       inset=c(-0.2,0),
+       c("Home isolation",
+         "Intensive Care Hospitalization",
+         "Non-Intensive Care Hospitalization"),
+       cex = 0.8,
+       fill=myPalette)
+
+```
+
+
+```{r salary_install, echo=FALSE}
+library(tidyverse)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(tibble)
+```
+
+
+<div style="text-align: justify">
+
+### The “adult.csv” dataset was downloaded from the [UCI data repository](https://archive.ics.uci.edu/ml/datasets/Adult) and collects census information paired with a variable determining whether an individual’s salary is larger or smaller than (or equal to) $50,000. 
+
+### 1: Load the data and check the formatting of the variables.
+
+I made sure that the `.csv` file was in the same working directory as my project, so there was no file path in the command. I make the first row of the `raw_salary` data frame as the columns names, and the first column, as the rows names.
+
+</div>
+
+```{r salary_q1}
+
+raw_salary <- read.csv(file = "adult.csv",
+                       sep = ";",
+                       row.names = 1,
+                       header = TRUE)
+
+```
+
+```{r salary_view_q1, echo=FALSE}
+
+glimpse(raw_salary)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 2: Rename the last column (currently called “NA”) containing the dichotomous salary information. Assign the name salary to it.
+
+</div>
+
+```{r salary_q2}
+
+colnames(raw_salary)[15] <- "salary"
+
+```
+
+```{r salary_view_q2, echo=FALSE}
+
+glimpse(raw_salary[15])
+
+```
+<div style="text-align: justify">
+\
+
+### 3: The values in salary have a space in front of them (e.g. " >50K"): remove the space from all values.
+
+Because it was a leading space, I choose to use `trimws()`. The argument `which` could be `"right"` for trailing spaces, `"both"` for leading and trailing and to remove all spaces.
+
+</div>
+
+```{r salary_q3}
+
+raw_salary$salary <- trimws(raw_salary$salary,
+                            which = "left")
+
+```
+
+```{r salary_view_q3, echo=FALSE}
+
+glimpse(raw_salary[15])
+
+```
+\
+
+<div style="text-align: justify">
+
+### 4: Again, in the variable salary, replace “>50K” with the value 1 and “<=50K” with 0. Make sure to format it as a factor with two levels.
+
+Here, I chose to factorize the `salary` variable, giving it two levels with the labels "0" and "1".
+
+</div>
+
+```{r salary_q4}
+
+raw_salary$salary <- factor(raw_salary$salary,
+                            levels = c("<=50K",">50K"),
+                            labels = c(0,1))
+
+```
+
+```{r salary_view_q4, echo=FALSE}
+
+class(raw_salary$salary)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 5: Use the glm() function to estimate this logistic model. Only specify the arguments formula = salary ~ ., data and family = binomial. Save the result of the estimation in an object called fit.
+
+</div>
+
+```{r salary_q5}
+
+raw_salary <- subset(raw_salary, select = -c(fnlwgt,education.num,capital.loss,capital.gain))
+
+fit <- glm(salary ~.,
+           data = raw_salary,
+           family = binomial)
+
+```
+\
+
+<div style="text-align: justify">
+
+### 6: Using the information in fit, create a dataframe collecting: The names of the variables (names of the rows of the dataframe); The value of the coefficients (first column); A logical vector stating which coefficients are positive (second column); The p-values (third column).
+
+First I extract the information using `summary.glm()`, which outputs a matrix with the values of `Estimates`, `Standard Errors`, `z-value`, and `p-values` for all variables. The second line binds this matrix with a new column that states a logical vector for values of `Estimates` bigger than zero (positive). The third line simply renames the TRUE/FALSE for Positive/Negative for tidiness. Finally, the last line reorders the data frame to the requested order.
+
+</div>
+
+```{r salary_q6}
+
+fit_results <- as.data.frame(
+                    summary.glm(fit)$coefficients
+                    [,c(1,4)])
+
+q6 <- cbind(fit_results,
+            coeff=fit_results[,1] > 0)
+
+q6$coeff <- factor(q6$coeff,
+                   levels = c("FALSE","TRUE"),
+                   labels = c("Negative","Positive"))
+
+q6 <- q6[c(1,3,2)]
+
+```
+
+```{r salary_view_q6, echo=FALSE}
+
+colnames(q6) = c("Coefficients","q6","p-values")
+
+kable(head(q6))
+
+```
+\
+
+<div style="text-align: justify">
+
+### 7: Subset the dataframe created in the previous question to only show the rows where the p-values are strictly smaller than 0.05. Knowing that (i) the remaining rows are statistically significant and that (ii) positive coefficients contribute to increase the probability of a salary larger than $50,000 (the opposite for negative values), comment on those variables that negatively contribute to salary..
+
+Code-wise, I simply filter the `p-values` smaller than 0.05. This gives us an interesting overview though (see Table below)... Discussing the why's of the variables that affect positively the salary would probably be inciting, to say the least (*vide* sex - Male, race- White).
+
+The only negative effect that a marital status has on one's income is when it corresponds to "never-married". This is probably due to the taxes system in the U.S., as the marital status interfere on the tiers that one belongs when filing, meaning that if someone that does not reaches `50K` is married to someone that makes more than double that, can still belong to the `>50K` tier, super underestimating the "never-married" status.
+
+Being a parent also impacts negatively the salary, which agrees to common sense: children are expensive. But this factor should not affect the salary *per se*, but the liquid income, or general expenses, I think. It is probably reflective on the secondary consequences that having children have on one's life which may affect the salary (not having flexible hours, more picky to choose jobs - as location, cost of family living, and moving have to be accounted for, more time to complete education on average (?)).
+
+The education up to 7<sup>th</sup> and 8<sup>th</sup> grade is tricky because it probably does not mean that "if you have education up to 7<sup>th</sup> and 8<sup>th</sup> grade you will be affected negatively on your income", rather means that people who did not have more than said grades on their education were affected negatively - theory that can be supported by the fact that all other higher level education were marked as a positive factor, contributing to a higher salary.
+
+Two of the saddest variables to impact negatively the income are occupation and country of origin. I will ignore the origin "South", because I'm honestly not sure what it means, and the data base did not provide enough information. Being originated from Colombia (*Columbia*) corresponds to a negative effect, which can be due to the visa type, the prejudice suffered, or just the how the average population that migrates from this country fits into all the other variables presented (such as occupation, relationship, education...). For occupation, farming and cleaning come up as negative effects on income, and this may be due purely to the average payment for this type of service and physical capability of working hours.
+
+</div>
+
+```{r salary_q7}
+
+q7 <- q6 %>%
+        filter(`p-values` < 0.05)
+
+```
+
+```{r salary_view_q7, echo=FALSE}
+
+q7 %>%
+        kable(booktabs = T) %>%
+        kable_styling() %>%
+        row_spec(which(q7$q6 == "Negative"),
+                 color = "black",
+                 background = "lightgrey")
+
+```
+
+If not mentioned in the chunk, the packages used in this assignment were:
+
+```{r obs, eval=FALSE}
+library(tidyverse)
+library(knitr)
+library(eeptools)
+library(kableExtra)
+library(tibble)
+```
