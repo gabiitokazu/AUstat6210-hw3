@@ -398,7 +398,10 @@ legend(locator(1),
        fill=myPalette)
 
 ```
+\
 
+***
+\
 
 ```{r salary_install, echo=FALSE}
 library(tidyverse)
@@ -426,13 +429,10 @@ raw_salary <- read.csv(file = "adult.csv",
                        row.names = 1,
                        header = TRUE)
 
-```
-
-```{r salary_view_q1, echo=FALSE}
-
 glimpse(raw_salary)
 
 ```
+
 \
 
 <div style="text-align: justify">

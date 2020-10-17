@@ -646,6 +646,11 @@ Number of people born after 1982, Asymptomatic or in Home isolation
 <span id="cb20-25"><a href="#cb20-25"></a>         <span class="st">&quot;Non-Intensive Care Hospitalization&quot;</span>),</span>
 <span id="cb20-26"><a href="#cb20-26"></a>       <span class="dt">cex =</span> <span class="fl">0.8</span>,</span>
 <span id="cb20-27"><a href="#cb20-27"></a>       <span class="dt">fill=</span>myPalette)</span></code></pre></div>
+<p><br />
+</p>
+<hr />
+<p><br />
+</p>
 <div style="text-align: justify">
 <h3 id="the-adult.csv-dataset-was-downloaded-from-the-uci-data-repository-and-collects-census-information-paired-with-a-variable-determining-whether-an-individuals-salary-is-larger-or-smaller-than-or-equal-to-50000.">The “adult.csv” dataset was downloaded from the <a href="https://archive.ics.uci.edu/ml/datasets/Adult">UCI data repository</a> and collects census information paired with a variable determining whether an individual’s salary is larger or smaller than (or equal to) $50,000.</h3>
 <h3 id="load-the-data-and-check-the-formatting-of-the-variables.">1: Load the data and check the formatting of the variables.</h3>
@@ -654,7 +659,9 @@ Number of people born after 1982, Asymptomatic or in Home isolation
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>raw_salary &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;adult.csv&quot;</span>,</span>
 <span id="cb21-2"><a href="#cb21-2"></a>                       <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>,</span>
 <span id="cb21-3"><a href="#cb21-3"></a>                       <span class="dt">row.names =</span> <span class="dv">1</span>,</span>
-<span id="cb21-4"><a href="#cb21-4"></a>                       <span class="dt">header =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<span id="cb21-4"><a href="#cb21-4"></a>                       <span class="dt">header =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb21-5"><a href="#cb21-5"></a></span>
+<span id="cb21-6"><a href="#cb21-6"></a><span class="kw">glimpse</span>(raw_salary)</span></code></pre></div>
 <pre><code>## Rows: 32,561
 ## Columns: 15
 ## $ age            &lt;int&gt; 39, 50, 38, 53, 28, 37, 49, 52, 31, 42, 37, 30, 23, 32…
