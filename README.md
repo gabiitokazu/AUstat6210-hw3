@@ -1,13 +1,14 @@
 ***
-# HW3-Gabii 
+#### homework activity developed during the class R Programming for Data Science
+#### Auburn University - Fall semester, 2020.
+#### Prof. Dr. Roberto Molinari
 ***
 
-Repo for Homework 3 - by **Ana Gabriela Itokazu** \
-STAT 6210 - R Programming for Data Science \
-Auburn University - Fall 2020 \
-Prof. Dr. Roberto Molinari
+This is a mirror of the original repo, that was/is maintained in a private organization.
+by **Ana Gabriela Itokazu**
 
-***
+**Finished and turned in: October 16, 2020.**
+
 
 Finalized `hw3final.html` file for Problems 1 and 2 in the `output` directory.
 Finalized `map.html` file for bonus problem in the `output` directory.
